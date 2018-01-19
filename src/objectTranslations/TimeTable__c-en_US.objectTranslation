@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TimeTable</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TimeTables</value>
+    </caseValues>
+    <fields>
+        <help><!-- Class for which this timetable valids --></help>
+        <label><!-- Class --></label>
+        <name>Class__c</name>
+        <relationshipLabel><!-- TimeTables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Days of the week --></help>
+        <label><!-- Day --></label>
+        <name>Day__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Division for which this timetable valids --></help>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <relationshipLabel><!-- TimeTables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Endtime for Slot1 --></help>
+        <label><!-- EndTime1 --></label>
+        <name>EndTime1__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Endtime for Slot2 --></help>
+        <label><!-- EndTime2 --></label>
+        <name>EndTime2__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EndTime for Slot3 --></help>
+        <label><!-- EndTime3 --></label>
+        <name>EndTime3__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EndTime for Slot4 --></help>
+        <label><!-- EndTime4 --></label>
+        <name>EndTime4__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EndTime 5 --></help>
+        <label><!-- EndTime5 --></label>
+        <name>EndTime5__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EndTime for Slot6 --></help>
+        <label><!-- EndTime6 --></label>
+        <name>EndTime6__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Start time for first slot --></help>
+        <label><!-- StartTime1 --></label>
+        <name>StartTime1__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- StartTime2 --></label>
+        <name>StartTime2__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Startime for the slot 3 --></help>
+        <label><!-- StartTime3 --></label>
+        <name>StartTime3__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- StartTime for Slot 4 --></help>
+        <label><!-- StartTime4 --></label>
+        <name>StartTime4__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- StartTime for Slot5 --></help>
+        <label><!-- StartTime5 --></label>
+        <name>StartTime5__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- StartTime for Slot6 --></help>
+        <label><!-- StartTime6 --></label>
+        <name>StartTime6__c</name>
+        <picklistValues>
+            <masterLabel>01:00 PM</masterLabel>
+            <translation><!-- 01:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>01:30 PM</masterLabel>
+            <translation><!-- 01:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:00 PM</masterLabel>
+            <translation><!-- 02:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02:30 PM</masterLabel>
+            <translation><!-- 02:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:00 PM</masterLabel>
+            <translation><!-- 03:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03:30 PM</masterLabel>
+            <translation><!-- 03:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:00 PM</masterLabel>
+            <translation><!-- 04:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04:30 PM</masterLabel>
+            <translation><!-- 04:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:00 PM</masterLabel>
+            <translation><!-- 05:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05:30 PM</masterLabel>
+            <translation><!-- 05:30 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06:00 PM</masterLabel>
+            <translation><!-- 06:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30 PM</masterLabel>
+            <translation><!-- 12:30 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot1 --></help>
+        <label><!-- Subject1 --></label>
+        <name>Subject1__c</name>
+        <relationshipLabel><!-- TimeTables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot2 --></help>
+        <label><!-- Subject2 --></label>
+        <name>Subject2__c</name>
+        <relationshipLabel><!-- TimeTables (Subject2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot3 --></help>
+        <label><!-- Subject3 --></label>
+        <name>Subject3__c</name>
+        <relationshipLabel><!-- TimeTables (Subject3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot4 --></help>
+        <label><!-- Subject4 --></label>
+        <name>Subject4__c</name>
+        <relationshipLabel><!-- TimeTables (Subject4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot5 --></help>
+        <label><!-- Subject5 --></label>
+        <name>Subject5__c</name>
+        <relationshipLabel><!-- TimeTables (Subject5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subject for Slot6 --></help>
+        <label><!-- Subject6 --></label>
+        <name>Subject6__c</name>
+        <relationshipLabel><!-- TimeTables (Subject6) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name of the subject teeacher --></help>
+        <label><!-- Teacher1 --></label>
+        <name>Teacher1__c</name>
+        <relationshipLabel><!-- TimeTables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Teacher for slot 2 --></help>
+        <label><!-- Teacher2 --></label>
+        <name>Teacher2__c</name>
+        <relationshipLabel><!-- TimeTables (Teacher2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Teacher for slot 3 --></help>
+        <label><!-- Teacher3 --></label>
+        <name>Teacher3__c</name>
+        <relationshipLabel><!-- TimeTables (Teacher3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Teacher for slot 4 --></help>
+        <label><!-- Teacher4 --></label>
+        <name>Teacher4__c</name>
+        <relationshipLabel><!-- TimeTables (Teacher4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Teacher for slot 5 --></help>
+        <label><!-- Teacher5 --></label>
+        <name>Teacher5__c</name>
+        <relationshipLabel><!-- TimeTables (Teacher5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Teacher6 --></label>
+        <name>Teacher6__c</name>
+        <relationshipLabel><!-- TimeTables (Teacher6) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>TimeTable Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Slot 1 --></label>
+            <section>Slot 1</section>
+        </sections>
+        <sections>
+            <label><!-- Slot 3 --></label>
+            <section>Slot 3</section>
+        </sections>
+        <sections>
+            <label><!-- Slot 4 --></label>
+            <section>Slot 4</section>
+        </sections>
+        <sections>
+            <label><!-- Slot 5 --></label>
+            <section>Slot 5</section>
+        </sections>
+        <sections>
+            <label><!-- Slot 6 --></label>
+            <section>Slot 6</section>
+        </sections>
+        <sections>
+            <label><!-- Slot2 --></label>
+            <section>Slot2</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

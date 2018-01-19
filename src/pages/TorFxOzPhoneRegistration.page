@@ -1,0 +1,34 @@
+<apex:page standardController="Account" showHeader="false" extensions="TorFxOzPhoneRegistration" id="page">
+<apex:messages />
+  
+  <!-- Begin Default Content REMOVE THIS -->
+ <apex:form id="FirstForm">
+     <apex:pageBlock id="ContactDetails" title="Contact Details">
+         
+         <apex:pageBlockSection id="PrimaryContactDetails1" title="Primary Contact Details">
+         
+         <apex:inputField id="salutation" label="salutation" value="{!con.salutation}"/>
+         <apex:inputField id="firstname" label="firstname" value="{!con.firstname}"/>
+         <apex:inputField id="lastname" label="lastname" value="{!con.lastname}"/>
+         <apex:inputField id="birthdate" label="birthdate" value="{!con.birthdate}"/>        
+         <apex:inputField id="mailingstreet" label="mailingstreet" value="{!con.mailingstreet}"/>         
+         <apex:inputField id="mailingcity" label="mailingcity" value="{!con.mailingcity}"/>      
+         <apex:inputField id="MailingState" label="MailingState" value="{!con.MailingState}"/>
+         <apex:inputField id="Mailingcountry" label="Mailingcountry" value="{!con.Mailingcountry}"/>
+         <apex:inputField id="MailingPostalCode" label="MailingPostalCode" value="{!con.MailingPostalCode}"/>
+         <apex:inputField id="email" label="email" value="{!con.email}"/>
+         <apex:inputField id="mobilephone" label="mobilephone" value="{!con.mobilephone}"/>
+         <apex:inputField id="phone" label="phone" value="{!con.phone}"/>
+         <apex:inputField id="title" label="title" value="{!con.title}"/><br></br>
+         
+<div align="center" draggable="false">
+                            <apex:commandButton value="Open an Account" id="open_btn" action="{!SaveContact}" style="width: 195px; height: 35px"/>
+                        </div>
+         
+         </apex:pageBlockSection>
+         
+     </apex:pageBlock>
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

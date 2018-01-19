@@ -1,0 +1,291 @@
+<apex:page controller="cwbtool.ProfileComparatorController" sidebar="false" tabStyle="CWB_Tool__tab" showheader="true">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-transition.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-dropdown.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/ionic/css/ionicons.min.css')}" />
+    <!-- <apex:includeScript value="{!URLFOR($Resource.googleAnalytics,'/googleAnalytics.js')}"/>-->
+    <style>
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+        margin-left: 8% !important;
+        width: 63%;
+    }
+    
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+    }
+    
+    .bodyDiv {
+        min-height: 400px;
+    }
+    
+    .Btn-group {
+        width: 100% !important;
+    }
+    
+    button.dropdown-toggle {
+        width: 100% !important;
+    }
+    .dropdown-menu{
+      width:100%;
+    }
+    .frm {
+        margin: 15px;
+    }
+    
+    .modal {
+        outline: none;
+    }
+    
+    .panel {
+        //float:left;
+    }
+    
+    .grey-text {
+        color:rgba(154, 148, 148, 0.91);
+    }
+    
+    </style>
+    <apex:sectionHeader title="Profile Comparison"/>
+    <apex:pagemessages rendered="{!lstProfile==null || lstProfile.size==0}" />
+    <c:actionstatusNew />
+    <!--  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Profile</legend>-->
+    <apex:form id="form" styleclass="frm1">
+        <apex:outputPanel rendered="{!isMultiOrg && !showProfileSelection}">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <h2>Existing Active Connection
+                        <apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();" rerender="form,msgId">
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </apex:commandLink>
+                    </h2>
+                    
+                    <div class="pull-right">
+                        <a class='Btn Btn-default Btn-sm' href="{!$Page.createNewConnection}" onclick="showOverLay('Please wait...');">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Create New Connection
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <table border='0' class="table table-striped" style='margin-bottom:2px;'>
+                        <thead>
+                            <th>Source Org</th>
+                            <th>Target Org</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width='49%'>
+                                    <apex:selectList id="SourceOrg" value="{!strSoureOrg}" multiselect="false" size="1" styleclass="form-control form-control1">
+                                        <apex:selectOptions value="{!lstExistingConnection}" />
+                                    </apex:selectList>
+                                </td>
+                                <td width='49%'>
+                                    <apex:selectList id="TargetOrg" value="{!strtargetOrg}" multiselect="false" size="1" styleclass="form-control form-control1">
+                                        <apex:selectOptions value="{!lstExistingConnection}" />
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();initButton();" rerender="frm"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></apex:commandLink>-->
+                    <div>
+                        <apex:outputpanel layout="none">
+                            
+                        </apex:outputpanel>
+                    </div>
+                    <div class='grey-text'>
+                        <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick="showOverLay('Profiles are loading..');getMultiOrgProfile();" data-action='Get Profile'>Start Comparison</span>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered='{!lstProfile!=null && lstProfile.size>0 && showProfileSelection}'>
+            <div class="panel panel-default">
+                <div style='padding:4px;float:left;'>
+                    <apex:commandLink action="{!showOrgSelection}" onclick="showOverLay('Please wait...');" 
+                        styleclass="Btn Btn-default Btn-sm"
+                        rerender="refreshPanel,form,msgId" oncomplete="hideOverLay();" rendered="{!isMultiOrg}">
+                        <span class="ion-edit" aria-hidden="true"></span>&nbsp;<span>Change Orgs</span>
+                    </apex:commandLink>
+                        
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" class='Btn Btn-default Btn-sm' data-action='Setting'>
+                       <span class="ion-funnel" aria-hidden="true"></span><span>&nbsp;Filter</span></a>
+                    <i class="grey-text">In case you run into CPU time limit issues, please filter comparision criteria to lesser items.</i>
+                </div>
+                <apex:variable value="{!0}" var="count"></apex:variable>
+                <table border='0' class="table table-striped" style='margin-bottom:2px;'>
+                    <thead>
+                        <th>Source Profile 
+                            <apex:outputPanel layout="none" rendered="{!isMultiOrg}">
+                                <small class="grey-text"> from Org "{!objORGDetail.strSourceOrgName}" </small>
+                            </apex:outputPanel>
+                         </th>
+                        <th>Target Profile
+                            <apex:outputPanel layout="none" rendered="{!isMultiOrg}">
+                                <small class="grey-text"> from Org "{!objORGDetail.strTargetOrgName}" </small>
+                            </apex:outputPanel>
+                        </th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!lstProfileWrapper}" var="objProfle">
+                            <apex:variable value="{!count+1}" var="count"></apex:variable>
+                            <tr>
+                                <td width='49%'>
+                                    <apex:selectList label="source profile" value="{!objProfle.strSelectedSourceProfile}" multiselect="false" styleclass="multiselect profileClass" style="margin-right:40px;display:none;" required="false">
+                                        <apex:selectOptions value="{!lstProfile}" />
+                                    </apex:selectList>
+                                </td>
+                                <td width='49%'>
+                                    <apex:selectList label="target profile" value="{!objProfle.strSelectedTargetProfile}" multiselect="false" styleclass="multiselect profileClass" style="margin-right:40px;display:none;" required="false">
+                                        <apex:selectOptions value="{!lstTargetOrgProfile}" />
+                                    </apex:selectList>
+                                </td>
+                              <apex:outputpanel rendered="{!(isLoggedInUserHave && hastoken) }" layout="none">
+                                <td>
+                                    <apex:outputpanel layout="none" rendered='{!lstProfileWrapper.size>1}'>
+                                        <apex:commandLink action="{!removeRow}" reRender="form" onclick="showOverLay('Please wait...');" oncomplete="hideOverLay();">
+                                            <apex:param name="iiIndex" assignTo="{!iiIndex}" value="{!count}" />
+                                            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                                        </apex:commandLink>
+                                    </apex:outputpanel>
+                                  <!--  <apex:outputpanel layout="none" rendered="{!count==lstProfileWrapper.size}">
+                                        <apex:commandLink action="{!addNewRow}" reRender="form" onclick="showOverLay('Please wait...');" oncomplete="hideOverLay();">
+                                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                        </apex:commandLink>
+                                    </apex:outputpanel>-->
+                                </td>
+                               </apex:outputpanel> 
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+                <div>
+                    <apex:outputpanel layout="none" rendered="{!(isLoggedInUserHave && hastoken) }">
+                        <div style='clear:both;width:39%;margin-bottom:14px;padding:4px;float:left;'>
+                            <apex:commandLink styleclass="Btn Btn-default Btn-sm" action="{!addNewRow}" reRender="form" onclick="showOverLay('Please wait...');" oncomplete="hideOverLay();">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Row
+                            </apex:commandLink>
+                        </div>
+                    </apex:outputpanel>
+                    <div style='padding:5px;'>
+                        <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick="Startprocessing('download');refresh();" data-action='Download Full Profile Detail Action'>
+                           <span class='ion-ios-cloud-download'></span> Download
+                        </span>
+                        <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick="Startprocessing('preview');refreshmsg();" data-action='Profile Comaparsion Preview Action'>
+        <span class='ion-eye'></span> View
+                        </span>
+                    </div>
+                </div>
+                <apex:actionFunction name="getProfileDetails" action="{!getAndDonload}" />
+                <apex:actionFunction name="getAndPreview" action="{!getAndPreview}" />
+                <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel,msgId,form" />
+                <apex:actionFunction name="refreshmsg" action="{!refreshmsg}" reRender="msgId" />
+                <apex:outputpanel id="refreshPanel">
+                    <apex:pagemessages rendered="{!lstProfile==null || lstProfile.size==0}" />
+                    <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,form,msgId" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){hideOverLay();}" />
+                </apex:outputpanel>
+                
+                <script>
+                var gaDetail = 'OrgName={!$Organization.Name}_Name={!$User.FirstName}';
+
+                function Startprocessing(actionType) {
+                       showOverLay('{!HTMLENCODE(strStatus)}');
+                        if (actionType == 'preview') {
+                            getAndPreview();
+                        } else {
+                            getProfileDetails();
+                        }
+                    // showOverLay('{!HTMLENCODE(strStatus)}');
+                    //getProfileDetails();
+                }
+
+                $(document).ready(function() {
+                    $('.profileClass').multiselect({ 
+
+                        buttonClass: 'Btn Btn-default',
+                        enableFiltering: true,
+                        filterBehavior: 'both',
+                        enableCaseInsensitiveFiltering: true,
+                        filterPlaceholder: 'Search Profile..',
+                        includeSelectAllOption: {!isLoggedInUserHave && hasToken},
+                        selectAllText: 'Select ALL Profile',
+                        selectAllValue: 'multiselect-all',
+                        maxHeight: 217,
+                        buttonWidth: '90%',
+                        nonSelectedText: 'You have not selected any Profile',
+                        disableIfEmpty: true,
+                        onChange: function(element, checked) {
+                            if ($('.profileClass').val() == null) {
+                                $('.containerDivclass').hide();
+                                $('#containerMessage').show();
+                            } else {
+                                $('.containerDivclass').show();
+                                $('#containerMessage').hide();
+                            }
+                            if ({!!isLoggedInUserHave} || {!!hasToken}) {
+                                disabledEnabled('profileClass');
+                            }
+                        }
+                    });
+
+                    $('.filter').multiselect({
+                        buttonClass: 'Btn Btn-default',
+                        includeSelectAllOption: true,
+                        maxHeight: 217,
+                        buttonWidth: '90%',
+                        nonSelectedText: 'You have not selected any Action',
+                        disableIfEmpty: true,
+                    });
+
+                });
+               
+                </script>
+            </div>
+            <!-- </fieldset>  -->
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style='outline:none;'>
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Filter</h4>
+                        </div>
+                        <div class="modal-body">
+                            <apex:selectList value="{!lstSelectedAction}" multiselect="true" styleclass="multiselect filter" style="margin-right:40px;">
+                                <apex:selectOptions value="{!lstAction}" />
+                            </apex:selectList>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="Btn Btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:pagemessages escape="false" id="msgId" />
+        <apex:actionFunction name="getMultiOrgProfile" action="{!getMultiOrgProfile}" reRender="refreshPanel,msgId,form" oncomplete="hideOverLay();" />
+    
+     <apex:outputpanel rendered="{!(!isLoggedInUserHave || !hastoken) }" layout="none">
+       <div style='color:green'>You are using free version so you can't change and compare more than one profile. Click <a href='{!$Page.VersionControl}' target='blank'>here</a> to upgrade your version.</div>
+   </apex:outputpanel>
+  
+    </apex:form>
+    <!--</apex:outputpanel>-->
+</apex:page>

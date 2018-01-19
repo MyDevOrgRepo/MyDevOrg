@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vehicle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vehicles</value>
+    </caseValues>
+    <fields>
+        <help><!-- Keep previous value on cancel demo --></help>
+        <label><!-- Brands --></label>
+        <name>Brands__c</name>
+        <picklistValues>
+            <masterLabel>Ford</masterLabel>
+            <translation><!-- Ford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maruti Suzuki</masterLabel>
+            <translation><!-- Maruti Suzuki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tata</masterLabel>
+            <translation><!-- Tata --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Select Cars --></label>
+        <name>Select_Cars__c</name>
+        <picklistValues>
+            <masterLabel>Benz</masterLabel>
+            <translation><!-- Benz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Celerio</masterLabel>
+            <translation><!-- Celerio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ford Figo</masterLabel>
+            <translation><!-- Ford Figo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swift</masterLabel>
+            <translation><!-- Swift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>i10</masterLabel>
+            <translation><!-- i10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>i20</masterLabel>
+            <translation><!-- i20 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Show Cars --></label>
+        <name>Show_Cars__c</name>
+    </fields>
+    <layouts>
+        <layout>Vehicle Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

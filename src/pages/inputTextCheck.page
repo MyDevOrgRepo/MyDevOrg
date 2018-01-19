@@ -1,0 +1,27 @@
+<apex:page controller="FormValidations" >
+    <apex:message />
+    
+    <script>
+    function checkPhone()
+    {alert('in function');
+        var phone1=document.getElementById("Phone").value;
+     alert(phone1);
+        if(/^\d$/.test(phone1))
+            alert('please enter numerical value');
+        else
+            alert('Its numeriacal value');
+    }
+    </script>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+    <apex:pageBlock >
+        <apex:pageBlockSection collapsible="true" title="Communication Details" dir="Contact" columns="1" id="mpbs1" >
+  <apex:form >
+  Phone:<apex:inputText id="phone" maxlength="9" onblur="checkPhone()"/>
+    <apex:outputLabel value="{!msg}"></apex:outputLabel>  
+  </apex:form>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

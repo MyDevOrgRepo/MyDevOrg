@@ -1,0 +1,124 @@
+<apex:page id="myPage" showHeader="false" controller="SearchRecordswithToolbar" rendered="true">
+  <!-- Begin Default Content REMOVE THIS -->
+   <apex:toolbar id="theToolbar">
+            <apex:outputText value="Sample Toolbar"/>
+
+            <apex:toolbarGroup itemSeparator="line" id="toobarGroupLinks">
+
+                <apex:outputLink value="https://ap2.salesforce.com/00Q/o">Leads</apex:outputLink>
+
+                <apex:outputLink value="https://ap2.salesforce.com/001/o">Accounts</apex:outputLink>
+
+                <apex:outputLink value="https://ap2.salesforce.com/003/o">Contacts</apex:outputLink>
+                
+                <apex:outputLink value="https://ap2.salesforce.com/006/o">Opportunties</apex:outputLink>
+
+            </apex:toolbarGroup>
+
+           <apex:toolbarGroup itemSeparator="line" location="right" id="toobarGroupForm">
+
+                <apex:form id="theForm">
+
+                    <apex:inputText id="theInputText" value="{!searchText}">Search</apex:inputText>
+
+                    <apex:commandButton value="Search" id="theCommandLink" action="{!showDetails}">
+                                        
+                          <apex:actionSupport event="onclick" reRender="MyLeads"/>
+                    
+                    </apex:commandButton>
+
+                </apex:form>
+
+            </apex:toolbarGroup>
+
+        </apex:toolbar>
+  
+  <apex:pageblock id="MyLeads" title="Leads" rendered="{!showBlock}">
+      
+      <apex:pageblockSection id="MyLeads" title="Leads" rendered="{!showBlock}">
+      
+          <apex:pageblockTable value="{!leads}" var="item">
+          
+          <apex:column value="{!item.name}"/>
+                    <apex:column value="{!item.email}"/>
+                              <apex:column value="{!item.phone}"/>
+          
+          
+          </apex:pageblockTable>
+      
+      </apex:pageblockSection>
+  </apex:pageblock>
+  
+  <!-- Account Details -->
+  
+   <apex:pageblock id="MyAccounts" title="Accounts" rendered="{!showBlock}">
+      
+      <apex:pageblockSection id="MyAccounts" title="Accounts" rendered="{!showBlock}">
+      
+          <apex:pageblockTable value="{!accounts}" var="item">
+          
+          <apex:column value="{!item.name}"/>
+                    <apex:column value="{!item.email__c}"/>
+                              <apex:column value="{!item.phone}"/>
+                              <apex:column value="{!item.billingcity}"/>
+                              <apex:column value="{!item.billingstate}"/>
+                              <apex:column value="{!item.billingcountry}"/>
+          
+          
+          </apex:pageblockTable>
+      
+      </apex:pageblockSection>
+  </apex:pageblock>
+  
+  
+  <!-- Conatct Details -->
+  
+  <apex:pageblock id="MyContacts" title="Contacts" rendered="{!showBlock}">
+      
+      <apex:pageblockSection id="Contacts" title="Contacts" rendered="{!showBlock}">
+      
+          <apex:pageblockTable value="{!contacts}" var="item">
+          
+          <apex:column value="{!item.name}"/>
+          <apex:column value="{!item.account.name}"/>
+          <apex:column value="{!item.phone}"/>
+                    <apex:column value="{!item.email}"/>
+                              <apex:column value="{!item.mailingcity}"/>
+                                          <apex:column value="{!item.mailingstate}"/>
+                                                  <apex:column value="{!item.mailingcountry}"/>
+                                                  <apex:column value="{!item.Primary_Contact__c}"/>
+          
+          
+          </apex:pageblockTable>
+      
+      </apex:pageblockSection>
+  </apex:pageblock>
+  
+  <!-- opportunities details -->
+  
+  
+  <apex:pageblock id="MyOpportunties" title="Opportunties" rendered="{!showBlock}">
+      
+      <apex:pageblockSection id="Opportunities" title="Opportunties" rendered="{!showBlock}">
+      
+          <apex:pageblockTable value="{!opportunities}" var="item">
+          
+          <apex:column value="{!item.name}"/>
+          <apex:column value="{!item.account.name}"/>
+          <apex:column value="{!item.type}"/>
+                    <apex:column value="{!item.stagename}"/>
+                              <apex:column value="{!item.probability}"/>
+                                          <apex:column value="{!item.closedate}"/>
+                                                  
+          
+          
+          </apex:pageblockTable>
+      
+      </apex:pageblockSection>
+  </apex:pageblock>
+  
+  
+  
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

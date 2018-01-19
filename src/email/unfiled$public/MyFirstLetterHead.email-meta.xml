@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>MyFirstLetterHead</letterhead>
+    <name>MyFirstLetterHead</name>
+    <style>promotionLeft</style>
+    <subject>Right time to invest!!!</subject>
+    <textOnly>Hi «{!Contact.FirstName}»,
+Happy Diwali.
+This is «{!Contact.OwnerFirstName}» from MyProptoSell.com. We are pleased to inform you that there is huge depreciation that have had happened in your absence for last 3-4 months. The rates are down up to by 25% and accompanied discount as well of flat 200000/- INR. Please be in touch or give us a lead, one of our representative will contact you shortly.
+
+
+Thanks,
+«{!Contact.OwnerFullName}»
+Senior Sales Executive,
+MyPropToSell.com 
+Note:
+This is the first mail-merge document that is sent to you for testing on trial basis. No relevance with any real-world scenarios.</textOnly>
+    <type>html</type>
+</EmailTemplate>

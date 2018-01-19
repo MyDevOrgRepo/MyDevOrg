@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Staff</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staffs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Address of the staff --></help>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- Class with which staff is associated with --></help>
+        <label><!-- Class --></label>
+        <name>Class__c</name>
+        <relationshipLabel><!-- Staffs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date of Birth of the staff entity --></help>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <help><!-- Divisions with which staff is associated with --></help>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <relationshipLabel><!-- Staffs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Employee Number --></label>
+        <name>Employee_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associated Employee --></help>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Staffs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- First Name of concerned staff who is point of contact for a division --></help>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID Card number that generates automatically on staff enrolment --></help>
+        <label><!-- ID Card Number --></label>
+        <name>ID_Card_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last name of the staff for a division --></help>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mmobile Number of the staff for a division --></help>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last name of the staff for a division --></help>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email of the staff for a division --></help>
+        <label><!-- email --></label>
+        <name>email__c</name>
+    </fields>
+    <layouts>
+        <layout>Staff Layout</layout>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

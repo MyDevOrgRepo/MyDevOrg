@@ -1,0 +1,18 @@
+<apex:page controller="eventTypeCustomController" showHeader="false" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock id="custom">
+  <apex:pageBlockSection id="customfields">
+  
+  <apex:form >  
+  <c:checkstartdate id="startdate" startdate="hi" >
+  
+  </c:checkstartdate>        
+         <!-- <apex:inputTextarea id="startdate" label="Start date" onblur="{!checkstartdate}"/> -->
+  
+  </apex:form>
+
+  </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

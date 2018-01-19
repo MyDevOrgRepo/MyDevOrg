@@ -1,0 +1,59 @@
+<apex:page id="viewAttendanceReport" controller="attendanceController" docType="html-5.0">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:form id="mainForm">
+  
+    <apex:pageblock id="showAttendanceReport" >
+  
+  <apex:pageblockButtons >
+      
+      <apex:commandButton id="showAttendanceReport" value="Show Attendance Report" action="{!showAttendnaceReport}">
+      
+      <apex:actionSupport id="renderattendanceTable" reRender="attendanceTable"/>
+  
+  </apex:commandButton>
+  
+  </apex:pageblockButtons>
+  
+      <apex:pageblocksection id="Filters" title="Filter Criteria" columns="2">
+      
+      
+     <apex:selectList id="selectClass" label="Select Class" value="{!classPlaceHolder}" size="1">
+          
+                  <apex:selectOptions value="{!cls_options}" />
+          
+     </apex:selectList> 
+     
+     <apex:selectList id="selectDivision" label="Select Division" value="{!divPlaceHolder}" size="1">
+          
+                  <apex:selectOptions value="{!div_options}" />
+          
+     </apex:selectList>
+     
+     <apex:input id="dateFilter" value="{!datefilter}" type="date" label="Select date"/>
+     
+      
+      </apex:pageblocksection>
+  
+  <apex:pageblocksection id="attendances" columns="1">
+  
+      <apex:pageblocktable id="attendanceTable" value="{!attendancereport}" var="iterator" rendered="{!showTable}">
+      
+      <apex:column value="{!iterator.name}"/>
+      <apex:column value="{!iterator.studentname__r.name}"/>
+      <apex:column value="{!iterator.Present__c}"/>
+      <apex:column value="{!iterator.Absent__c}"/>
+      <Apex:column value="{!iterator.Reason_if_Absent__c}"/>
+      </apex:pageblocktable>
+  
+  </apex:pageblocksection>
+  
+  
+  
+  </apex:pageblock>
+  
+  </Apex:form>
+  
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

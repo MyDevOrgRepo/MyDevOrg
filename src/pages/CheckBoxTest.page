@@ -1,0 +1,30 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <script>
+  function CheckBoxTicked()
+  {
+  alert('CheckBoxTicked');
+  if(document.getElementById('{!$Component.myForm.myCheck}').value=='on')
+  {
+  alert('CheckBox True');
+  }
+  elseif(document.getElementById('{!$Component.myForm.myCheck}').value=='off')
+  {
+      document.write(document.getElementById('myForm:myCheck').value);
+    alert('CheckBox False');
+  }
+  }
+  </script>
+  
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form id="myForm">
+  <apex:inputCheckbox id="myCheck" onchange="CheckBoxTicked()"/>I agree Terms and Conditions
+  <apex:commandButton value="Clcik it" onclick="CheckBoxTicked()"/>
+
+            
+  <!-- End Default Content REMOVE THIS -->
+  </apex:form>
+  
+</apex:page>

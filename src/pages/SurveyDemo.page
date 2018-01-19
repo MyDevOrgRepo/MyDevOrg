@@ -1,0 +1,34 @@
+<apex:page showHeader="false" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <style>
+  .tableClass
+  {
+          font-family:sans-serif;
+          font-size:20pt;
+          color:yellow;
+          background-color:pink;
+          foreground-color:yellow;
+  }
+  .p
+  {
+          font-family:sans-serif;
+          font-size:30pt;
+          color:blue;
+          
+          background-color:yellow;
+      
+  }
+  </style>
+  
+  <p align="center" class="p"> Please fill provider survey </p>
+  
+  <table id="myTable" name="Mytable" border="1" class="tableClass" padding="20" align="Center" width="100%">
+  
+  <tr>
+      <td colspan="20%">Have you ate the meal?</td>
+      <td>Yes <input type="radio" value="Yes" name="firstRepsonse" id="r1"/>&nbsp;&nbsp;&nbsp;&nbsp; No <input type="radio" value="Yes" name="firstRepsonse" id="r2"/> </td> 
+      
+  </tr>
+  </table>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

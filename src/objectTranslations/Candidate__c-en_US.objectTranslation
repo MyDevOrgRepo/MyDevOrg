@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Candidate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Candidates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Rating --></label>
+        <name>Average_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- City of the candidate --></help>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country of the candidate --></help>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Employer of the candidate --></help>
+        <label><!-- Current Employer --></label>
+        <name>Current_Employer__c</name>
+    </fields>
+    <fields>
+        <help><!-- checked-currently employed
+unchecked- not currently employed --></help>
+        <label><!-- Currently Employed --></label>
+        <name>Currently_Employeed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Education details of the candidates --></help>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+        <picklistValues>
+            <masterLabel>BA/BS</masterLabel>
+            <translation><!-- BA/BS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HS Diploma</masterLabel>
+            <translation><!-- HS Diploma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA/MS/MBA</masterLabel>
+            <translation><!-- MA/MS/MBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ph.D.</masterLabel>
+            <translation><!-- Ph.D. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Doc</masterLabel>
+            <translation><!-- Post Doc --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Email of the candidate --></help>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fax number of the candidate --></help>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <help><!-- First Name of the candidate --></help>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Name of the candidate --></help>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mobile number of the candidate --></help>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Phone number of the candidate --></help>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checking data loading operation for MD relationship.. No any significance for recruiting app --></help>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+        <relationshipLabel><!-- Candidates --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Social Security Number of the candidate --></help>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <help><!-- State/Province of the candidate --></help>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <help><!-- Street address of the candidate --></help>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total rating --></help>
+        <label><!-- Total Rating --></label>
+        <name>Total_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total no. of reviews --></help>
+        <label><!-- Total Reviews --></label>
+        <name>Total_Reviews__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked-US Citizen
+Unchecked- Non US Citizen --></help>
+        <label><!-- US Citizen --></label>
+        <name>US_Citizen__c</name>
+    </fields>
+    <fields>
+        <help><!-- checked-Visa Required
+UncheckedVisa Not Required --></help>
+        <label><!-- Visa Required --></label>
+        <name>Visa_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total years of the experience candidate have --></help>
+        <label><!-- Years of Experience --></label>
+        <name>Years_of_Experience__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zip/Postal Code of the candiate --></help>
+        <label><!-- Zip/Postal Code --></label>
+        <name>Zip_Postal_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Candidate Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Employment --></label>
+            <section>Employment</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

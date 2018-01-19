@@ -1,0 +1,93 @@
+<apex:page standardController="Vehicle__c" extensions="GarbageTryOut">
+  <apex:includeScript value="{!URLFOR($Resource.myLiabraryDefined)}"  />
+  <!-- Begin Default Content REMOVE THIS -->
+  <!--
+  <div id="spinner"> 
+        <div style="top:0px;margin-left: 44%;margin-top: 18%;">         
+            <img src="/img/loading.gif" />
+        </div>
+    </div>
+  -->
+  
+  <head>
+  
+  
+  <script type="text/javascript">
+  
+  function getChBoxValue()
+  {alert('hi');
+ 
+  }
+  
+  function callme(event)
+  {
+     if(event.onclick==true)
+     {
+     alert('event is:'+event);
+     }
+      
+  }
+  
+  var setLastSelected = function(element) {
+   $(element).data('lastSelected', $(element).find("option:selected"));
+};
+
+$("myForm.myPageBlock.mypbsection.select").each(function () {
+   setLastSelected(this);
+});
+
+$("myForm.myPageBlock.mypbsection.select").change(function(){        
+      if(confirm("Are you sure")) { 
+          setLastSelected(this);
+          return true; 
+      }
+      else {
+         $(this).data('lastSelected').attr("selected", true);
+         return false;
+      }
+});
+  
+  
+  </script>
+  </head>
+  <!-- something from participant -->
+  <apex:pageblock >
+  
+  <apex:outputPanel id="firstPanel"    >
+  
+  
+  
+  </apex:outputPanel>
+  
+  </apex:pageblock>
+  
+  <!-- something from participant -->
+  
+  <apex:form id="myForm">
+  
+  <apex:pageBlock id="myPageBlock">
+  <apex:pageBlockSection id="mypbsection">
+  
+  <apex:inputfield id="select" value="{!vc.Brands__c}" onchange="callme(this)"/>
+  
+  <apex:inputcheckbox id="chkb0" value="{!vc1.Show_Cars__c}" onclick="getChBoxValue()" /> 
+
+
+  <apex:inputcheckbox id="chkb" value="{!vc.Show_Cars__c}">
+  
+      <apex:actionsupport event="onclick" action="{!showmultipicklist}" reRender="myPageBlock" immediate="true"/>
+  
+  </apex:inputcheckbox>
+  
+  <apex:inputField value="{!vc.Select_Cars__c}" rendered="{!SelectCar}"/>
+  
+  
+  
+  </apex:pageBlockSection>
+    
+  
+  </apex:pageBlock>
+  
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

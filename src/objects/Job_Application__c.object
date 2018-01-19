@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>JobApplicationCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>JobApplicationCompactLayout</fullName>
+        <fields>Name</fields>
+        <fields>Status__c</fields>
+        <fields>Candidate__c</fields>
+        <fields>Position__c</fields>
+        <label>JobApplicationCompactLayout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents a candidate&apos;s application to a position</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship of job application to candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relationship of job application to candidate</inlineHelpText>
+        <label>Candidate</label>
+        <referenceTo>Candidate__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cover_Letter__c</fullName>
+        <description>Cover letter to be attached by the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cover letter to be attached by the candidate</inlineHelpText>
+        <label>Cover Letter</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship between position and job application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relationship between position and job application</inlineHelpText>
+        <label>Position</label>
+        <referenceTo>Position__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of the job application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the job application</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Review Resume</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Screen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schedule Interviews</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extend an Offer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Rating__c</fullName>
+        <description>Total rating obtained by the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total rating obtained by the candidate</inlineHelpText>
+        <label>Total Rating</label>
+        <summarizedField>Review__c.Rating__c</summarizedField>
+        <summaryForeignKey>Review__c.Job_Application__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Job Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>JA-{00000}</displayFormat>
+        <label>Job Application Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Job Applications</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Candidate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Position__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Candidate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Position__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.FIRST_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.LAST_NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Candidate__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Candidate__c</searchFilterFields>
+        <searchFilterFields>Position__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Candidate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Position__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

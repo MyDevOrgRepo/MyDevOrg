@@ -1,0 +1,7 @@
+<apex:page standardController="Vendor__c" extensions="ApprovalProcessController">
+<!-- Begin Default Content REMOVE THIS -->
+<apex:form >
+<apex:commandButton id="submitForApproval" value="Submit For Approval" action="{!submitForApproval}"/> 
+</apex:form>
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

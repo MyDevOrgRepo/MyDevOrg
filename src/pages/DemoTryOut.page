@@ -1,0 +1,49 @@
+<apex:page Standardcontroller="Vehicle__c" extensions="demoTryOut">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:form accept="MainForm">
+  <apex:pageBlock id="MainBlock" title="Notes">
+  
+  <apex:pageBlockButtons >
+  
+          <apex:commandButton value="New"/>
+  
+  </apex:pageBlockButtons>
+  
+          <apex:pageBlockSection id="firstSection">
+          
+          
+              <apex:pageBlockTable id="firstTable" value="{!cdlst}" var="note">
+              
+                <!-- <apex:commandLink value="{!note.contentdocument.id}">   -->
+         <!--       <apex:column title="Title" headerValue="Title">
+                <apex:outputLink value="{!note.id}"> 
+                
+                        <apex:outputtext value="{!note.contentDocument.Title}"/>
+                
+                </apex:outputLink>
+                </apex:column> -->
+<!--                            <apex:column value="{!note.contentDocument.Title}" title="Title" headerValue="Title" /> -->
+                
+           <!--     </apex:commandLink> -->
+                  <apex:column value="{!note.contentDocument.ContentModifiedDate}" title="Last Modified" headerValue="Last Modified"/>
+      
+
+<apex:column title="Title" headerValue="Title">
+<apex:outputlink value="/{!note.Id}" target="_blank"> {!note.contentDocument.title} </apex:outputlink>           
+</apex:column>
+
+                  <apex:column value="{!note.sharetype}" title="ShareType" headerValue="ShareType"/>
+                  <apex:column value="{!note.SystemModStamp}" title="SystemModStamp" headerValue="SystsemModStamp"/>
+                  <apex:column value="{!note.visibility}" title="Visibility" headerValue="Visibility"/>
+              
+              </apex:pageBlockTable>
+          
+          </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+  
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,81 @@
+<apex:page controller="StudentController" sidebar="false" showHeader="false">
+<script>
+function myfunc()
+{
+alert('changed!');
+}
+</script>
+<apex:pageBlock id="Students" title="Students">
+
+<apex:form >
+
+<apex:pageblocktable id="Student_Table" value="{!studentsToShow}" var="item">
+
+<!--
+<apex:column value="{!item.first_name__c}"/>
+<apex:column value="{!item.last_name__c}"/>
+<apex:column value="{!item.email__c}"/>
+<apex:column value="{!item.phone__c}"/>
+<apex:column value="{!item.mobile__c}"/>
+<apex:column value="{!item.class__r.name}"/>
+<apex:column value="{!item.division__c}"/>
+-->
+<apex:column value="{!item.name}"/>
+<apex:column value="{!item.stagename}"/>
+<apex:column value="{!item.account.name}"/>
+<apex:column value="{!item.amount}"/>
+
+</apex:pageblocktable>
+
+
+
+<apex:selectList multiselect="false" size="1" id="selectRange" title="Select Range" value="{!getSelectedRange}">
+
+  <apex:actionSupport event="onchange" action="{!showLimitedRecords}" reRender="Student_Table"/> 
+
+
+
+<apex:selectOption itemLabel="10" itemValue="10">
+</apex:selectOption>
+
+<apex:selectOption itemLabel="20" itemValue="20">
+</apex:selectOption>
+
+<apex:selectOption itemLabel="50" itemValue="50">
+</apex:selectOption>
+
+<apex:selectOption itemLabel="100" itemValue="100">
+</apex:selectOption>
+</apex:selectList>
+
+<apex:commandButton id="First" title="First" value="First" action="{!ShowFirstPage}">
+<apex:actionSupport event="onclick" reRender="Student_Table"/>
+
+</apex:commandButton>
+
+<apex:commandButton id="Previous" title="Previous" value="Previous" action="{!ShowPreviousPage}" rendered="{!hidePreviousPage}">
+
+<apex:actionSupport event="onclick"  reRender="Student_Table"/>
+
+</apex:commandButton>
+
+<apex:commandButton id="Next" title="Next" value="Next" action="{!ShowNextPage}">
+
+<apex:actionSupport event="onclick"  reRender="Student_Table"/>
+
+
+</apex:commandButton>
+<apex:commandButton id="Last" title="Last" value="Last" action="{!ShowLastPage}">
+
+<apex:actionSupport event="onclick"  reRender="Student_Table"/>
+
+</apex:commandButton>
+
+</apex:form>
+
+
+
+
+</apex:pageBlock>
+
+</apex:page>

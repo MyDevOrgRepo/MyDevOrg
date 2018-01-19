@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://myfirstappdemo.herokuapp.com/canvas</canvasUrl>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>rrjoshi89@gmail.com</contactEmail>
+    <description>MyFirstApp</description>
+    <iconUrl>https://myfirstappdemo.herokuapp.com/icon.png</iconUrl>
+    <infoUrl>https://myfirstappdemo.herokuapp.com/welcome.jsp</infoUrl>
+    <label>MyFirstAppDemo</label>
+    <logoUrl>https://myfirstappdemo.herokuapp.com/logo.png</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://myfirstappdemo.herokuapp.com/callback</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrA8ZUoEBtGqd.23LGc2WsaIk6zo6B6aBQ0v4VchZoZvqRWUU1nbBbvqy5rXt.0pqLNufcaY</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Chatter</scopes>
+    </oauthConfig>
+</ConnectedApp>

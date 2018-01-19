@@ -1,0 +1,109 @@
+<!-- Upload a file and put it in your personal documents folder-->
+
+<!-- Page: -->
+<apex:page controller="documentExt">
+<!-- 
+<apex:page standardController="Document" extensions="documentExt">
+    <apex:messages />
+    
+    <script lang="text/javascript">
+    
+    function testExt(var fName)
+    {
+        if(!(fName.contains('.pdf')))
+        {
+            alert('Choose only PDF Files');
+        }
+    }
+    
+    </script>
+    
+    <apex:form id="theForm">
+      <apex:pageBlock title="Choose Syllabus File (PDF Only)">
+          <apex:pageBlockSection >
+          <apex:outputField id="Class" label="Related Class" value=""/>
+            <apex:inputFile value="{!document.body}" filename="{!document.name}" accept="application/pdf" title="Choose Syllabus file to Upload:" />
+            <apex:commandButton value="Save" action="{!save}" />
+          </apex:pageBlockSection>
+       </apex:pageBlock>
+    </apex:form>
+-->
+<!--
+
+<apex:sectionHeader title="Visualforce Example" subtitle="File Upload Example"/>
+ 
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload a File">
+ 
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="Save"/>
+      </apex:pageBlockButtons>
+ 
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File Name" for="fileName"/>
+          <apex:inputText value="{!document.name}" id="fileName"/>
+        </apex:pageBlockSectionItem>
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File" for="file"/>
+          <apex:inputFile value="{!document.body}" filename="{!document.name}" accept="application/pdf" id="file"/>
+        </apex:pageBlockSectionItem>
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Description" for="description"/>
+          <apex:inputTextarea value="{!document.description}" id="description"/>
+        </apex:pageBlockSectionItem>
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Keywords" for="keywords"/>
+          <apex:inputText value="{!document.keywords}" id="keywords"/>
+        </apex:pageBlockSectionItem>
+ 
+      </apex:pageBlockSection>
+ 
+    </apex:pageBlock>
+  </apex:form>
+
+</apex:page>
+
+-->
+
+<!-- Document Object vf page concept ends here -->
+
+
+  
+  <apex:sectionHeader title="Visualforce Example" subtitle="Attachment Upload Example"/>
+
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload a Attachment">
+
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="Save"/>
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File Name" for="fileName"/>
+          <apex:inputText value="{!attachment.name}" id="fileName"/>
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File" for="file"/>
+          <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Description" for="description"/>
+          <apex:inputTextarea value="{!attachment.description}" id="description"/>
+        </apex:pageBlockSectionItem>
+
+      </apex:pageBlockSection>
+
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

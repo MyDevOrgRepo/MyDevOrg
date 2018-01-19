@@ -1,0 +1,18 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <style type="text/css">
+          h1  { font-style:Times New Roman; font-weight:Bold; font-size:50 PX; color: #f00; }
+p { background-color: #eec; }
+
+newLink { color: #f60; font-weight: bold; }
+
+  </style>
+  
+  <Font size="30PX"><h1 align="center"> Om Auto Biiling portal </h1></font>
+  <p> Paragraph</p>
+  <apex:pageBlock id="first_block" title="Account details" tabStyle="Account">
+  
+  </apex:pageBlock>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

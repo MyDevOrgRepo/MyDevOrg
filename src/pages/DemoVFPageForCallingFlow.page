@@ -1,0 +1,50 @@
+<apex:page standardController="Event__c">
+  <!-- Begin Default Content REMOVE THIS -->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"/>
+ 
+ <script type="text/javascript">
+
+
+$(document).keypress(function(e) {
+  /*if(e.which == 13) {
+    // enter pressed
+
+    (function ($) {
+        $(document).ready(function () {
+                $("input.FlowNextBtn").click();
+                $("input.FlowFinishBtn").click();
+        });
+    })(jQuery.noConflict(true))
+  }*/
+  
+  /*Click detection*/
+  $(document).ready(function () {
+                $("input.FlowNextBtn").click(function(e)
+                {alert('Next Clicked!!!');}));
+}
+  
+});
+ </script>
+ 
+ <apex:pageblock title="Vendor Booking Flow">
+ 
+ <flow:interview name="Vendor_Booking_Flow" finishLocation="/{!Event__c.id}">
+ 
+ </flow:interview>
+ 
+ </apex:pageblock>
+ 
+ <apex:pageBlock title="Interaction Details">
+ 
+ <apex:pageblockSection title="Primary Details">
+ 
+     <apex:outputField value="{!Event__c.Name}"/>
+     <apex:outputField value="{!Event__c.Start_Date__c}"/>
+     <apex:outputField value="{!Event__c.End_Date__c}" />
+     <apex:outputField value="{!Event__c.Event_Type__c}"/>
+ </apex:pageblockSection>
+ 
+ </apex:pageBlock>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

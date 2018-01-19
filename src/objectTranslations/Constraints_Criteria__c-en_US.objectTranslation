@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Constraints Criteria</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Constraints Criterias</value>
+    </caseValues>
+    <fields>
+        <help><!-- Condition to be applied on mentioned criteria --></help>
+        <label><!-- Condition --></label>
+        <name>Condition__c</name>
+        <picklistValues>
+            <masterLabel>Equals</masterLabel>
+            <translation><!-- Equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater Than</masterLabel>
+            <translation><!-- Greater Than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater Than Or Equals</masterLabel>
+            <translation><!-- Greater Than Or Equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In</masterLabel>
+            <translation><!-- In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less Than</masterLabel>
+            <translation><!-- Less Than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less Than Or Equals</masterLabel>
+            <translation><!-- Less Than Or Equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not In</masterLabel>
+            <translation><!-- Not In --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Related Constraint Rule --></help>
+        <label><!-- Constraint Rule --></label>
+        <name>Constraint_Rule__c</name>
+        <relationshipLabel><!-- Constraints Criterias --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Criteria to be chosen for constriant --></help>
+        <label><!-- Criteria --></label>
+        <name>Criteria__c</name>
+        <picklistValues>
+            <masterLabel>Actual Division Count</masterLabel>
+            <translation><!-- Actual Division Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Division Count</masterLabel>
+            <translation><!-- Division Count --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Values for criteria --></help>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- If value to be compared is taken from salesforce field --></help>
+        <label><!-- provide value from field --></label>
+        <name>provide_value_from_field__c</name>
+    </fields>
+    <fields>
+        <help><!-- field labels from which value can be picked up for comparing crtieria --></help>
+        <label><!-- value from field --></label>
+        <name>value_from_field__c</name>
+        <picklistValues>
+            <masterLabel>Actual Division Count</masterLabel>
+            <translation><!-- Actual Division Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Division Count</masterLabel>
+            <translation><!-- Division Count --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

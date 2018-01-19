@@ -1,0 +1,130 @@
+<!-- <apex:page standardController="Account"  extensions="myControllerPractice" showheader="false" sidebar="false"> -->
+
+<apex:page sidebar="False" showheader="false" controller="myControllerPractice">
+
+
+
+
+<apex:pageblock id="firstPageBlock">
+        
+            <apex:pageBlockSection id="firstSection" title="Select Your Account">
+            <apex:form >
+            <apex:outputLabel value="Select your Account" />
+            <apex:inputField id="inputAccount" label="Select Account" value="{!toa.Account__c}" onblur="!accDetails">
+                       <!-- <apex:commandButton id="accButton" value="Show Account Details" action="{!accDetails}" rendered="{!hideButtons}"> -->
+                       <apex:actionSupport event="onblur" action="{!accDetails}"/>
+                       <apex:actionSupport event="onblur" action="{!conDetails}"/>
+                       <apex:actionsupport event="onblur" action="{!oppDetails}"/> 
+                       
+                       <apex:actionSupport event="onblur" reRender="secondPAgeBlock"/>
+                       <apex:actionsupport event="onblur" reRender="secondPAgeBlock1"/> 
+                       <apex:actionsupport event="onblur" reRender="secondPAgeBlock2"/>
+                       
+                         
+                      
+                       
+                      <!--  </apex:commandButton>  -->
+                      </apex:inputfield>
+        </apex:form>
+        </apex:pageBlockSection>
+</apex:pageblock>
+
+    <apex:pageblock id="secondPAgeBlock" rendered="true" title="Account Details">
+    
+            <apex:pageblocksection id="secondSection" title="Account Information">
+            
+            <apex:form >
+            <apex:commandButton id="conButton" value="SHow Contact" action="{!conDetails}" rendered="{!hideButtons}">
+                    <apex:actionsupport event="onclick" reRender="secondPAgeBlock1"/>            
+                    
+            </apex:commandButton>
+            <apex:pageBlockTable id="myTableAccount" value="{!acc}" var="rec">
+            
+                <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.phone}"/>
+                                                <apex:column value="{!rec.email__c}"/>
+                                                            <apex:column value="{!rec.billingcity}"/>
+            
+            </apex:pageBlockTable>
+            
+            </apex:form>
+            
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    
+    <!-- To show contacts -->
+    <apex:pageblock id="secondPAgeBlock1" rendered="{!showConTable}" title="Contact Details">
+    
+            <apex:pageblocksection id="secondSection" title="Contact Details">
+            
+            <apex:form >
+            
+             <apex:commandButton id="oppButton" value="Show Opportunities" action="{!oppDetails}" rendered="{!hideButtons}">
+                    <apex:actionsupport event="onclick" reRender="secondPAgeBlock2"/>            
+                    
+            </apex:commandButton>
+            
+            <apex:pageBlockTable id="myTableAccount1" value="{!cons}" var="rec">
+            
+                <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.phone}"/>
+                                                <apex:column value="{!rec.email}"/>
+                                                            <apex:column value="{!rec.mailingcity}"/>
+                                                            <apex:column value="{!rec.mailingstate}"/>
+                                                                <apex:column value="{!rec.mailingcountry}"/>
+                                                                <apex:column value="{!rec.Primary_Contact__c}"/>
+                                                                
+                                                                    
+            
+            </apex:pageBlockTable>
+            
+            </apex:form>
+            
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    
+    <!-- to show opportunity -->
+    
+     <apex:pageblock id="secondPAgeBlock2" rendered="{!showOppTable}" title="Opportunity Details">
+    
+            <apex:pageblocksection id="ThirdSection" title="Opportunity Details">
+            
+            <apex:form >
+            
+            <apex:pageBlockTable id="myTableAccount1" value="{!opps}" var="rec">
+            
+                <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.stagename}"/>
+                                                <apex:column value="{!rec.closedate}"/>
+                                                            <apex:column value="{!rec.type}"/>
+                                                            <apex:column value="{!rec.probability}"/>
+            
+            </apex:pageBlockTable>
+            
+            </apex:form>
+            
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    <apex:pageblock >
+    <apex:form >
+    <apex:commandButton value="Print" onclick="window.print()">
+        
+            <apex:actionsupport event="onclick" reRender="accButton"/>
+                        <apex:actionsupport event="onclick" reRender="conButton"/>
+                                    <apex:actionsupport event="onclick" reRender="oppButton"/>
+                                   
+       
+                                                
+    
+    </apex:commandButton>
+    </apex:form>
+    </apex:pageblock>
+    
+    
+    
+    
+
+</apex:page>

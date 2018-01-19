@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- DemoAppToDeploy --></label>
+        <name>DemoAppToDeploy</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Distribution Engine --></label>
+        <name>Distribution_Engine</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Event Manager --></label>
+        <name>Event_Manager</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Garage --></label>
+        <name>Garage</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Medical Store --></label>
+        <name>Medical_Store</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Recruiting --></label>
+        <name>Recruiting</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- School Management --></label>
+        <name>School_Management</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Warehouse --></label>
+        <name>Warehouse</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- BaseOrgURL --></label>
+        <name>BaseOrgURL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Dynamic value for position --></label>
+        <name>Dynamic_value_for_position</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- EnddatePassedSubject --></label>
+        <name>EnddatePassedSubject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Move_Position_To_the_Position_Queue --></label>
+        <name>Move_Position_To_the_Position_Queue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Purge_Queue --></label>
+        <name>Purge_Queue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RA_ReDirectToDivision --></label>
+        <name>RA_ReDirectToDivision</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ReDirectToDivision --></label>
+        <name>ReDirectToDivision</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ReDirectToUploadVFPage --></label>
+        <name>ReDirectToUploadVFPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RedirectToAttendancePage --></label>
+        <name>RedirectToAttendancePage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Component Limit --></label>
+        <name>cwbtool__Component_Limit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Free Limit Reached Message --></label>
+        <name>cwbtool__FreeLimitReachedMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Free APP Message --></label>
+        <name>cwbtool__Free_APP_Message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- reDirectToShowAttendancePage --></label>
+        <name>reDirectToShowAttendancePage</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Employee --></label>
+        <name>Employee</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- MyCustomHomePageSF1 --></label>
+        <name>MyCustomHomePageSF1</name>
+    </customTabs>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- Classes with Divisions with Staffs --></description>
+        <label><!-- Classes with Divisions with Staffs --></label>
+        <name>Classes_with_Divisions_with_Staffs</name>
+        <sections>
+            <label><!-- Classes --></label>
+            <name>Classes</name>
+        </sections>
+        <sections>
+            <label><!-- Divisions --></label>
+            <name>Divisions</name>
+        </sections>
+        <sections>
+            <label><!-- Staffs --></label>
+            <name>Staffs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Classes with Divisions with Staffs with Library Accounts --></description>
+        <label><!-- Classes with Divisions with Staffs with Library Accounts --></label>
+        <name>Classes_with_Divisions_with_Staffs_with_Library_Accounts</name>
+        <sections>
+            <label><!-- Classes --></label>
+            <name>Classes</name>
+        </sections>
+        <sections>
+            <label><!-- Divisions --></label>
+            <name>Divisions</name>
+        </sections>
+        <sections>
+            <label><!-- Staffs --></label>
+            <name>Staffs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Classes with Divisions with TimeTables --></description>
+        <label><!-- Classes with Divisions with TimeTables --></label>
+        <name>Classes_with_Divisions_with_TimeTables</name>
+        <sections>
+            <label><!-- Classes --></label>
+            <name>Classes</name>
+        </sections>
+        <sections>
+            <label><!-- Divisions --></label>
+            <name>Divisions</name>
+        </sections>
+        <sections>
+            <label><!-- TimeTables --></label>
+            <name>TimeTables</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DummyObjects with DummyObjects1 with DummyObjects2 --></description>
+        <label><!-- DummyObjects with DummyObjects1 with DummyObjects2 --></label>
+        <name>DummyObjects_with_DummyObjects1_with_DummyObjects2</name>
+        <sections>
+            <label><!-- DummyObjects --></label>
+            <name>DummyObjects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- DummyObjects with DummyObjects1 with DummyObjects2 with DummyObjects3 --></description>
+        <label><!-- DummyObjects with DummyObjects1 with DummyObjects2 with DummyObjects3 --></label>
+        <name>DummyObjects_with_DummyObjects1_with_DummyObjects2_with_DummyObjects3</name>
+        <sections>
+            <label><!-- DummyObjects --></label>
+            <name>DummyObjects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Guardians with Students with Library Accounts --></description>
+        <label><!-- Guardians with Students with Library Accounts --></label>
+        <name>Guardians_with_Students_with_Library_Accounts</name>
+        <sections>
+            <label><!-- Guardians --></label>
+            <name>Guardians</name>
+        </sections>
+        <sections>
+            <label><!-- Students --></label>
+            <name>Students</name>
+        </sections>
+    </reportTypes>
+</Translations>

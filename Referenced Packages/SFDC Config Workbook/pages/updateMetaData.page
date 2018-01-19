@@ -1,0 +1,495 @@
+<apex:page controller="cwbtool.UpdateMetaDataController"  tabStyle="CWB_Tool__tab" standardStylesheets="false" sidebar="false" showHeader="true">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.switch,'/switch/css/highlight.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.switch,'/switch/css/bootstrap-switch.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__switch,'/switch/js/highlight.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__switch,'/switch/js/bootstrap-switch.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__switch,'/switch/js/main.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}" />
+     <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/ionic/css/ionicons.min.css')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootboxnew.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__UpdateMetaDataResource,'/app.js')}" />
+    
+    
+    <style>
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+        margin-left: 8% !important;
+        width: 63%;
+    }
+    
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+    }
+    
+    .bodyDiv {
+        /*height: 100%;*/
+    }
+    
+    .Btn-group {
+        /*width: 60% !important;*/
+    }
+    
+    .frm {
+        margin: 15px;
+    }
+    
+    .modal {
+        outline: none;
+    }
+     .s110{
+		     vertical-align: bottom;
+            /*border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;*/
+            font-family: Calibri;
+            font-size: 14px;
+            color: #FFFFFF;
+            font-weight: bold;
+            background-color: #3F62AE;
+          }
+		  .s164{
+		   vertical-align:Bottom;
+		   border-top: 1px solid #000000; 
+		   border-bottom: 1px solid #000000; 
+		   border-left: 1px solid #000000; 
+		   border-right: 1px solid #000000;
+		   font-family: Calibri;
+		   font-size:14px;
+		  color:#FFFFFF;
+		  font-weight:bold;
+		  background-color:#00B050;
+		 } 
+		 .s87{
+		     border-top: 1px solid #000000; 
+			 border-bottom: 1px solid #000000; 
+			 border-left: 1px solid #000000; 
+			 border-right: 1px solid #000000;
+			 font-family: inherit;
+			
+			 background-color:#FFFFFF;
+	  } 
+	 
+	 .UpdatedClass{
+	     background-color:red;
+	 }	
+	 .grey-text {
+        color:rgba(154, 148, 148, 0.91);
+    }
+		 
+    </style>
+    <c:actionstatusNew />
+        <!--  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Object</legend>-->
+        <apex:form id="form" styleclass="frm"> 
+            <script>
+            /*$('input[id$="switch-size"]').bootstrapSwitch();
+           
+             $('input[id$="switch-size"]').on('switchChange.bootstrapSwitch', function(event, state) {
+                 changeValue(this,state,true);
+             });
+             
+             $("input.change" ).change(function() {
+                  changeValue(this,null,false); 
+             });
+             
+             function changeValue(object,state,checkboxchange){
+                 if($(object).closest('input.change').data('oldvalue')!=state){
+                    var obj=$(object).closest('tr').find('input.updated');
+                    $(obj).prop('checked', false);  
+                    $("input.change",$(object).closest('tr')).each(function( index ) {
+                        if(!$(this).hasClass('chk') && $(this).data('oldvalue')!=$(this).val()){
+                          $(obj).prop('checked', true);  
+                        }
+                        if(checkboxchange && $(this).hasClass('chk') && $(this).data('oldvalue2')!=state){
+                            $(obj).prop('checked', true);  
+                        }    
+                    });    
+                 }
+              }*/
+            </script>
+           
+          <apex:outputPanel rendered="{!isMultiOrg && !showMetacomponent}">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <h2>Existing Active Connection
+                        <apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();" rerender="form,msgId">
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </apex:commandLink>
+                    </h2>
+                    
+                    <div class="pull-right">
+                        <a class='Btn Btn-default Btn-sm' href="{!$Page.createNewConnection}?org=other&type={!$CurrentPage.parameters.type}&retUrl=metatab" onclick="showOverLay('Please wait...');">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Create New Connection
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <table border='0' class="table table-striped" style='margin-bottom:2px;' >
+                        <thead>
+                            <th>Source Org</th>
+                         </thead>
+                        <tbody>
+                            <tr>
+                                <td width='49%'>
+                                    <apex:selectList id="SourceOrg" value="{!strSoureOrg}" multiselect="false" size="1" styleclass="form-control form-control1">
+                                        <apex:selectOptions value="{!lstExistingConnection}" />
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();initButton();" rerender="frm"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></apex:commandLink>-->
+                    <div>
+                        <apex:outputpanel layout="none">
+                            
+                        </apex:outputpanel>
+                    </div>
+                    <div class='grey-text'>
+                        <span id="example21-toggle" class="Btn Btn-primary compType " style='margin-right:10px;' onclick="showOverLay('{!strMetaDataName} are loading..');getOtherOrgMetaDetail();" data-action='Get {!strMetaDataName}'>Get {!strMetaDataName}</span>
+                    </div>
+                </div>
+            </div>
+             <apex:actionFunction name="getOtherOrgMetaDetail" action="{!getOtherOrgMetaDetail}" reRender="msgId,form" oncomplete="hideOverLay();" />
+        </apex:outputPanel>
+       
+         <apex:outputPanel layout="none" rendered='{!lstObject!=null && lstObject.size>0 && showMetacomponent}'>  
+             <div class="panel panel-default">
+                <div style='padding:4px;float:left;'>
+                    <apex:commandLink action="{!showOrgSelection}" onclick="showOverLay('Please wait...');" 
+                        styleclass="Btn Btn-default Btn-sm"
+                        rerender="form,msgId" oncomplete="hideOverLay();" rendered="{!isMultiOrg}">
+                        <span class="ion-edit" aria-hidden="true"></span>&nbsp;<span>Change Orgs</span>
+                    </apex:commandLink>
+                    <i class="grey-text">You can't update installed package detail.</i>
+                </div>
+            <apex:selectList value="{!lstSelectedObject}" multiselect="true" styleclass="multiselect ObjectClass" style="margin-right:40px;display:none;">
+                <apex:selectOptions value="{!lstObject}" />
+            </apex:selectList>
+             <apex:selectList rendered="{!isProfile}" value="{!strSelectedType}" multiselect="false" styleclass="multiselect ObjectType" style="margin-right:40px;display:none;">
+                <apex:selectOptions value="{!lstType}" />
+            </apex:selectList>
+            
+            
+            <apex:outputPanel rendered="{!isValidationRule}">
+                <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick='getObjectDetails();showOverLay();' data-action='Get ValidationRule'>Get ValidationRule</span>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!isProfile}">
+                <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick='getProfileDetails();showOverLay();' data-action='Get Profile'>Get Profile Detail</span>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!isWorkFlow}">
+                <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick='getWorkFlowRuleDetails();showOverLay();' data-action='Get WorkflowRule'>Get WorkflowRule</span>
+            </apex:outputPanel>
+            <apex:actionFunction name="getObjectDetails" action="{!getValidationRuleDetails}" oncomplete="hideOverLay();init();" reRender="form" rendered="{!isValidationRule}" />
+            <apex:actionFunction name="getProfileDetails" action="{!getProfileDetails}" oncomplete="hideOverLay();init();" reRender="form" rendered="{!isProfile}" />
+            <apex:actionFunction name="getWorkFlowRuleDetails" action="{!getWorkFlowRuleDetails}" oncomplete="hideOverLay();init();" reRender="form" rendered="{!isWorkFlow}" />
+            <!--  <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel,msgId,form"/> -->
+            <c:AppUpgradeMessage hastoken="{!hasToken}" loogedinUserHave="{!isLoggedInUserHave}" isReachedMaximumlimit="{!SelectedComponentReachedTheLimit}" isAlreadySelectedComponent="{!isAlreadySelectedComponent}" type="Object" />
+           
+            <apex:variable var="objectOldName" value="{!}" />  
+            <apex:variable var="objectName" value="{!}" /> 
+            <apex:variable var="count" value="{!0}" /> 
+        
+         <apex:outputPanel layout="none" rendered="{!(lstValidationRule!=null &&lstValidationRule.size>0)
+                                                   || (lstWorkflowRuleDetail!=null && lstWorkflowRuleDetail.size>0)
+                                                   || (lstFLS!=null && lstFLS.size>0)}">
+          <apex:outputpanel rendered="{!isValidationRule}" layout="none"> 
+           
+            <table cellspacing="0"  rules="NONE" border="0" width='100%' class='table table-striped1'  style='margin:15px auto;'>
+             
+              <apex:repeat value="{!lstValidationRule}" var="objWrp" >
+                 <apex:variable var="objectOldName" value="{!If(objectOldName!=objectName,objectName,objectOldName)}"/>
+                <apex:variable var="objectName" value="{!LEFT(objWrp.objRule.fullName,(FIND('.',objWrp.objRule.fullName)-1))}"/>
+              
+               <apex:outputpanel rendered="{!objectName!=objectOldName}" layout="none"> 
+                
+                 <tr  Height="20" >
+                     <td class="s110"  colspan="1">
+                       {!objectName}   
+                     </td>
+                     <td class="s110" width='40%;'>
+                        Content 
+                     </td>         
+                    <td class="s110" >
+                      Description
+                    </td>
+                     <td class="s110" width='5%'>
+                        Active
+                    </td>
+                </tr>
+               </apex:outputpanel>  
+                 <tr class='rowdetail'>
+                    <td class="s87" colspan="1">
+                        {!RIGHT(objWrp.objRule.fullName,(LEN(objWrp.objRule.fullName)-FIND('.',objWrp.objRule.fullName)))}
+                    </td>
+                    <td class="s87">
+                      <!-- <pre>-->
+                             {!objWrp.objRule.errorConditionFormula}
+                   <!-- </pre>     -->
+                     </td>        
+                     <td class="s87" >
+                         <apex:inputTextArea value="{!objWrp.objRule.description}" html-data-oldvalue="{!HTMLENCODE(objWrp.objRule.description)}" styleclass="change" style="height:50px;width:97%;"></apex:inputTextArea></td>
+                     <td class="s87 s567" >
+                         <apex:inputCheckbox value="{!objWrp.objRule.active}" html-data-on-color="success" html-data-size="mini" id="switch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.objRule.active}"></apex:inputCheckbox>
+                         <apex:inputCheckbox style="display:none;" value="{!objWrp.isUpdated}" styleclass="updated"></apex:inputCheckbox>
+                     </td>
+                </tr>       
+              </apex:repeat>
+             </table>
+           
+           </apex:outputpanel>  
+           
+          <!--  <apex:repeat value="{!lstApexTriggerDetail}" var="objTrigger" rendered="{!isApexTrigger}">
+                <apex:inputText value="{!objTrigger.fullName}"></apex:inputText>
+                <apex:inputText value="{!objTrigger.apiVersion}"></apex:inputText>
+                <apex:inputCheckbox value="{!objTrigger.status}" html-data-size="mini" id="switch-size"></apex:inputCheckbox>
+            </apex:repeat>-->
+            <apex:outputpanel rendered="{!isProfile}" layout="none">  
+             <apex:outputpanel rendered="{!SelectedTypeDetail}" layout="none">  
+              <table cellspacing="0"  rules="NONE" border="0" width='100%' class='table table-striped1' style='margin:15px auto;'>
+                <apex:repeat value="{!lstFLS}" var="objWrp1" >
+                 <apex:repeat value="{!objWrp1.lstFlsDetail}" var="objWrp" >    
+                <apex:variable var="objectOldName" value="{!If(objectOldName!=objectName,objectName,objectOldName)}"/>
+                <apex:variable var="objectName" value="{!LEFT(objWrp.objFLS.field,(FIND('.',objWrp.objFLS.field)-1))}"/>
+              
+               <apex:outputpanel rendered="{!objectName!=objectOldName}" layout="none"> 
+               <thead>
+                    <tr class="s110">
+                        <th colspan="3">{!objWrp1.strProfileName}</th>
+                   </tr>          
+                
+                <tr><td colspan="4"></td></tr>
+                 <tr  Height="20">
+                     <td class="s110"  >
+                       {!objectName}   
+                     </td>
+                    <td class="s110" width='40%;'>
+                      Editable
+                    </td>
+                     <td class="s110" width='5%'>
+                        Readable
+                    </td>
+                </tr>
+                  </thead>  
+               </apex:outputpanel>  
+               <tr class='rowdetail'>
+                    <td class="s87" >
+                        {!RIGHT(objWrp.objFLS.field,(LEN(objWrp.objFLS.field)-FIND('.',objWrp.objFLS.field)))}
+                    </td>
+                     <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.objFLS.editable}" html-data-on-color="success" html-data-size="mini" id="sswitch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.objFLS.editable}"></apex:inputCheckbox>
+                     </td>     
+                    <td class="s87 s567" >
+                         <apex:inputCheckbox value="{!objWrp.objFLS.readable}" html-data-on-color="success" html-data-size="mini" id="switch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.objFLS.readable}"></apex:inputCheckbox>
+                         <apex:inputCheckbox style="display:none;" value="{!objWrp.isUpdated}" styleclass="updated"></apex:inputCheckbox>
+                     </td>
+                </tr> 
+              </apex:repeat>
+            </apex:repeat> 
+              </table>          
+             </apex:outputpanel>  
+             
+             <apex:outputpanel rendered="{!!SelectedTypeDetail}" layout="none">  
+              <table cellspacing="0"  rules="NONE" border="0" width='100%' class='table table-striped1' style='margin:15px auto;'>
+              
+              
+                <apex:repeat value="{!lstFLS}" var="objWrp1" >
+                  <thead>
+                    <tr class="s110">
+                        <th colspan="7">{!objWrp1.strProfileName}</th>
+                   </tr>          
+                   <tr>  
+                    <th class="s110">Object</th>
+                    <th class="s110">allowCreate</th>
+                    <th class="s110">allowRead</th>
+                    <th class="s110">allowEdit</th>
+                    <th class="s110">allowDelete</th>
+                    <th class="s110">modifyAllRecords</th>
+                    <th class="s110">viewAllRecords</th>
+                    </tr>
+                    
+                </thead>   
+                 <tbody>
+                 <apex:repeat value="{!objWrp1.lstObjectPermissionDetail}" var="objWrp" >    
+                
+               <tr class='rowdetail'>
+                    <td class="s87" >
+                       {!objWrp.ObjPerm.object_x}
+                    </td>
+                     <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.ObjPerm.allowCreate}" html-data-on-color="success" html-data-size="mini" id="s1switch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.allowCreate}"></apex:inputCheckbox>
+                     </td> 
+                      <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.ObjPerm.allowRead}" html-data-on-color="success" html-data-size="mini" id="ss2witch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.allowRead}"></apex:inputCheckbox>
+                     </td> 
+                      <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.ObjPerm.allowEdit}" html-data-on-color="success" html-data-size="mini" id="ss3witch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.allowEdit}"></apex:inputCheckbox>
+                     </td> 
+                      <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.ObjPerm.allowDelete}" html-data-on-color="success" html-data-size="mini" id="ss4witch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.allowDelete}"></apex:inputCheckbox>
+                     </td> 
+                      <td class="s87" >
+                          <apex:inputCheckbox value="{!objWrp.ObjPerm.modifyAllRecords}" html-data-on-color="success" html-data-size="mini" id="ss5witch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.modifyAllRecords}"></apex:inputCheckbox>
+                     </td> 
+                    <td class="s87 s567" >
+                         <apex:inputCheckbox value="{!objWrp.ObjPerm.viewAllRecords}" html-data-on-color="success" html-data-size="mini" id="switch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.ObjPerm.viewAllRecords}"></apex:inputCheckbox>
+                         <apex:inputCheckbox style="display:none;" value="{!objWrp.isUpdated}" styleclass="updated"></apex:inputCheckbox>
+                     </td>
+                </tr> 
+                
+              </apex:repeat>
+               </tbody>
+            </apex:repeat> 
+           
+              </table>          
+             </apex:outputpanel>  
+             
+             
+             
+             
+            </apex:outputpanel>  
+            
+            
+           <apex:outputpanel rendered="{!isWorkFlow}" layout="none">  
+            <table cellspacing="0"  rules="NONE" border="0" width='100%' class='table table-striped1' style='margin:15px auto;'>
+            <apex:repeat value="{!lstWorkflowRuleDetail}" var="objWrp" >
+                <apex:variable var="objectOldName" value="{!If(objectOldName!=objectName,objectName,objectOldName)}"/>
+                <apex:variable var="objectName" value="{!LEFT(objWrp.objWorkflowRule.fullName,(FIND('.',objWrp.objWorkflowRule.fullName)-1))}"/>
+              
+               <apex:outputpanel rendered="{!objectName!=objectOldName}" layout="none"> 
+                <tr><td colspan="4"></td></tr>
+                 <tr  Height="20">
+                     <td class="s110"  >
+                       {!objectName}   
+                     </td>
+                    <td class="s110" width='40%;'>
+                      Description
+                    </td>
+                     <td class="s110" width='5%'>
+                        Active
+                    </td>
+                </tr>
+               </apex:outputpanel>  
+               <tr class='rowdetail'>
+                    <td class="s87" >
+                        {!RIGHT(objWrp.objWorkflowRule.fullName,(LEN(objWrp.objWorkflowRule.fullName)-FIND('.',objWrp.objWorkflowRule.fullName)))}
+                    </td>
+                     <td class="s87" >
+                         <apex:inputTextArea value="{!objWrp.objWorkflowRule.description}" html-data-oldvalue="{!HTMLENCODE(objWrp.objWorkflowRule.description)}" styleclass="change" style="height:50px;width:97%;"></apex:inputTextArea></td>
+                     <td class="s87 s567" >
+                         <apex:inputCheckbox value="{!objWrp.objWorkflowRule.active}" html-data-on-color="success" html-data-size="mini" id="switch-size" styleclass="change chk" html-data-oldvalue2="{!objWrp.objWorkflowRule.active}"></apex:inputCheckbox>
+                         <apex:inputCheckbox style="display:none;" value="{!objWrp.isUpdated}" styleclass="updated"></apex:inputCheckbox>
+                     </td>
+                </tr>       
+               
+                
+              </apex:repeat>
+             </table>
+            </apex:outputpanel>  
+            <span class='Btn Btn-default showbtn'  onclick='showMySelection(this);'>Show my selection</span>
+             <span class='Btn Btn-default Allbtn' style='display:none;' onclick='showAllValue(this);'>Show All Row(s)</span>
+            <apex:commandLink action="{!updateMetaDetail}" value="Update" reRender="form" styleclass="update Btn Btn-success" onclick="showOverLay();" oncomplete="init();hideOverLay();"></apex:commandLink>
+         </apex:outputPanel>    
+        </div>
+          </apex:outputpanel>    
+           
+            <script>
+            var gaDetail = 'OrgName={!$Organization.Name}_Name={!$User.FirstName}';
+
+            function Startprocessing() {
+
+                if ({!!SelectedComponentReachedTheLimit} && ({!!hasToken}|| {!!isLoggedInUserHave})) {
+                    /* bootbox.confirm("<font color='green'>{!$Label.Free_APP_Message} </font><br><br>.Are you sure?", function(result) {
+             if(result){
+                showOverLay('{!HTMLENCODE(strStatus)}');
+                getObjectDetails(); 
+             }else{
+                 return;
+             }
+      });*/
+                    bootbox.dialog({
+                        message: "<font color=''>{!$Label.Free_APP_Message} </font>",
+                        title: "Are you Sure?",
+                        buttons: {
+                            success: {
+                                label: "Yes",
+                                className: "Btn-success",
+                                callback: function() {
+                                    showOverLay('{!HTMLENCODE(strStatus)}');
+                                    getObjectDetails();
+                                }
+                            },
+                            main: {
+                                label: "No",
+                                className: "Btn-default",
+                                callback: function() {
+                                    return;
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    showOverLay('{!HTMLENCODE(strStatus)}');
+                    getObjectDetails();
+                }
+
+                //showOverLay('{!HTMLENCODE(strStatus)}');
+                //getObjectDetails();
+            }
+
+            $(document).ready(function() {
+                 $('.ObjectType').multiselect();
+                $('.ObjectClass').multiselect({
+
+                    buttonClass: 'Btn Btn-default',
+                    enableFiltering: true,
+                    filterBehavior: 'both',
+                    enableCaseInsensitiveFiltering: true,
+                    filterPlaceholder: 'Search {!HTMLENCODE(strMetaDataName)}..',
+                    includeSelectAllOption: {!isLoggedInUserHave && hasToken},
+                    selectAllText: 'Select ALL {!HTMLENCODE(strMetaDataName)}',
+                    selectAllValue: 'multiselect-all',
+                    maxHeight: 217,
+                    /*buttonWidth: '90%',*/
+                    nonSelectedText: 'You have not selected any {!HTMLENCODE(strMetaDataName)}',
+                    disableIfEmpty: true,
+                    onChange: function(element, checked) {
+                        if ($('.ObjectClass').val() == null) {
+                            $('.containerDivclass').hide();
+                            $('#containerMessage').show();
+                        } else {
+                            $('.containerDivclass').show();
+                            $('#containerMessage').hide();
+                        }
+                        if ({!!isLoggedInUserHave} || {!!hasToken}) {
+                            disabledEnabled('ObjectClass');
+                        }
+                    }
+                });
+
+                if ({!!isLoggedInUserHave} || {!!hasToken}) {
+                    disabledExisting('ObjectClass');
+                }
+
+            });
+            </script>
+            <apex:pagemessages id="msgId" escape="false" />
+        </apex:form>
+        <!-- </fieldset>  -->
+   
+</apex:page>

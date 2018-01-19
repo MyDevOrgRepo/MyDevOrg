@@ -1,0 +1,18 @@
+Hi {!HeyLightning__Borrowed_Books__c.HeyLightning__Library_AccountId__r.name},
+
+Your end date for returning a book named '{!HeyLightning__Borrowed_Books__c.HeyLightning__BookId__r.name}' has already passsed on its end date, i.e. {!Borrowed_Books__c.End_Date__c}.
+
+Kindly return the same as early as possible.
+
+Please find following book details:
+
+Book Name: {!HeyLightning__Borrowed_Books__c.HeyLightning__BookId__r.name
+
+Book Borrowed Date: {!HeyLightning__Borrowed_Books__c.HeyLightning__Start_Date__c}
+
+Estimated date of book return: {!Borrowed_Books__c.End_Date__c}
+
+Your's sincere,
+Library Administrator 
+
+Note: Fine for returning it late till date is: {!Borrowed_Books__c.Late_Fees__c}

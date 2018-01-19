@@ -1,0 +1,16 @@
+<apex:page sidebar="false" showheader="true" standardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+ <apex:relatedList list="Contacts"/><apex:relatedList list="Opportunities"/>
+  <apex:pageBlock title="A Block Title"> 
+      <apex:pageblockSection title="A second title">
+          I am three components deeper!!!
+      </apex:pageblockSection>
+       <apex:pageblockSection title="A third title">
+          I am three components deeper!!! {!account.name}
+      </apex:pageblockSection>
+      <!-- Practicing global variables-->
+      Logged in user:{!$User.FirstName} {!$User.LastName}
+  </apex:pageBlock>
+<h1>Hello World!</h1>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

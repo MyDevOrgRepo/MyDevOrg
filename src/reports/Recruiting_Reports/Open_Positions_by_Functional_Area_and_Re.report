@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_12264145</developerName>
+        <masterLabel>Region</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Position__c.Location__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>San Francisco, CA</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Austin, TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Boulder, CO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>New York, NY</sourceValue>
+            </sourceValues>
+            <value>USA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>London, England</sourceValue>
+            </sourceValues>
+            <value>UK</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mumbai, India</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sydney, Australia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tokyo, Japan</sourceValue>
+            </sourceValues>
+            <value>Asia Pacific</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Pie</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>Position__c.Functional_Area__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_12264145</field>
+    </columns>
+    <columns>
+        <field>Position__c.Location__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Hiring_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Status__c</field>
+    </columns>
+    <description>Which functional areas have the
+most new or open positions by region?</description>
+    <filter>
+        <criteriaItems>
+            <column>Position__c.Status__c</column>
+            <operator>equals</operator>
+            <value>New Position No,Open - Approved,Pending Approval</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Position__c.Functional_Area__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Open Positions by Functional Area and Re</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Position__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Position__c.Close_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

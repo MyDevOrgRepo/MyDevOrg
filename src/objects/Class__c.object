@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Division_Count__c</fullName>
+        <description>Actual Division Count for a class</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual Division Count for a class</inlineHelpText>
+        <label>Actual Division Count</label>
+        <summaryForeignKey>Division__c.Class__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Division_Count__c</fullName>
+        <description>Number of divisions in a class/standard</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of divisions in a class/standard</inlineHelpText>
+        <label>Division Count</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>End Date from which this class is valid from</description>
+        <externalId>false</externalId>
+        <inlineHelpText>End Date from which this class is valid from</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Field_Release_Date__c</fullName>
+        <description>Field Release Date from which this class is valid from</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field Release Date from which this class is valid from</inlineHelpText>
+        <label>Field Release Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Start Date from which this class is valid from</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Start Date from which this class is valid from</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Class</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Class Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Classes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>DivisionCountShouldNotBeLessThanActual</fullName>
+        <active>true</active>
+        <description>Division Count Should Not Be Less Than Actual Count</description>
+        <errorConditionFormula>Division_Count__c  &lt;  Actual_Division_Count__c</errorConditionFormula>
+        <errorDisplayField>Division_Count__c</errorDisplayField>
+        <errorMessage>Division Count Should Not Be Less Than Actual Count</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Maximum_division_count_exceeds</fullName>
+        <active>true</active>
+        <description>Maximum division count can not exceed 10</description>
+        <errorConditionFormula>Division_Count__c &gt; 10</errorConditionFormula>
+        <errorDisplayField>Division_Count__c</errorDisplayField>
+        <errorMessage>Maximum division count cannot exceed 10</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,13 @@
+Hello to all from Universal Containers!!!
+
+New job has been posted to {!Employment_Website__c.Name} website
+
+Please find the following details:
+
+Website name: {!Employment_Website__c.Name}
+
+Website address: {!Employment_Website__c.Web_Address__c}
+
+Position ID:{!Job_Posting__c.Name}
+
+So, please see for the same and apply asap....

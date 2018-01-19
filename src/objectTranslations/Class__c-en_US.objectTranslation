@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Class</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Classes</value>
+    </caseValues>
+    <fields>
+        <help><!-- Actual Division Count for a class --></help>
+        <label><!-- Actual Division Count --></label>
+        <name>Actual_Division_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of divisions in a class/standard --></help>
+        <label><!-- Division Count --></label>
+        <name>Division_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- End Date from which this class is valid from --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field Release Date from which this class is valid from --></help>
+        <label><!-- Field Release Date --></label>
+        <name>Field_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Start Date from which this class is valid from --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Class Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Upload Syllabus --></label>
+            <section>Upload Syllabus</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Division Count Should Not Be Less Than Actual Count --></errorMessage>
+        <name>DivisionCountShouldNotBeLessThanActual</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Maximum division count cannot exceed 10 --></errorMessage>
+        <name>Maximum_division_count_exceeds</name>
+    </validationRules>
+</CustomObjectTranslation>

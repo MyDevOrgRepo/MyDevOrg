@@ -1,0 +1,42 @@
+<apex:page StandardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <script type="text/javascript" language="javascript">
+  
+  function String getAddress(String city,String state,String country,String zip)
+  {
+  
+          return city+" "+state+" "+country+" "+zip; 
+  
+  }
+  </script>
+  
+  <apex:pageBlock title="Accounts">
+         
+  <apex:form >
+          <apex:pageBlockSection title="Contacts">
+          
+              <apex:pageBlockTable value="{!account.contacts}" var="con">
+              
+              <apex:column value="{!con.name}" />
+              <apex:commandLink >
+                  
+                  <apex:param name="conId" value="{!con.id}"/>
+                  
+              </apex:commandLink>
+          
+              <apex:column value="{!con.firstname}"/>
+                      <apex:column value="{!con.lastname}"/>
+                      <apex:column value="{!con.phone}"/>
+                      <apex:column value="{!con.email}"/>
+                      <apex:column value="{!con.mailingcity}"/>
+                        <apex:column value="{!con.mailingstate}"/>
+                          <apex:column value="{!con.mailingcountry}"/>
+                          <apex:column value="{!con.zip__c}"/>
+                        </apex:pageBlockTable>
+          
+          </apex:pageBlockSection>
+  </apex:form>
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

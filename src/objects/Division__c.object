@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Divisions that comes under certain classes/standards</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Class__c</fullName>
+        <description>Class with which this division is associated with</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Class with which this division is associated with</inlineHelpText>
+        <label>Class</label>
+        <referenceTo>Class__c</referenceTo>
+        <relationshipLabel>Divisions</relationshipLabel>
+        <relationshipName>Divisions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>TimeTableRecordCount__c</fullName>
+        <description>No. of associated timetable records...</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of associated timetable records...</inlineHelpText>
+        <label>TimeTableRecordCount</label>
+        <summaryForeignKey>TimeTable__c.Division__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>attendance_reported__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Will be checked on when attendance for the day is reported. User will not be able to re-report the attendance for the same day for the same division, if this is checked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Will be checked on when attendance for the day is reported. User will not be able to re-report the attendance for the same day for the same division, if this is checked</inlineHelpText>
+        <label>attendance reported</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Division</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Division Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Divisions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Class__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Class__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Class__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Class__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Cannot_add_division</fullName>
+        <active>true</active>
+        <description>Can not add new division as maximum count is reached...</description>
+        <errorConditionFormula>AND(ISNEW(),Class__r.Actual_Division_Count__c  &gt;=  Class__r.Division_Count__c)</errorConditionFormula>
+        <errorMessage>Can not add new division. Maximum limit reached.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_Time_Table</fullName>
+        <availability>online</availability>
+        <description>Creates New TimeTable for This Division</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Time Table</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if({!Division__c.TimeTableRecordCount__c}!=0)
+{
+    alert(&apos;Can not create Time Table for this division... It Already Exists...&apos;);
+}
+else
+{
+          window.open(&apos;apex/TimeTableEditPage?id={!Division__c.Id}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Report_Attendance</fullName>
+        <availability>online</availability>
+        <description>Report attendance for a day!!!</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Report Attendance</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if({!Division__c.attendance_reported__c}) 
+{ 
+         alert(&apos;Attendance has already been reported for the day!!!&apos;); 
+} 
+else 
+{  
+   window.open(&apos;{!$Label.heylightning__redirecttoattendancepage}&apos;+&apos;?id={!Division__c.Id}&amp;class={!Division__c.ClassId__c}&apos;); 
+  
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ShowTimeTable</fullName>
+        <availability>online</availability>
+        <description>Shows timeTable for this division</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>ShowTimeTable</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;https://mylightningusers-dev-ed--heylightning.ap2.visual.force.com/apex/TimeTableDetailPage?id={!Division__c.Id}&apos;)</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Show_Attendance</fullName>
+        <availability>online</availability>
+        <description>Show attendance for this division</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Show Attendance</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;{!$Label.heylightning__redirecttoshowattendancepage}&apos;);</url>
+    </webLinks>
+</CustomObject>

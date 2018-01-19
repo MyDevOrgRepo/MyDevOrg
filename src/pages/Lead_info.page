@@ -1,0 +1,22 @@
+<apex:page controller="myLeadController">
+  <!-- Begin Default Content REMOVE THIS -->
+  <Marquee><h1>Welcome to employee details form</h1></Marquee>
+  This is your new Page
+  <apex:form >
+                First Name:  <apex:inputText id="fname1" value="{!lead.FirstName}"/><br></br><br></br>
+                Last Name:  <apex:inputText id="lname1" value="{!lead.LastName}"/><br></br><br></br>
+                Phone:  <apex:inputText id="phone" value="{!lead.Phone}"/><br></br><br></br>
+                Email:  <apex:inputText id="email" value="{!lead.Email}"/><br></br><br></br>
+                Click Here->> <apex:commandButton value="submit" action="{!SaveLead}"/> 
+<!--
+<br></br><h1>The details you have submitted are:</h1><br></br>
+                <Font size="2" color="Red">
+                Your First Name:<apex:outputText >{!fname}</apex:outputText><br></br>
+                Your Last Name: <apex:outputText >{!lname}</apex:outputText><br></br>
+                Your Designation:<apex:outputText >{!designation}</apex:outputText><br></br>
+                Your departMent: <apex:outputText >{!department}</apex:outputText><br></br>
+                </Font> -->
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

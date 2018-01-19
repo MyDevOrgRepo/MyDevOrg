@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>TimeTableEditPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Time Tables for different classes and Divisions</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Class for which this timetable valids</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Class for which this timetable valids</inlineHelpText>
+        <label>Class</label>
+        <referenceTo>Class__c</referenceTo>
+        <relationshipLabel>TimeTables</relationshipLabel>
+        <relationshipName>TimeTables</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Day__c</fullName>
+        <description>Days of the week</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Days of the week</inlineHelpText>
+        <label>Day</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Monday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tuesday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wednesday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thursday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saturday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Division for which this timetable valids</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Division for which this timetable valids</inlineHelpText>
+        <label>Division</label>
+        <referenceTo>Division__c</referenceTo>
+        <relationshipLabel>TimeTables</relationshipLabel>
+        <relationshipName>TimeTables</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EndTime1__c</fullName>
+        <description>Endtime for Slot1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Endtime for Slot1</inlineHelpText>
+        <label>EndTime1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EndTime2__c</fullName>
+        <description>Endtime for Slot2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Endtime for Slot2</inlineHelpText>
+        <label>EndTime2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EndTime3__c</fullName>
+        <description>EndTime for Slot3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EndTime for Slot3</inlineHelpText>
+        <label>EndTime3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EndTime4__c</fullName>
+        <description>EndTime for Slot4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EndTime for Slot4</inlineHelpText>
+        <label>EndTime4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EndTime5__c</fullName>
+        <description>EndTime 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EndTime 5</inlineHelpText>
+        <label>EndTime5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EndTime6__c</fullName>
+        <description>EndTime for Slot6</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EndTime for Slot6</inlineHelpText>
+        <label>EndTime6</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime1__c</fullName>
+        <description>Start time for first slot</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Start time for first slot</inlineHelpText>
+        <label>StartTime1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime2__c</fullName>
+        <externalId>false</externalId>
+        <label>StartTime2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime3__c</fullName>
+        <description>Startime for the slot 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Startime for the slot 3</inlineHelpText>
+        <label>StartTime3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime4__c</fullName>
+        <description>StartTime for Slot 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>StartTime for Slot 4</inlineHelpText>
+        <label>StartTime4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime5__c</fullName>
+        <description>StartTime for Slot5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>StartTime for Slot5</inlineHelpText>
+        <label>StartTime5</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StartTime6__c</fullName>
+        <description>StartTime for Slot6</description>
+        <externalId>false</externalId>
+        <inlineHelpText>StartTime for Slot6</inlineHelpText>
+        <label>StartTime6</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>01:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05:30 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06:00 PM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot1</inlineHelpText>
+        <label>Subject1</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables</relationshipLabel>
+        <relationshipName>TimeTables</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subject2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot2</inlineHelpText>
+        <label>Subject2</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables (Subject2)</relationshipLabel>
+        <relationshipName>TimeTables1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subject3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot3</inlineHelpText>
+        <label>Subject3</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables (Subject3)</relationshipLabel>
+        <relationshipName>TimeTables2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subject4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot4</inlineHelpText>
+        <label>Subject4</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables (Subject4)</relationshipLabel>
+        <relationshipName>TimeTables3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subject5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot5</inlineHelpText>
+        <label>Subject5</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables (Subject5)</relationshipLabel>
+        <relationshipName>TimeTables4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subject6__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Subject for Slot6</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject for Slot6</inlineHelpText>
+        <label>Subject6</label>
+        <referenceTo>Subject__c</referenceTo>
+        <relationshipLabel>TimeTables (Subject6)</relationshipLabel>
+        <relationshipName>TimeTables5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of the subject teeacher</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the subject teeacher</inlineHelpText>
+        <label>Teacher1</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables</relationshipLabel>
+        <relationshipName>TimeTables</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Teacher for slot 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Teacher for slot 2</inlineHelpText>
+        <label>Teacher2</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables (Teacher2)</relationshipLabel>
+        <relationshipName>TimeTables1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Teacher for slot 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Teacher for slot 3</inlineHelpText>
+        <label>Teacher3</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables (Teacher3)</relationshipLabel>
+        <relationshipName>TimeTables2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Teacher for slot 4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Teacher for slot 4</inlineHelpText>
+        <label>Teacher4</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables (Teacher4)</relationshipLabel>
+        <relationshipName>TimeTables3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Teacher for slot 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Teacher for slot 5</inlineHelpText>
+        <label>Teacher5</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables (Teacher5)</relationshipLabel>
+        <relationshipName>TimeTables4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Teacher6__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Teacher6</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>TimeTables (Teacher6)</relationshipLabel>
+        <relationshipName>TimeTables5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>TimeTable</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>TimeTable Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>TimeTables</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

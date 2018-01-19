@@ -1,0 +1,43 @@
+<apex:page standardController="Location__c" extensions="CollectValue" >
+<p id="demo"></p>
+
+
+
+
+    <script>
+    var x = document.getElementById("demo");
+    var geolat='';
+    var geolang='';
+function getLocation() {
+
+    if (navigator.geolocation) {
+    var y = navigator.geolocation.getCurrentPosition(showPosition);
+    var newLoc = new sforce.SObject("Location__C");
+    newLoc.Latitude__c=geolat;
+    newLoc.Longitude__c=geolong;
+    var result = sorce.connection.create([newLoc]);
+    alert(result);
+    
+    } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+    function showPosition(position) {
+  
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+    geolat=position.coords.latitude;
+    geolong=position.coords.longitude;
+    
+    }
+    
+</script>
+
+ <button onclick="getLocation()">Current Location</button>
+ <apex:form >
+
+ <apex:commandButton action="{!save}" value="Insert"/>
+ </apex:form>
+ 
+</apex:page>

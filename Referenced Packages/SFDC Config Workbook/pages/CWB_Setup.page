@@ -1,0 +1,53 @@
+<apex:page controller="cwbtool.CWBSetupCtrl" tabStyle="CWB_Setup__tab">  
+ 
+  <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}"/>
+ <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/ionic/css/ionicons.min.css')}"/>
+ 
+ <apex:includeScript value="{!URLFOR($Resource.cwbtool__googleAnalytics,'/RemoteSite.js')}"/>
+<c:actionstatusNew />
+
+<apex:sectionHeader title="CWB Setup" />
+<apex:pagemessages id="msgId"/>
+  <apex:form >
+    <apex:pageBlock >
+        <apex:pageblockbuttons >
+           <apex:commandbutton action="{!saveDetail}" value="Save"/>
+        </apex:pageblockbuttons>
+      <apex:pageblocksection >
+         <apex:inputfield value="{!objSetup.cwbtool__Batch_Size__c}" />
+         <apex:inputfield value="{!objSetup.cwbtool__Include_Managed_Package_Detail__c}" />
+         <apex:inputfield value="{!objSetup.cwbtool__ErrorLog__c}" />
+       </apex:pageblocksection>
+    </apex:pageBlock>
+      
+    <apex:outputpanel id="remoteSite">
+        
+     <apex:pageBlock title="Important Post Install Step" rendered="{!bMetadataConnectionWarning}">
+      <!-- <img src="http://andrewfawcett.files.wordpress.com/2013/07/blog_chart1.jpg" width="200" height="200" align="left"/>-->
+     <div style='display:inline-block'>
+         <div style='float:left;font-size:100px;width:10%;color:cadetblue;'>
+           <span class="ion-settings" aria-hidden="true"></span>
+         </div>  
+        
+         <div style='float:left;width:89%;'>
+    	 	<h1>Important Post Install Step:</h1> 
+    			<p>In order to utilize the features of CWB tool you need to permit the tool access to the Salesforce Metadata API by adding a
+    			 <a href='{!strDomainName}/0rp/e?EndpointUrl={!strDomainName}&SiteName={!RemoteSiteName}&retURL={!$Page.CWB_Setup}'>Remote Site Setting</a> with this Salesforce Server URL <b>{!strDomainName}</b></p>
+    			<p> Click the <b>Create Remote Site Setting</b> button to have the tool perform this step for you.</p><br/>
+    			<input id="createremotesitebtn" class='Btn Btn-primary' type="button" onclick=" showOverLay('Please wait..');createRemoteSite('{!strDomainName}','{!$Api.Session_ID}','{!RemoteSiteName}');" value="Create Remote Site Setting"/>
+    	   </div>
+	    </div>  
+	  </apex:pageBlock>
+    </apex:outputpanel>
+    <apex:actionFunction name="displayRemoteSiteResponse" action="{!displayRemoteSiteResponse}" rerender="remoteSite,msgId" oncomplete="hideOverLay();">
+            <apex:param name="metadataResponse" assignTo="{!metadataResponse}" value="{!metadataResponse}"/>
+        </apex:actionFunction>
+      
+  </apex:form>
+  
+  <script>
+
+</script>
+  
+  
+</apex:page>

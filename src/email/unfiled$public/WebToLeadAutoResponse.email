@@ -1,0 +1,8 @@
+Hi, 
+{!Lead.Name}
+Thank you for showing interest in our organization. Your unique lead number is : {!Lead.Lead_number__c}.
+Please note this unique lead number for further communication.
+
+Thanks and regards,
+{!Lead.OwnerFullName}
+RJ Pvt. Ltd.

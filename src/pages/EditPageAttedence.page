@@ -1,0 +1,57 @@
+<apex:page controller="attendanceController">
+  <!-- Begin Default Content REMOVE THIS -->
+  <!--
+  <script>
+         function enableDisable(cb)
+    {
+      $("input:checkbox[id*=looped]").removeAttr('checked');
+      $(cb).attr('checked', 'checked');
+    }
+ 
+</script>*/
+  -->
+ <apex:form >
+ <apex:pageBlock id="MainBlock" title="{!title}">
+ 
+ <apex:pageBlockButtons >
+ <apex:commandButton value="Load Students" action="{!LoadStudents}" rendered="{!showselectionblock}">
+ <apex:actionSupport event="click" reRender="attendanceTable"/>
+ </apex:commandButton>
+ <apex:commandButton value="Submit Attendance" action="{!SaveAttendance}"/>
+ </apex:pageBlockButtons>
+          
+ <apex:pageblocksection id="FirstSection" rendered="{!showselectionblock}">
+ 
+ <apex:selectList label="Select Class" value="{!classPlaceHolder}" size="1" > 
+ 
+ <apex:selectOptions id="selectClass" value="{!cls_options}"/> 
+ 
+</apex:selectList>
+
+ <apex:selectList label="Select Division" value="{!divPlaceHolder}" size="1">
+  <apex:selectOptions id="selectDivision" value="{!div_options}"/>
+ </apex:selectList>
+   
+ </apex:pageblocksection>
+ 
+ <apex:pageblockSection id="Students" columns="1">
+ 
+ <apex:pageblockTable id="attendanceTable" value="{!attendancelst}" var="atnd" rendered="{!showAttendanceTable}">
+ 
+     <apex:column value="{!atnd.name}"/>
+     <apex:column value="{!atnd.StudentName__c}" />
+     <apex:column value="{!atnd.Present__c}"/>
+     <apex:column value="{!atnd.Absent__c}"/>
+     <apex:column value="{!atnd.Reason_if_Absent__c}"/>
+     <apex:column value="{!atnd.Class__c}"/>
+     <apex:column value="{!atnd.Division__c}"/>
+     
+     <apex:inlineEditSupport event="onClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+ </apex:pageblockTable>
+ 
+ </apex:pageblockSection>
+ 
+ </apex:pageBlock>
+ </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

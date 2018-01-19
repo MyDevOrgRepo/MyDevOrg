@@ -1,0 +1,600 @@
+<apex:page Controller="TimeTablePageController" tabStyle="TimeTable__c" label="TimeTable">
+<!-- <apex:page standardController="TimeTable__c" extensions="TimeTablePageController" > -->
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <header>
+  <title> TimeTable </title>
+  </header>
+  <apex:pageblock id="MainBlock" title="TimeTable" >
+  {!monday.Day__c}
+  <apex:pageblockSection id="SelectionBlock" title="Select below Details" rendered="{!selectionBlock}">  
+  <apex:form >
+  
+  <table>
+  <tr>
+  
+  <th>
+  <h1>Select Class</h1>
+  </th>
+  
+  <td>
+  <apex:inputfield id="selectClass" value="{!timetable.Class__c}" label="Select Class"/>
+  </td>
+  
+  <th>
+  <h1>Select Division</h1>
+  </th>
+  
+   
+  <td>
+  <apex:inputfield id="selectDivision" value="{!timetable.Division__c}" label="Select Division"/>
+  </td>
+  
+  </tr>
+  </table>
+   <apex:commandButton value="Submit" action="{!showTimeTable}">
+      <apex:actionSupport reRender="MainBlock" event="Onclick"/>
+      
+      </apex:commandButton>
+  
+   <apex:commandButton value="Clear" action="{!clearTimeTable}">
+      <apex:actionSupport reRender="MainBlock" event="Onclick"/>
+      
+      </apex:commandButton>
+      
+      
+  </apex:form>
+  </apex:pageblockSection>
+
+
+
+
+  <apex:pageblockSection id="ShowTableBlock" title="TimeTable" rendered="{!showTimeTable}"> 
+  <apex:form >      
+  
+  <apex:commandButton id="EditPage" value="Edit" action="{!Edit}" />
+  
+  
+  <!-- Table for showing detail page -->
+  
+  <table id="TimeTable" name="TimeTable" border="1" cellpadding="50">
+      
+      <tr>
+          <th>
+              Days and Timings
+          </th>
+           
+      <th>
+          <apex:outputField id="Day1" label="Day" value="{!timetables[0].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Day2" label="Day" value="{!timetables[1].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Day3" label="Day" value="{!timetables[2].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Day4" label="Day" value="{!timetables[3].Day__c}"/>
+      </th>
+      
+      <th>
+          <apex:outputField id="Day5" label="Day" value="{!timetables[4].Day__c}"/>
+      </th>
+      <th>
+          <apex:outputField id="Day6" label="Day" value="{!timetables[5].Day__c}"/>
+      </th>
+      
+      </tr>
+      <!-- row 2 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime1" label="StartTime" value="{!timetables[0].starttime1__c}"/>
+          <apex:outputField id="endTime1" label="EndTime" value="{!timetables[0].endtime1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject1" label="StartTime" value="{!timetables[0].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject1" label="StartTime" value="{!timetables[1].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject1" label="StartTime" value="{!timetables[2].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject1" label="StartTime" value="{!timetables[3].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject1" label="StartTime" value="{!timetables[4].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject1" label="StartTime" value="{!timetables[5].subject1__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 2 ends -->
+      
+      <!-- row 3 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime2" label="StartTime" value="{!timetables[0].starttime2__c}"/>
+          <apex:outputField id="endTime2" label="EndTime" value="{!timetables[0].endtime2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject2" label="StartTime" value="{!timetables[0].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject2" label="StartTime" value="{!timetables[1].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject2" label="StartTime" value="{!timetables[2].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject2" label="StartTime" value="{!timetables[3].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject2" label="StartTime" value="{!timetables[4].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject2" label="StartTime" value="{!timetables[5].subject2__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 3 ends -->
+      
+      <!-- row 4 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime3" label="StartTime" value="{!timetables[0].starttime3__c}"/>
+          <apex:outputField id="endTime3" label="EndTime" value="{!timetables[0].endtime3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject3" label="StartTime" value="{!timetables[0].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject3" label="StartTime" value="{!timetables[1].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject3" label="StartTime" value="{!timetables[2].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject3" label="StartTime" value="{!timetables[3].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject3" label="StartTime" value="{!timetables[4].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject3" label="StartTime" value="{!timetables[5].subject3__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 4 ends -->
+      
+      <!-- row 5 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime4" label="StartTime" value="{!timetables[0].starttime4__c}"/>
+          <apex:outputField id="endTime4" label="EndTime" value="{!timetables[0].endtime4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject4" label="StartTime" value="{!timetables[0].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject4" label="StartTime" value="{!timetables[1].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject4" label="StartTime" value="{!timetables[2].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject4" label="StartTime" value="{!timetables[3].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject4" label="StartTime" value="{!timetables[4].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject4" label="StartTime" value="{!timetables[5].subject4__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 5 ends -->
+      
+      <!-- row 6 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime5" label="StartTime" value="{!timetables[0].starttime5__c}"/>
+          <apex:outputField id="endTime5" label="EndTime" value="{!timetables[0].endtime5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject5" label="StartTime" value="{!timetables[0].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject5" label="StartTime" value="{!timetables[1].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject5" label="StartTime" value="{!timetables[2].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject5" label="StartTime" value="{!timetables[3].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject5" label="StartTime" value="{!timetables[4].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject5" label="StartTime" value="{!timetables[5].subject5__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 6 ends -->
+      
+      
+      <!-- row 7 starts -->
+      <tr>
+      
+      <td>
+          <apex:outputField id="startTime6" label="StartTime" value="{!timetables[0].starttime6__c}"/>
+          <apex:outputField id="endTime6" label="EndTime" value="{!timetables[0].endtime6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Mon_subject6" label="StartTime" value="{!timetables[0].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Tue_subject6" label="StartTime" value="{!timetables[1].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Wed_subject6" label="StartTime" value="{!timetables[2].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Thur_subject6" label="StartTime" value="{!timetables[3].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Fri_subject6" label="StartTime" value="{!timetables[4].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:outputField id="Sat_subject6" label="StartTime" value="{!timetables[5].subject6__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 7 ends -->
+      
+      
+      
+      
+      </table>
+      </apex:form>      
+  
+      </apex:pageBlockSection>
+      <!-- Table for showing Detail Page Ends Here -->
+      
+      
+      
+      <!-- Table for showing Edit Page Starts Here-->
+      
+      <apex:pageblockSection id="ShowEditTableBlock" title="TimeTable" rendered="{!EditTimeTable}">
+      <apex:form >      
+   
+ <table id="TimeTableEdit" name="TimeTableEdit" border="1" cellpadding="50">
+      
+      <tr>
+          <th>
+              Days and Timings
+          </th>
+           
+      <th>
+          <apex:outputField id="Row1_Edit_Day1" label="Day" value="{!timetables[0].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Row1_Edit_Day2" label="Day" value="{!timetables[1].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Row1_Edit_Day3" label="Day" value="{!timetables[2].Day__c}"/>
+      </th>
+      
+       <th>
+          <apex:outputField id="Row1_Edit_Day4" label="Day" value="{!timetables[3].Day__c}"/>
+      </th>
+      
+      <th>
+          <apex:outputField id="Row1_Edit_Day5" label="Day" value="{!timetables[4].Day__c}"/>
+      </th>
+      <th>
+          <apex:outputField id="Row1_Edit_Day6" label="Day" value="{!timetables[5].Day__c}"/>
+      </th>
+      
+      </tr>
+      <!-- row 2 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime1" label="StartTime" value="{!timetables[0].starttime1__c}"/>
+          <apex:inputField id="Edit_endTime1" label="EndTime" value="{!timetables[0].endtime1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2__Edit_Mon_subject1" label="StartTime" value="{!timetables[0].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2_Edit_Tue_subject1" label="StartTime" value="{!timetables[1].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2_Edit_Wed_subject1" label="StartTime" value="{!timetables[2].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2_Edit_Thur_subject1" label="StartTime" value="{!timetables[3].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2_Edit_Fri_subject1" label="StartTime" value="{!timetables[4].subject1__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row2_Edit_Sat_subject1" label="StartTime" value="{!timetables[5].subject1__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 2 ends -->
+      
+      <!-- row 3 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime2" label="StartTime" value="{!timetables[0].starttime2__c}"/>
+          <apex:inputField id="Edit_endTime2" label="EndTime" value="{!timetables[0].endtime2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Mon_subject2" label="StartTime" value="{!timetables[0].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Tue_subject2" label="StartTime" value="{!timetables[1].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Wed_subject2" label="StartTime" value="{!timetables[2].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Thur_subject2" label="StartTime" value="{!timetables[3].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Fri_subject2" label="StartTime" value="{!timetables[4].subject2__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row3_Edit_Sat_subject2" label="StartTime" value="{!timetables[5].subject2__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 3 ends -->
+      
+      <!-- row 4 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime3" label="StartTime" value="{!timetables[0].starttime3__c}"/>
+          <apex:inputField id="Edit_Time3" label="EndTime" value="{!timetables[0].endtime3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Mon_subject3" label="StartTime" value="{!timetables[0].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Tue_subject3" label="StartTime" value="{!timetables[1].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Wed_subject3" label="StartTime" value="{!timetables[2].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Thur_subject3" label="StartTime" value="{!timetables[3].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Fri_subject3" label="StartTime" value="{!timetables[4].subject3__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row4_Edit_Sat_subject3" label="StartTime" value="{!timetables[5].subject3__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 4 ends -->
+      
+      <!-- row 5 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime4" label="StartTime" value="{!timetables[0].starttime4__c}"/>
+          <apex:inputField id="Edit_endTime4" label="EndTime" value="{!timetables[0].endtime4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Mon_subject4" label="StartTime" value="{!timetables[0].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Tue_subject4" label="StartTime" value="{!timetables[1].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Wed_subject4" label="StartTime" value="{!timetables[2].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Thur_subject4" label="StartTime" value="{!timetables[3].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Fri_subject4" label="StartTime" value="{!timetables[4].subject4__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row5_Edit_Sat_subject4" label="StartTime" value="{!timetables[5].subject4__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 5 ends -->
+      
+      <!-- row 6 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime5" label="StartTime" value="{!timetables[0].starttime5__c}"/>
+          <apex:inputField id="Edit_endTime5" label="EndTime" value="{!timetables[0].endtime5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Mon_subject5" label="StartTime" value="{!timetables[0].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Tue_subject5" label="StartTime" value="{!timetables[1].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Wed_subject5" label="StartTime" value="{!timetables[2].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Thur_subject5" label="StartTime" value="{!timetables[3].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Fri_subject5" label="StartTime" value="{!timetables[4].subject5__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row6_Edit_Sat_subject5" label="StartTime" value="{!timetables[5].subject5__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 6 ends -->
+      
+      
+      <!-- row 7 starts -->
+      <tr>
+      
+      <td>
+          <apex:inputField id="Edit_startTime6" label="StartTime" value="{!timetables[0].starttime6__c}"/>
+          <apex:inputField id="Edit_endTime6" label="EndTime" value="{!timetables[0].endtime6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Mon_subject6" label="StartTime" value="{!timetables[0].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Tue_subject6" label="StartTime" value="{!timetables[1].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Wed_subject6" label="StartTime" value="{!timetables[2].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Thur_subject6" label="StartTime" value="{!timetables[3].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Fri_subject6" label="StartTime" value="{!timetables[4].subject6__c}"/>
+      </td>
+      
+      <td>
+          <apex:inputField id="Row7_Edit_Sat_subject6" label="StartTime" value="{!timetables[5].subject6__c}"/>
+      </td>
+      
+      
+      
+      </tr>
+      <!-- row 7 ends -->
+      
+      </table>
+       
+           <!-- Table For Showing Edit Page Ends Here -->
+      
+      <apex:commandButton id="Edit_Save" action="{!Edit_Save}" Value="Save"/>
+     
+      </apex:form>
+</apex:pageblockSection>
+<apex:form >
+
+</apex:form>
+
+  </apex:pageblock>
+  
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,8 @@
+Hi ,
+<b> {!User.FirstName}  {!User.LastName} ,</b>
+
+This opportunity has been assigned to you for approval.
+Your action on this is needed...
+
+Thanks and regards,
+Admin.

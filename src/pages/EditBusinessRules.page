@@ -1,0 +1,16 @@
+<apex:page Controller="Edit_Business_Rule" >
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ <apex:image alt="Business Edit Mode" url="{!$Resource.Business_Rules}" width="200" height="200"/>
+ <!--
+ <apex:stylesheet value="{!$Resource.myCSS}"/>
+ <apex:outputLabel>Business Rule for Event Types</apex:outputLabel>
+ -->
+     <apex:pageBlock id="myFirstBlock">
+     
+         
+     
+     </apex:pageBlock>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

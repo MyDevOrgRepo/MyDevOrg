@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MyFirstDemoCS</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MyFirstDemoCS</value>
+    </caseValues>
+    <fields>
+        <help><!-- Email domain of an email id should fall in .org --></help>
+        <label><!-- Email domain --></label>
+        <name>Email_domain__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

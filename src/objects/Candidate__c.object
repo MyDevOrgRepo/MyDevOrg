@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Compact_Layout_Details</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Compact_Layout_Details</fullName>
+        <fields>City__c</fields>
+        <fields>Education__c</fields>
+        <fields>Last_Name__c</fields>
+        <fields>Years_of_Experience__c</fields>
+        <label>Compact Layout Details</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents an applicant who might apply for one or more positions</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Average_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Total_Reviews__c  &lt;&gt; 0 , Total_Rating__c  /  Total_Reviews__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>City of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>City of the candidate</inlineHelpText>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>Country of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Country of the candidate</inlineHelpText>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Employer__c</fullName>
+        <description>Current Employer of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Employer of the candidate</inlineHelpText>
+        <label>Current Employer</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currently_Employeed__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>checked-currently employed
+unchecked- not currently employed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>checked-currently employed
+unchecked- not currently employed</inlineHelpText>
+        <label>Currently Employed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <description>Education details of the candidates</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Education details of the candidates</inlineHelpText>
+        <label>Education</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HS Diploma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BA/BS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA/MS/MBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ph.D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Doc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Email of the candidate</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Email of the candidate</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <description>Fax number of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fax number of the candidate</inlineHelpText>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>First Name of the candidate</description>
+        <externalId>true</externalId>
+        <inlineHelpText>First Name of the candidate</inlineHelpText>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>Last Name of the candidate</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Last Name of the candidate</inlineHelpText>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile__c</fullName>
+        <description>Mobile number of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mobile number of the candidate</inlineHelpText>
+        <label>Mobile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>Phone number of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone number of the candidate</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Checking data loading operation for MD relationship.. No any significance for recruiting app</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking data loading operation for MD relationship.. No any significance for recruiting app</inlineHelpText>
+        <label>Position</label>
+        <referenceTo>Position__c</referenceTo>
+        <relationshipLabel>Candidates</relationshipLabel>
+        <relationshipName>Candidates</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SSN__c</fullName>
+        <description>Social Security Number of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Social Security Number of the candidate</inlineHelpText>
+        <label>SSN</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <description>State/Province of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>State/Province of the candidate</inlineHelpText>
+        <label>State/Province</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <description>Street address of the candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Street address of the candidate</inlineHelpText>
+        <label>Street</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Rating__c</fullName>
+        <description>Total rating</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total rating</inlineHelpText>
+        <label>Total Rating</label>
+        <summarizedField>CandidateReview__c.Rating__c</summarizedField>
+        <summaryForeignKey>CandidateReview__c.Candidate__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Reviews__c</fullName>
+        <description>Total no. of reviews</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total no. of reviews</inlineHelpText>
+        <label>Total Reviews</label>
+        <summaryForeignKey>CandidateReview__c.Candidate__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>US_Citizen__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Checked-US Citizen
+Unchecked- Non US Citizen</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked-US Citizen
+Unchecked- Non US Citizen</inlineHelpText>
+        <label>US Citizen</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Visa_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>checked-Visa Required
+Unchecked-Visa Not Required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>checked-Visa Required
+UncheckedVisa Not Required</inlineHelpText>
+        <label>Visa Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Years_of_Experience__c</fullName>
+        <description>Total years of the experience candidate have</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total years of the experience candidate have</inlineHelpText>
+        <label>Years of Experience</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Postal_Code__c</fullName>
+        <description>Zip/Postal Code of the candiate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Zip/Postal Code of the candiate</inlineHelpText>
+        <label>Zip/Postal Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Candidate</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>C-{00000}</displayFormat>
+        <label>Candidate Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Candidates</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>First_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Last_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State_Province__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Phone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Rating__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Reviews__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Average_Rating__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>First_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Last_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State_Province__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Phone__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>First_Name__c</searchFilterFields>
+        <searchFilterFields>Last_Name__c</searchFilterFields>
+        <searchFilterFields>Education__c</searchFilterFields>
+        <searchFilterFields>Years_of_Experience__c</searchFilterFields>
+        <searchFilterFields>City__c</searchFilterFields>
+        <searchFilterFields>State_Province__c</searchFilterFields>
+        <searchFilterFields>Country__c</searchFilterFields>
+        <searchFilterFields>Currently_Employeed__c</searchFilterFields>
+        <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State_Province__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Phone__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

@@ -1,0 +1,6 @@
+<apex:component >
+    <apex:inputCheckbox id="mychk" label="mychk	"/>
+    <apex:attribute name="startdate" description="check start date" type="String" required="true">
+        
+    </apex:attribute>
+</apex:component>

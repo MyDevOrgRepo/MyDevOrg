@@ -1,0 +1,11 @@
+Hi,
+<B>
+{!Account.Name} ,
+</B>
+Opportunity with name <b> {!Opportunity.Name} </b> is created par 2000$...
+The amount is {!Opportunity.Amount} $.
+
+Please take a note and do the needful actions.
+
+Thanks and regards,
+Admin.

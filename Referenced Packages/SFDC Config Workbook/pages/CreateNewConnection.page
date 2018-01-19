@@ -1,0 +1,19 @@
+<apex:page sidebar="false" tabStyle="CWB_Tool__tab" showheader="true">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}"/> 
+  
+  <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.retUrl==''} || {!$CurrentPage.parameters.retUrl==null}">
+   <a class="Btn Btn-info btn-add1" href="{!$Page.CompareProfile}?org=multi"  style="margin-left:0%!important;text-decoration:none;">
+      <span class="glyphicon glyphicon-step-backward"></span>
+      Back
+   </a>
+  </apex:outputPanel> 
+  <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.retUrl!='' && $CurrentPage.parameters.retUrl!=null}">
+    <a class="Btn Btn-info btn-add1" href="{!$Page.updateMetaData}?Org=other&type={!$CurrentPage.parameters.type}"  style="margin-left:0%!important;text-decoration:none;">
+      <span class="glyphicon glyphicon-step-backward"></span>
+      Back
+   </a>
+  </apex:outputPanel>   
+      
+  <c:actionstatusNew />
+  <c:ConnectionComp />
+</apex:page>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Books borrowed by staff/students/employees/others</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Book__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup for borrowed book</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup for borrowed book</inlineHelpText>
+        <label>Book</label>
+        <referenceTo>Book__c</referenceTo>
+        <relationshipLabel>Borrowed Books</relationshipLabel>
+        <relationshipName>Borrowed_Books</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Duration_in_hrs__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( ((Now()  -  Start_Date_Time__c)* 24) &lt; 0 , 0 , ((Now()  -  Start_Date_Time__c)* 24))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration in hrs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date_Time__c</fullName>
+        <description>End date and time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>End date and time</inlineHelpText>
+        <label>End Date(Time)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Date on which book to be returned</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which book to be returned</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Late_Fees__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Duration_in_hrs__c &gt; 168  &amp;&amp;    NOT(ISPICKVAL(Status__c,&apos;Returned&apos;)),(((Duration_in_hrs__c/24)- ( End_Date__c  -  Start_Date__c ))*10) , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Late Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Library_Account__c</fullName>
+        <description>Library of Staff/Student/Employee/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Library of Staff/Student/Employee/Other</inlineHelpText>
+        <label>Library Account</label>
+        <referenceTo>Library_Account__c</referenceTo>
+        <relationshipLabel>Borrowed Books</relationshipLabel>
+        <relationshipName>Borrowed_Books</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Returned_by_name__c</fullName>
+        <description>name of the person who returned the book</description>
+        <externalId>false</externalId>
+        <inlineHelpText>name of the person who returned the book</inlineHelpText>
+        <label>Returned by name</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Returned_by_type__c</fullName>
+        <description>Book returned by whom? Student / Staff / Employee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Book returned by whom? Student / Staff / Employee</inlineHelpText>
+        <label>Returned by type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_Time__c</fullName>
+        <description>Start date and time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Start date and time</inlineHelpText>
+        <label>Start Date (Time)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Date book borrowed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date book borrowed</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Book status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Book status</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Borrowed</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>date_of_returned__c</fullName>
+        <description>Date on which book is returned</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which book is returned</inlineHelpText>
+        <label>date of returned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Borrowed Book</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Borrowed Books Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Borrowed Books</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Start_cate_cannot_be_greater_than_end_da</fullName>
+        <active>true</active>
+        <description>Start date cannot be greater than end date</description>
+        <errorConditionFormula>Start_Date__c &gt;  End_Date__c</errorConditionFormula>
+        <errorDisplayField>Start_Date__c</errorDisplayField>
+        <errorMessage>START DATE CANNOT BE GREATER THAN END DATE!!!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>startandend_time_should_be_proper</fullName>
+        <active>true</active>
+        <description>Start Date Time should not be greater than end date time</description>
+        <errorConditionFormula>Start_Date_Time__c &gt;  End_Date_Time__c</errorConditionFormula>
+        <errorDisplayField>Start_Date_Time__c</errorDisplayField>
+        <errorMessage>START DATE(TIME) CAN NOT BE GREATER THAN END DATE(TIME)</errorMessage>
+    </validationRules>
+</CustomObject>

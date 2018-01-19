@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>SetUserManager {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SetUserManager</label>
+    <processType>AutoLaunchedFlow</processType>
+    <variables>
+        <description>User id of the user</description>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>All tasks to be done on this which are dummy one</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Candidate lookup and select appropriate candidate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidate lookup and select appropriate candidate</inlineHelpText>
+        <label>Candidate</label>
+        <referenceTo>Candidate__c</referenceTo>
+        <relationshipLabel>DummyObjects</relationshipLabel>
+        <relationshipName>DummyObjects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>Cities of the states</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cities of the states</inlineHelpText>
+        <label>City</label>
+        <picklist>
+            <controllingField>State_Provinance__c</controllingField>
+            <picklistValues>
+                <fullName>Ahmadabad</fullName>
+                <default>true</default>
+                <controllingFieldValues>Gujarat</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ajmer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Bihar</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Jharkhand</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Badoda</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Bihar</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Gujarat</controllingFieldValues>
+                <controllingFieldValues>Jammu and Kashmir</controllingFieldValues>
+                <controllingFieldValues>Jharkhand</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhopal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Bihar</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Jammu and Kashmir</controllingFieldValues>
+                <controllingFieldValues>Jharkhand</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+                <controllingFieldValues>Madhya Pradesh</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bijing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Assam</controllingFieldValues>
+                <controllingFieldValues>Bihar</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Himachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Jammu and Kashmir</controllingFieldValues>
+                <controllingFieldValues>Jharkhand</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gandhi Nagar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Assam</controllingFieldValues>
+                <controllingFieldValues>Bihar</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Gujarat</controllingFieldValues>
+                <controllingFieldValues>Himachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Jammu and Kashmir</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guhuwati</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Assam</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Himachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Jammu and Kashmir</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+                <controllingFieldValues>Madhya Pradesh</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kolhapur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Assam</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Himachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LasVegas</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mumbai</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Delhi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Daman and Diu</controllingFieldValues>
+                <controllingFieldValues>Delh</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NewYork</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Lakshadweep</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pune</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranchi</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Haryana</controllingFieldValues>
+                <controllingFieldValues>Karnataka</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SanFransisco</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+                <controllingFieldValues>Andhra Pradesh</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sangli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Satara</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+                <controllingFieldValues>Arunachal Pradesh</controllingFieldValues>
+                <controllingFieldValues>Chandigarh</controllingFieldValues>
+                <controllingFieldValues>Chhattisgarh</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shanghai</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solapur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+                <controllingFieldValues>Maharashtra</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Surat</fullName>
+                <default>false</default>
+                <controllingFieldValues>Andaman and Nicobar Island</controllingFieldValues>
+                <controllingFieldValues>Gujarat</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>List of countries</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of countries</inlineHelpText>
+        <label>Country</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Afghanistan</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Albania</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Algeria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andorra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Angola</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Antigua and Barbuda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Argentina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Armenia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aruba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Austria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Azerbaijan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahamas, The</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahrain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bangladesh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barbados</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belarus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belize</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bhutan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bolivia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bosnia and Herzegovina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Botswana</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brunei</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulgaria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burkina Faso</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burundi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cambodia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cameroon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cape Verde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central African Republic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colombia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comoros</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congo, Democratic Republic of the</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congo, Republic of the</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Costa Rica</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cote d&apos;Ivoire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Croatia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cuba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Curacao</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyprus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State_Provinance__c</fullName>
+        <description>List of all states</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of all states</inlineHelpText>
+        <label>State/Provinance</label>
+        <picklist>
+            <controllingField>Country__c</controllingField>
+            <picklistValues>
+                <fullName>Andaman and Nicobar Island</fullName>
+                <default>true</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Andhra Pradesh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cyprus</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arunachal Pradesh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cyprus</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assam</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cyprus</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bihar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cyprus</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chandigarh</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chhattisgarh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dadra and Nagar Haveli</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daman and Diu</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goa</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gujarat</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haryana</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Himachal Pradesh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jammu and Kashmir</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cuba</controllingFieldValues>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jharkhand</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karnataka</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kerala</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakshadweep</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Madhya Pradesh</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maharashtra</fullName>
+                <default>false</default>
+                <controllingFieldValues>India</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manipur</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meghalaya</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mizoram</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagaland</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Odisha</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Puducherry</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjab</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rajasthan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sikkim</fullName>
+                <default>false</default>
+                <controllingFieldValues>Curacao</controllingFieldValues>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TamilNadu</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telangana</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tripura</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uttarakhand</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+                <controllingFieldValues>USA</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uttar Pradesh</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Bengal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Czech Republic</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TestPic__c</fullName>
+        <externalId>false</externalId>
+        <label>TestPic</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Test1</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>DummyObject</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>DummyName</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DummyObjects</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

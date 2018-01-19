@@ -1,0 +1,9 @@
+<apex:page standardController="Event__c" extensions="SelectAppropriateVendorTypesController">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:pageblockSection title="selectVendorType">
+  
+  </apex:pageblockSection>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

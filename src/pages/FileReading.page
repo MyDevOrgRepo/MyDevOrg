@@ -1,0 +1,6 @@
+<apex:page sidebar="false" controller="FileReadingClassxxx">
+<apex:form >
+<apex:inputfile value="{!fileBody}"/>
+<apex:commandButton value="ReadDataIntoMyObject" action="{!readContent}"/>
+</apex:form>
+</apex:page>

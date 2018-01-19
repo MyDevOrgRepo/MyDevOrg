@@ -1,0 +1,49 @@
+<table border="0" cellpadding="0" width="650" cellspacing="0" height="400" >
+<tr valign="top" >
+<td width="180" style=" background-color:#FFCC33; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" >
+<table border="0" cellpadding="5" width="180" cellspacing="5" height="400" >
+<tr valign="top" height="100" >
+<td rowspan="3" width="180" tEditID="c1r1" style=" background-color:#FFCC33; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal"><font color="#3333ff"><span style="font-size: 12pt; line-height: 107%; font-family: &quot;MV Boli&quot;;">Hi</span><span style="font-size: 12pt; line-height: 107%; font-family: &quot;MV Boli&quot;;">{!Contact.FirstName}</span><span style="font-size: 12pt; line-height: 107%; font-family: &quot;MV Boli&quot;;">,<o:p></o:p></span></font></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 107%; font-family: &quot;MV Boli&quot;;"><font color="#3333ff">Happy Diwali.</font><o:p></o:p></span></p><p class="MsoNormal"><span style="font-size: 12pt; line-height: 107%; font-family: &quot;MV Boli&quot;;"><font color="#3333ff"><br></font></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0);"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;MV Boli&quot;"><br></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); text-align: justify;"><br></p>]]></td>
+</tr>
+</table>
+</td>
+<td width="10" style=" background-color:#FFCC33; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" >
+<![CDATA[]]></td>
+<td width="460" style=" background-color:#FFCC33; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" >
+<table border="0" cellpadding="5" width="460" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c2r1" style=" background-color:#FFCC33; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r1" locked="0" >
+<![CDATA[<font color="#3333ff"><span style="font-size: 12pt; text-align: justify; line-height: 17.12px; font-family: &quot;MV Boli&quot;;">This is&nbsp;</span><span style="font-size: 12pt; text-align: justify; line-height: 17.12px; font-family: &quot;MV Boli&quot;;"><b>{!Contact.OwnerFirstName}</b></span><span style="text-align: justify;">&nbsp;</span><span style="font-size: 12pt; text-align: justify; line-height: 17.12px; font-family: &quot;MV Boli&quot;;">from MyProptoSell.com. We are pleased to inform you that there is huge depreciation that have had happened in your absence for last 3-4 months. The rates are down up to by 25% and accompanied discount as well of flat 200000/- INR. Please be in touch or give us a lead, one of our representative will contact you shortly.</span></font><div><font color="#3333ff"><span style="font-size: 12pt; text-align: justify; line-height: 17.12px; font-family: &quot;MV Boli&quot;;"><br></span></font></div><div><p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;MV Boli&quot;"><font color="#3333ff">Thanks,<o:p></o:p></font></span></p>
+
+<p class="MsoNormal"><!--[if supportFields]><span style='font-size:12.0pt;
+line-height:107%;font-family:"MV Boli"'><span style='mso-element:field-begin'></span><span
+style='mso-spacerun:yes'> </span>MERGEFIELD<span style='mso-spacerun:yes'> 
+</span>{!Contact.OwnerFullName}<span style='mso-spacerun:yes'>  </span>\*
+MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><font color="#3333ff"><span style="font-size:12.0pt;line-height:107%;font-family:&quot;MV Boli&quot;">«{!Contact.OwnerFullName}»</span><!--[if supportFields]><span
+style='font-size:12.0pt;line-height:107%;font-family:"MV Boli"'><span
+style='mso-element:field-end'></span></span><![endif]--><span style="font-size:
+12.0pt;line-height:107%;font-family:&quot;MV Boli&quot;"><o:p></o:p></span></font></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;MV Boli&quot;"><font color="#3333ff">Senior Sales Executive,<o:p></o:p></font></span></p>
+
+<p class="MsoNormal"><font color="#3333ff"><span style="font-size:12.0pt;line-height:107%;font-family:
+&quot;MV Boli&quot;">MyPropToSell.com</span> <o:p></o:p></font></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0);"><span style="font-size: 8pt; line-height: 107%; font-family: &quot;MV Boli&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255);"><br></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0);"><span style="font-size: 8pt; line-height: 107%; font-family: &quot;MV Boli&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(204, 153, 51);"><font color="#003300">Note:<o:p></o:p></font></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0);"><span style="font-size: 8pt; line-height: 107%; font-family: &quot;MV Boli&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(204, 153, 51);"><font color="#003300"><br></font></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0);"><span style="font-size: 8pt; line-height: 107%; font-family: &quot;MV Boli&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(204, 153, 51);"><font color="#003300">This is the first mail-merge
+document that is sent to you for testing on trial basis. No relevance with any
+real-world scenarios.</font></span><span style="color: rgb(0, 0, 0); font-size: 8pt; line-height: 107%; font-family: &quot;MV Boli&quot;;"><o:p></o:p></span></p></div>]]></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Event Types</value>
+    </caseValues>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- End Date of an event. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Start Date of an event. --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Flows Available --></label>
+        <name>Vendor_Flows_Available__c</name>
+        <picklistValues>
+            <masterLabel>--None--</masterLabel>
+            <translation><!-- - - None- -  --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor Types --></label>
+        <name>Vendor_Types__c</name>
+        <picklistValues>
+            <masterLabel>AV</masterLabel>
+            <translation><!-- AV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;B</masterLabel>
+            <translation><!-- F&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

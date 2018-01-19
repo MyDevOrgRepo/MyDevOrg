@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Component_Limit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Component Limit</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>FreeLimitReachedMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free Limit Reached Message</shortDescription>
+        <value>You have reached maximum free limit(5).</value>
+    </labels>
+    <labels>
+        <fullName>Free_APP_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free APP Message</shortDescription>
+        <value>You are using free version of CWB so your selected component will be locked and You can&apos;t change your selection in future.</value>
+    </labels>
+</CustomLabels>

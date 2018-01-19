@@ -1,0 +1,25 @@
+<apex:page Controller="myTableController" showheader="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:form >
+  
+  <apex:pageblock id="mypageblcok" title="My page block" rendered="true">
+  
+  <apex:pageblocksection title="MySection">
+  <apex:commandButton value="{!add}" reRender="mypageblcok"/>
+  <!--<apex:pageBlockTable title="MyTable" value="{!account.Contacts}" var="items"> -->
+   
+  <apex:pageBlockTable title="MyTable" value="{!pos}" var="items">
+ 
+  <apex:column value="{!items.name}"/>  
+  </apex:pageBlockTable>
+  
+  </apex:pageblocksection>
+  
+  </apex:pageblock>
+  
+  </apex:form>
+  
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

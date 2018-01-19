@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Employment_Website</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Employment_Website</fullName>
+        <fields>Name</fields>
+        <fields>Price_Per_Post__c</fields>
+        <fields>Web_Address__c</fields>
+        <fields>Maximum_Budget__c</fields>
+        <label>Employment Website</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Information about a particular employment website</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Maximum_Budget__c</fullName>
+        <description>Maximum Budget</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum Budget</inlineHelpText>
+        <label>Maximum Budget</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_Per_Post__c</fullName>
+        <description>Price per cost</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Price per cost</inlineHelpText>
+        <label>Price Per Post</label>
+        <precision>7</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Web_Address__c</fullName>
+        <description>Web Address</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Web Address</inlineHelpText>
+        <label>Web Address</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Employment Website</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Employment Website Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employment Websites</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Web_Address__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Price_Per_Post__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Maximum_Budget__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Web_Address__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Price_Per_Post__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Maximum_Budget__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Web_Address__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Price_Per_Post__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Maximum_Budget__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Web_Address__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Price_Per_Post__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Maximum_Budget__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

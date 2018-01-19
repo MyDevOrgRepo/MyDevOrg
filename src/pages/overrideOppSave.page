@@ -1,0 +1,22 @@
+<apex:page standardController="Opportunity" tabStyle="Opportunity" extensions="OppOverride" docType="html-5.0">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock title="Opportunity" mode="edit">
+  
+
+      <apex:pageBlockSection id="PersonalInfo" title="Personal Information">
+      <apex:form >
+      
+      
+
+          <apex:outputField value="{!opportunity.Account.name}"/>
+          <apex:outputField value="{!opportunity.Account.birthdate__c}"/>
+          <apex:commandButton action="{!save}" value="Save"/>
+          <apex:commandButton action="{!edit}" value="Edit"/>
+         
+       <!--   <apex:inputField list="mypriceplans"/> -->
+      </apex:form>
+      </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

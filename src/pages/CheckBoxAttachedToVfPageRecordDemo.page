@@ -1,0 +1,70 @@
+<apex:page controller="CheckBoxAttachedToVfPageRecordDemoCtrl">
+<!-- Begin Default Content REMOVE THIS -->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
+</script>
+<script>
+
+
+function openMultipleWindows()
+{
+
+var wrapperStuff = {!wrapperList};
+Visualforce.remoting.Manage.invokeAction('{!$RemoteAction.CheckBoxAttachedToVfPageRecordDemoCtrl.processWrapper}',wrapperStuff,
+	function(result,event)
+	{
+		if(event.status)
+		{
+			console.log('event.status>>'+event.status);
+		}
+	}
+);
+
+}
+</script>
+
+<apex:form id="from">
+
+
+<apex:actionFunction id="fetchRecords" name="fetchSobjectRecords" action="{!getSobjectrecords}" rerender="dataSection,searchBoxBlock"/>
+
+
+    <apex:pageblock id="searchBoxBlock" title="Search Box">
+   List is: {!wrapperList}>>
+    <apex:commandbutton value="Submit" onclick="openMultipleWindows();"/> 
+    
+        <apex:pageBlockSection id="searchBocSection" title="Search Box Section">
+        
+            <apex:selectList id="selectObject" label="Select Object" multiselect="false" value="{!selectedObject}" size="1" onchange="fetchSobjectRecords()">
+                <apex:selectOptions id="selectObjectList" value="{!selectedObjectLst}"/>
+            
+            </apex:selectList>
+        
+        </apex:pageBlockSection>
+    
+    <apex:pageBlockSection id="dataSection" title="Retrieved Data">
+    
+   <apex:pageBlockTable id="pbTable" value="{!wrapperList}" var="iterator">
+       
+       <apex:column headerValue="Action" >
+        <apex:inputCheckbox value="{!iterator.isSelect}" id="checkBox1" /> <!-- onclick="getParticipantId('{!seriesTable.participantSeriesWrapper.Participant__c}',this);" styleClass="chkSelected1" -->
+     	</apex:column>
+       
+        <apex:repeat id="repeatColumn" value="{!fieldListLst}" var="repeatVar">
+        
+        
+        <apex:column value="{!iterator.sObjectWrapper[repeatVar]}"/>
+        </apex:repeat>
+       
+       
+        
+        </apex:pageBlockTable>
+   
+    
+    </apex:pageBlockSection>
+    
+    </apex:pageblock>
+
+</apex:form>
+
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

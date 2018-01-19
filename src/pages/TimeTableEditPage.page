@@ -1,0 +1,659 @@
+<!-- <apex:page id="MainPage" StandardController="TimeTable__c" extensions="TimeTablePageController" tabstyle="TimeTable__c"> -->
+
+<apex:page id="MainPage" Controller="TimeTablePageController" tabstyle="TimeTable__c">
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ 
+ 
+ <style>
+    .activeTab {background-color: yellow; background-image:none}
+    .inactiveTab { background-color: pink; background-image:none}
+    </style>
+ <apex:form >
+ 
+     <apex:pageblock id="MainBlock">
+     
+        <apex:pageblocksection id="EditMode"> 
+         
+     <apex:outputLabel id="errorMesseges" value="{!errorMessage}" rendered="{!displayError}">
+      
+      
+      </apex:outputLabel>
+      
+      <apex:outputLink id="linkToTimeTable" value="{!linkToTimeTable}" target="_blank" rendered="{!showLink}">
+      Click this link to view timetable for division {timetable.Division__r} of class {!timetable.Class__c}
+      </apex:outputLink>
+     
+      <apex:inputField id="Class" label="Select Class" value="{!timetable.Class__c}" rendered="{!editInput}" required="true">
+      <!--    <apex:param id="class" name="class" value="{!timetable.Class__c}" assignTo="{!timetable.Class__c}"/> -->
+      
+      </apex:inputField>
+      
+      <apex:inputField id="Division" label="Select Division" value="{!timetable.Division__c}" rendered="{!editInput}">
+        <!--  <apex:param id="Division" name="Division" value="{!timetable.Division__c}" assignTo="{!timetable.Division__c}"/> -->
+      </apex:inputfield>
+      
+      <apex:commandButton id="CreateTimeTable" value="Create Time Table" action="{!checkduplicates}"/>
+      <apex:actionsupport event="onclick" rerender="MainBlock"/>
+                 </apex:pageblockSection>
+      
+      <apex:tabPanel id="TabbedPane" tabClass="activeTab" inactiveTabClass="inactiveTab" headerSpacing="150" switchType="Client" selectedTab="{!selectedTab}" value="{!selectedTab}" rendered="{!showTimeTablePanel}">
+            <!-- <apex:tabPanel id="TabbedPan" tabClass="activeTab" inactiveTabClass="inactiveTab"> -->
+                 
+                 
+                 
+                 
+                 
+                 
+                 <apex:tab id="Monday" Label="Monday" name="Monday" labelWidth="30">
+                 
+                 <apex:pageblock id="Monday_pgb">
+                 <apex:pageBlockSection id="slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="EndTime3" label="End Time" value="{!timetable.EndTime3__c}" required="true"/>
+                 <apex:inputfield id="Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="StartTime6" label="Start Time" value="{!timetable.StartTime6__c}" required="true"/>
+                 <apex:inputfield id="EndTime6" label="End Time" value="{!timetable.EndTime6__c}" required="true"/>
+                 <apex:inputfield id="Subject6" label="Subject" value="{!timetable.Subject6__c}" required="true"/>
+                 <apex:inputfield id="Teacher6" label="Teacher" value="{!timetable.Teacher6__c}" required="true"/>
+                 
+                
+                 </apex:pageBlockSection>
+                 </apex:pageBlock>
+                 
+                 
+                 
+                <!-- <apex:commandButton id="Monday_submit" value="Save" action="{!Save}"/> -->
+                 <apex:commandButton id="Monday_Next" value="Next" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="selectedTab" assignTo="{!selectedTab}" value="Monday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                 
+                 <apex:commandButton id="Monday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Monday_Previous_selectedTab" assignTo="{!selectedTab}" value="Monday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                 </apex:tab>
+                 
+                 <!-- </apex:tabPanel>
+                 <apex:tabPanel> -->
+                
+                 
+                 <!-- Tuestday tab starts here -->
+                 
+                  <apex:tab id="Tuesday" Label="Tuesday" name="Tuesday" labelWidth="30">
+                 
+                 <apex:pageBlockSection id="Tuesday_slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="Tuesday_StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="Tuesday_slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="Tuesday_StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="Tuesday_slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="Tuesday_StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime3" label="End Time" value="{!timetable.EndTime3__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Tuesday_slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="Tuesday_StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Tuesday_slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="Tuesday_StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Tuesday_slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="Tuesday_StartTime6" label="Start Time" value="{!timetable.StartTime6__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_EndTime6" label="End Time" value="{!timetable.EndTime6__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Subject6" label="Subject" value="{!timetable.Subject6__c}" required="true"/>
+                 <apex:inputfield id="Tuesday_Teacher6" label="Teacher" value="{!timetable.Teacher6__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <!-- Tuesday tab ends here -->
+                 
+                 <!--Buttons for Tuesday Tab starts here-->
+                  
+                  <!-- <apex:commandButton id="Tuesday_submit" value="Save"/> -->
+                 <apex:commandButton id="Tuesday_Next" value="Next" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="Tuesday_selectedTab" assignTo="{!selectedTab}" value="Tuesday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                  <apex:commandButton id="Tuesday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Tuesday_Previous_selectedTab" assignTo="{!selectedTab}" value="Tuesday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+
+                 <!-- Buttons for Tuesday Tab ends here -->
+                 
+                 </apex:tab>
+             
+           
+           <!-- Wednesday tab starts here -->
+                 
+                  <apex:tab id="Wednesday" Label="Wednesday" name="Wednesday" labelWidth="30">
+                 
+                 <apex:pageBlockSection id="Wednesday_slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="Wednesday_StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="Wednesday_slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="Wednesday_StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="Wednesday_slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="Wednesday_StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime3" label="End Time" value="{!timetable.EndTime3__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Wednesday_slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="Wednesday_StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Wednesday_slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="Wednesday_StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Wednesday_slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="Wednesday_StartTime6" label="Start Time" value="{!timetable.StartTime6__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_EndTime6" label="End Time" value="{!timetable.EndTime6__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Subject6" label="Subject" value="{!timetable.Subject6__c}" required="true"/>
+                 <apex:inputfield id="Wednesday_Teacher6" label="Teacher" value="{!timetable.Teacher6__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <!--Buttons for Tuesday Tab starts here-->
+                  
+                  <!-- <apex:commandButton id="Wednesday_submit" value="Save"/> -->
+                 <apex:commandButton id="Wednesday_Next" value="Next" reRender="MainBlock">
+                
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="Wednesday_selectedTab" assignTo="{!selectedTab}" value="Wednesday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                  </apex:commandButton> 
+                 
+                 
+                 
+                  <apex:commandButton id="Wednesday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Wedenesday_Previous_selectedTab" assignTo="{!selectedTab}" value="Wednesday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+
+                 <!-- Buttons for Tuesday Tab ends here -->
+                 
+                 </apex:tab>
+           
+         <!-- Wednesday tab ends here -->
+         
+         <!-- Thurday tab starts here -->
+                 
+                  <apex:tab id="Thursday" Label="Thursday" name="Thursday" labelWidth="30">
+                 
+                 <apex:pageBlockSection id="Thursday_slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="Thursday_StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="Thursday_EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="Thursday_slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="Thursday_StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="Thursday_EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="Thursday_slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="Thursday_StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="Thursday_EndTime3" label="End Time" value="{!timetable.EndTime3__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Thursday_slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="Thursday_StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="Thursday_EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Thursday_slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="Thursday_StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="Thursday_EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Thursday_Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Thursday_slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="Thursday_StartTime6" label="Start Time" value="{!timetable.StartTime6__c}"/>
+                 <apex:inputfield id="Thursday_EndTime6" label="End Time" value="{!timetable.EndTime6__c}"/>
+                 <apex:inputfield id="Thursday_Subject6" label="Subject" value="{!timetable.Subject6__c}"/>
+                 <apex:inputfield id="Thursday_Teacher6" label="Teacher" value="{!timetable.Teacher6__c}"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <!--Buttons for Tuesday Tab starts here-->
+                 
+                 <!-- <apex:commandButton id="Thursday_submit" value="Save"/> -->
+                 <apex:commandButton id="Thursday_Next" value="Next" reRender="MainBlock">
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="Thursday_selectedTab" assignTo="{!selectedTab}" value="Thursday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                  <apex:commandButton id="Thursday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Thursday_Previous_selectedTab" assignTo="{!selectedTab}" value="Thursday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+
+             <!-- Buttons for Tuesday Tab ends here -->
+                 
+                 </apex:tab>
+           
+         <!-- Thursday tab ends here -->
+         
+         <!-- Friday tab starts here -->
+                 
+                  <apex:tab id="Friday" Label="Friday" name="Friday" labelWidth="30">
+                 
+                 <apex:pageBlockSection id="Friday_slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="Friday_StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="Friday_slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="Friday_StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="Friday_slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="Friday_StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime3" label="End Time" value="{!timetable.EndTime3__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Friday_slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="Friday_StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Friday_slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="Friday_StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Friday_slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="Friday_StartTime6" label="Start Time" value="{!timetable.StartTime6__c}" required="true"/>
+                 <apex:inputfield id="Friday_EndTime6" label="End Time" value="{!timetable.EndTime6__c}" required="true"/>
+                 <apex:inputfield id="Friday_Subject6" label="Subject" value="{!timetable.Subject6__c}" required="true"/>
+                 <apex:inputfield id="Friday_Teacher6" label="Teacher" value="{!timetable.Teacher6__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+           
+            <!--Buttons for Tuesday Tab starts here-->
+            
+            <!-- <apex:commandButton id="Friday_submit" value="Save"/> -->
+                 <apex:commandButton id="Friday_Next" value="Next" reRender="MainBlock">
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="Friday_selectedTab" assignTo="{!selectedTab}" value="Friday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                  <apex:commandButton id="Friday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Friday_Previous_selectedTab" assignTo="{!selectedTab}" value="Friday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+
+                 
+                 <!-- Buttons for Tuesday Tab ends here -->
+                    
+                 </apex:tab>
+           
+           
+         <!-- Friday tab ends here -->
+         
+         
+         <!-- Saturday tab starts here -->
+                 
+                  <apex:tab id="Saturday" Label="Saturday" name="Saturday" labelWidth="30">
+                 
+                 <apex:pageBlockSection id="Saturday_slot1" title="Slot 1">
+                 
+                 <apex:inputfield id="Saturday_StartTime1" label="Start Time" value="{!timetable.StartTime1__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime1" label="End Time" value="{!timetable.EndTime1__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Subject1" label="Subject" value="{!timetable.Subject1__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher1" label="Teacher" value="{!timetable.Teacher1__c}" required="true"/>
+                  
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                   <apex:pageBlockSection id="Saturday_slot2" title="Slot 2">
+                 
+                 <apex:inputfield id="Saturday_StartTime2" label="Start Time" value="{!timetable.StartTime2__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime2" label="End Time" value="{!timetable.EndTime2__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Subject2" label="Subject" value="{!timetable.Subject2__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher2" label="Teacher" value="{!timetable.Teacher2__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 
+                 <apex:pageBlockSection id="Saturday_slot3" title="Slot 3">
+                 
+                 <apex:inputfield id="Saturday_StartTime3" label="Start Time" value="{!timetable.StartTime3__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime3" label="End Time" value="{!timetable.EndTime3__c}" />
+                 <apex:inputfield id="Saturday_Subject3" label="Subject" value="{!timetable.Subject3__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher3" label="Teacher" value="{!timetable.Teacher3__c}" required="true"/>
+                  
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Saturday_slot4" title="Slot 4">
+                 
+                 <apex:inputfield id="Saturday_StartTime4" label="Start Time" value="{!timetable.StartTime4__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime4" label="End Time" value="{!timetable.EndTime4__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Subject4" label="Subject" value="{!timetable.Subject4__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher4" label="Teacher" value="{!timetable.Teacher4__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Saturday_slot5" title="Slot 5">
+                 
+                 <apex:inputfield id="Saturday_StartTime5" label="Start Time" value="{!timetable.StartTime5__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime5" label="End Time" value="{!timetable.EndTime5__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Subject5" label="Subject" value="{!timetable.Subject5__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher5" label="Teacher" value="{!timetable.Teacher5__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="Saturday_slot6" title="Slot 6">
+                 
+                 <apex:inputfield id="Saturday_StartTime6" label="Start Time" value="{!timetable.StartTime6__c}" required="true"/>
+                 <apex:inputfield id="Saturday_EndTime6" label="End Time" value="{!timetable.EndTime6__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Subject6" label="Subject" value="{!timetable.Subject6__c}" required="true"/>
+                 <apex:inputfield id="Saturday_Teacher6" label="Teacher" value="{!timetable.Teacher6__c}" required="true"/>
+                 
+                 
+                 </apex:pageBlockSection>
+                  <!--Buttons for Tuesday Tab starts here-->
+                  
+                  <!-- <apex:commandButton id="Saturday_submit" value="Save"/> -->
+                 <apex:commandButton id="Saturday_Next" value="Next" reRender="MainBlock">
+                 
+               <apex:actionSupport action="{!switchToNextTab}" event="onclick"> 
+               
+               <apex:param id="Saturday_selectedTab" assignTo="{!selectedTab}" value="Saturday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+                 
+                  <apex:commandButton id="Saturday_Previous" value="Previous" reRender="MainBlock">
+                 
+               
+                 
+               <apex:actionSupport action="{!switchToPreviousTab}" event="onclick"> 
+               
+               <apex:param id="Saturday_Previous_selectedTab" assignTo="{!selectedTab}" value="Saturday" name="selectedTab"/>  
+                   
+                 </apex:actionSupport>  
+                   
+                 
+                 </apex:commandButton>
+
+                 <!-- Buttons for Tuesday Tab ends here -->
+                 <apex:commandButton id="Submit_Final" value="Submit" action="{!Save}"/>
+                 </apex:tab>
+           
+         <!-- Saturday tab ends here -->
+    
+             </apex:tabPanel>
+         
+         <!-- </apex:pageblocksection> --> 
+     
+     </apex:pageblock>
+ </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

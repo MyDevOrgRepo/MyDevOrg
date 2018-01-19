@@ -1,0 +1,26 @@
+<apex:page standardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ <Style>
+         .OutputText
+         {
+             font-size:12Pt
+             font-weight:BOLD
+             font-color:#f60
+         }
+ </Style> 
+ 
+         <apex:pageblock id="myFirstBlock">
+         
+             <apex:pageBlockSection id="MyFirstSection">
+             
+                 <apex:outputText value="{!Account.name}" styleClass="OutputText">
+                 
+                 </apex:outputText>
+                              
+             </apex:pageBlockSection>
+         
+         </apex:pageblock>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

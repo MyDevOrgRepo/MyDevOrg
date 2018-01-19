@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Constraint Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Constraint Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Objects__c</name>
+        <picklistValues>
+            <masterLabel>Class__c</masterLabel>
+            <translation><!-- Class__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Division__c</masterLabel>
+            <translation><!-- Division__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee__c</masterLabel>
+            <translation><!-- Employee__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff__c</masterLabel>
+            <translation><!-- Staff__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student__c</masterLabel>
+            <translation><!-- Student__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Time_Table__c</masterLabel>
+            <translation><!-- Time_Table__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rule Status to be Active / In-Active --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <layouts>
+        <layout>Business Rule Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

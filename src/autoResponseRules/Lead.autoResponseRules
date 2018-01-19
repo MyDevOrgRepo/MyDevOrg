@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>WebToLeadAutoResponse</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.Branch__c</field>
+                <operation>equals</operation>
+                <value>France,Gold Coast,Manchester CD office,Moorgate HO,Moorgate HO - 3111,Mumbai,Portugal,Spain - ES1,Spain - ES2,Spain - ES3,Spain - ES4,Spain - Head Office,Spain - Mallorca,TorFX - Penzance</value>
+            </criteriaItems>
+            <senderEmail>testmesfdc@gmail.com</senderEmail>
+            <senderName>RJ Pvt. Ltd.</senderName>
+            <template>unfiled$public/WebToLeadAutoResponse</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

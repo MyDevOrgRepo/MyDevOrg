@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>VendorBookingConfig</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>VendorBookingConfig</value>
+    </caseValues>
+    <fields>
+        <label><!-- Flow Name --></label>
+        <name>Flow_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order of execution --></label>
+        <name>Order_of_execution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Type --></label>
+        <name>Vendor_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send Update Email to all Universal Containers Employee</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Recruiting APP New Position</name>
+    <style>none</style>
+    <subject>New Positoin Alert: {!Position__c.Name}</subject>
+    <type>text</type>
+</EmailTemplate>

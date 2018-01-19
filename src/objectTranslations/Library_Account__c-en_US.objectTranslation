@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Library Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Library Accounts</value>
+    </caseValues>
+    <fields>
+        <help><!-- Auto-Generated account number --></help>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associated Employee record --></help>
+        <label><!-- Employee --></label>
+        <name>Associated_Employee__c</name>
+        <relationshipLabel><!-- Library Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Associated Staff record --></help>
+        <label><!-- Staff --></label>
+        <name>Associated_Staff__c</name>
+        <relationshipLabel><!-- Library Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Associated Student record --></help>
+        <label><!-- Student --></label>
+        <name>Associated_Student__c</name>
+        <relationshipLabel><!-- Library Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Email of Staff/Student/Employee/Other --></help>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- First name of the Staff/Employee/Student/Other --></help>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last name of the Staff/Employee/Student/Other --></help>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mobile of Staff/Student/Employee/Other --></help>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Phone of Staff/Student/Employee/Other --></help>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <layouts>
+        <layout>Employee&apos;s Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Staff&apos;s Record</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Student&apos;s Layout</layout>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Information --></label>
+            <section>Personal Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Employees --></label>
+        <name>Employees</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Others --></label>
+        <name>Others</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Staffs --></label>
+        <name>Staffs</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Students --></label>
+        <name>Students</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

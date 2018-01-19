@@ -1,0 +1,53 @@
+<apex:component controller="CustomNotesViewController" allowDML="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:attribute name="LinkedEntity" description="Linked Entity Id" type="ID" assignTo="{!LinkedEntityId}"/>
+  <apex:attribute name="LinkedEntityObjectName" description="Corresponding related Object for this note" type="String" assignTo="{!LinkedEntityObjectNameID}"/>
+  
+  
+  <!-- JavaScript Stuff -->
+  
+  <apex:includescript value="//code.jquery.com/jquery-1.11.1.min.js" / >
+    <apex:includescript value="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" />
+    <apex:stylesheet value="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css" />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.Bootstrap_SF1,'dist/css/bootstrap-namespaced.css')}"/>
+
+  
+  <!-- JavaScript Stuff -->
+  
+  <!-- Style and Scripting -->
+  
+   <style>
+        .modal .modal-body {
+            max-height: 220px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+        .modal-content {
+            width: 900px;
+            margin-left: -150px;
+        }
+        
+    </style>
+    <script>
+        function openWin(url){
+            window.open(url, '_blank');
+        } 
+    </script> 
+    <script>
+        j$ = jQuery.noConflict();
+        j$(document).ready( function () {
+            var contactTable = j$('[id$="NotesTable"]').DataTable({
+                "paging": false,
+                order: [[1, 'asc']]
+            });
+        });
+    </script>       
+  
+  <!-- Style and Scripting -->
+  
+  
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:component>

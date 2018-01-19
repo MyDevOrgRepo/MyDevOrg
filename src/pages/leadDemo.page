@@ -1,0 +1,81 @@
+<apex:page standardController="Account" showHeader="false" extensions="leadDemo" id="page">
+<apex:messages />
+  
+  <!-- Begin Default Content REMOVE THIS -->
+ <apex:form id="FirstForm">
+     <apex:pageBlock id="ContactDetails" title="Contact Details">
+         
+         <apex:pageBlockSection id="PrimaryContactDetails1" title="Primary Contact Details">
+                
+                
+         <apex:inputField id="Applicationtype" label="Applicationtype" value="{!lead.ApplicationType__c}">
+         <!-- 
+         #rendered: It is used to show or hide the componant on conditional basis(Condition is specified to be returned for its bollean value either true or false)
+         #rerender: It is used to refresh the componant to show the changed content on its condition(Here componant ID is specified)
+         -->
+         <apex:actionsupport rerender="ContactDetails" event="onchange" />
+        <!--  <apex:actionsupport rerender="PrimaryContactDetails1" event="onload" /> -->
+         </apex:inputfield>
+        
+
+
+         <apex:inputField id="salutation" value="{!lead.salutation}"/>
+         <apex:outputField id="firstname" value="{!lead.firstname}"/>
+         <apex:outputField id="lastname" value="{!lead.lastname}"/>
+         <!--<apex:inputField id="birthdate" value="{!lead.birthdate__c}" rendered="{!If(lead.ApplicationType__c=="Single",true,false)}"/>        -->
+         <!--<apex:inputField id="birthdate2" label="BirthDate2" value="{!lead.birthdate__c}" rendered="{!If(lead.ApplicationType__c=="Joint",true,false)}"/>         -->
+                  <apex:inputField id="birthdate" value="{!lead.birthdate__c}"/>
+         <apex:inputField id="mailingstreet" value="{!lead.street}"/>         
+         <apex:inputField id="mailingcity" value="{!lead.city}"/>      
+         <apex:inputField id="MailingState" value="{!lead.State}"/>
+         <apex:inputField id="Mailingcountry" value="{!lead.country}"/>
+         <apex:inputField id="MailingPostalCode" value="{!lead.PostalCode}"/>
+         <apex:outputField id="email" value="{!lead.email}"/>
+         <apex:inputField id="mobilephone" value="{!lead.mobilephone}"/>
+         <apex:inputField id="phone" value="{!lead.phone}"/>
+         <apex:inputField id="title" value="{!lead.title}"/><br></br>
+         
+
+         
+        </apex:pageblocksection>
+         
+         <!-- Second contact information -->
+         
+         
+         
+
+
+               <apex:pageBlockSection id="SecondContactDetails" title="Second Contact Details" rendered="{!If(lead.ApplicationType__c=='Joint',true,false)}">  
+   
+   
+   
+   
+                   <apex:inputField id="second_Contact_salutation" value="{!lead.Salutation_second_contact__c}"/>
+         <apex:inputField id="second_Contact_firstname" value="{!lead.Second_contact_FirstName__c}"/>
+         <apex:inputField id="second_contact_lastname" value="{!lead.Second_contact_LastName__c}"/>
+         <!--<apex:inputField id="birthdate" value="{!lead.birthdate__c}" rendered="{!If(lead.ApplicationType__c=="Single",true,false)}"/>        -->
+         <!--<apex:inputField id="birthdate2" label="BirthDate2" value="{!lead.birthdate__c}" rendered="{!If(lead.ApplicationType__c=="Joint",true,false)}"/>         -->
+                  <apex:inputField id="second_contact_birthdate" value="{!lead.Birthdate_second_contact__c}"/>
+         
+         <apex:inputField id="second_contact_email" value="{!lead.Email_second_contact__c}"/>
+
+         <apex:inputField id="second_contact_phone" value="{!lead.Phone_second_contact__c}"/>
+   
+   
+   </apex:pageBlockSection>
+                  
+         
+         <div align="center" draggable="false">
+                            <apex:commandButton value="Open an Account" id="open_btn" action="{!SaveLead}" style="width: 195px; height: 35px"/>
+                        </div>
+
+               
+
+
+         
+         
+     </apex:pageBlock>
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

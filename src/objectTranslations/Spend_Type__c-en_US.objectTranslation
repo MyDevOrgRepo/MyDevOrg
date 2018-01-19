@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Spend Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Spend Types</value>
+    </caseValues>
+    <fields>
+        <help><!-- Spent Amount --></help>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Spend types according to spend nature for different expenses --></help>
+        <label><!-- Spend Type --></label>
+        <name>Spend_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accommodation</masterLabel>
+            <translation><!-- Accommodation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Travel</masterLabel>
+            <translation><!-- Air Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Fees</masterLabel>
+            <translation><!-- Event Fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food and Breverages</masterLabel>
+            <translation><!-- Food and Breverages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ground travel</masterLabel>
+            <translation><!-- Ground travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Expenses</masterLabel>
+            <translation><!-- Other Expenses --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,15 @@
+There's a new position open at Universal Containers!
+Title: {!Position__c.Name}
+Functional Area: {!Position__c.Functional_Area__c}
+Location: {!Position__c.Location__c}
+Job Description
+{!Position__c.Job_Description__c}
+Responsibilities
+{!Position__c.Responsibilities__c}
+Skills Required
+{!Position__c.Skills_Required__c}
+Educational Requirements
+{!Position__c.Educational_Requirements__c}
+If you know of anyone great who might be able to fill this role, please
+contact the hiring manager, {!Position__c.Hiring_Manager__c}.
+Thanks!

@@ -1,0 +1,31 @@
+<apex:page standardController="Event_Type__c" extensions="EventTypeViewController">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:form >
+  <apex:pageBlock title="Event Type Details" mode="inlineEdit">
+  
+  
+  
+  <apex:pageBlockSection title="Primary Details">
+  
+  <apex:outputField value="{!Event_Type__c.Name}"/>
+  
+  <apex:outputField value="{!Event_Type__c.Start_Date__c}"/>
+  
+  <apex:outputField value="{!Event_Type__c.End_Date__c}"/>
+  
+  <apex:outputField value="{!Event_Type__c.Vendor_Types__c}"/>
+  
+  <apex:selectList value="{!selectedVendorType}" multiselect="true" size="4">
+  <apex:selectOptions value="{!optionsToSelect}">
+  
+  </apex:selectOptions>
+  </apex:selectList>
+  
+  </apex:pageBlockSection>
+  
+  
+  </apex:pageBlock>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

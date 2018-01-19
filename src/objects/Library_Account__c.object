@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Library Account to which students and staffs are associated with</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <description>Auto-Generated account number</description>
+        <displayFormat>LIB-{000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto-Generated account number</inlineHelpText>
+        <label>Account Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Employee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associated Employee record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated Employee record</inlineHelpText>
+        <label>Employee</label>
+        <referenceTo>Employee_SM__c</referenceTo>
+        <relationshipLabel>Library Accounts</relationshipLabel>
+        <relationshipName>Library_Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Staff__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Who&apos;s</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated Staff record</inlineHelpText>
+        <label>Staff</label>
+        <referenceTo>Staff__c</referenceTo>
+        <relationshipLabel>Library Accounts</relationshipLabel>
+        <relationshipName>Library_Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Student__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associated Student record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated Student record</inlineHelpText>
+        <label>Student</label>
+        <referenceTo>Student__c</referenceTo>
+        <relationshipLabel>Library Accounts</relationshipLabel>
+        <relationshipName>Library_Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Email of Staff/Student/Employee/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email of Staff/Student/Employee/Other</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>First name of the Staff/Employee/Student/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First name of the Staff/Employee/Student/Other</inlineHelpText>
+        <label>First Name</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>Last name of the Staff/Employee/Student/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last name of the Staff/Employee/Student/Other</inlineHelpText>
+        <label>Last Name</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile__c</fullName>
+        <description>Mobile of Staff/Student/Employee/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mobile of Staff/Student/Employee/Other</inlineHelpText>
+        <label>Mobile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>Phone of Staff/Student/Employee/Other</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone of Staff/Student/Employee/Other</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <label>Library Account</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LB-{000000}</displayFormat>
+        <label>Account Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Library Accounts</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Employees</fullName>
+        <active>true</active>
+        <description>Only Employees are intended users</description>
+        <label>Employees</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Others</fullName>
+        <active>true</active>
+        <description>Other than [Students/Staffs/Employees] are intended users</description>
+        <label>Others</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Staffs</fullName>
+        <active>true</active>
+        <description>Only staffs are intended users</description>
+        <label>Staffs</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Students</fullName>
+        <active>true</active>
+        <description>Students are intended users</description>
+        <label>Students</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vendor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vendors</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending For Approval</masterLabel>
+            <translation><!-- Pending For Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Vendors --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Last Contacted --></label>
+        <name>Date_Last_Contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-Up Required --></label>
+        <name>Follow_Up_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Status --></label>
+        <name>Vendor_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Available</masterLabel>
+            <translation><!-- Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contacted</masterLabel>
+            <translation><!-- Contacted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unavailable</masterLabel>
+            <translation><!-- Unavailable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor Type --></label>
+        <name>Vendor_Type__c</name>
+        <picklistValues>
+            <masterLabel>AV</masterLabel>
+            <translation><!-- AV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;B</masterLabel>
+            <translation><!-- F&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- isVendorAvailable --></label>
+        <name>isVendorAvailable__c</name>
+    </fields>
+    <layouts>
+        <layout>Vendor Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Vendor_Booking_Workflow --></label>
+        <name>Vendor_Booking_Workflow</name>
+    </webLinks>
+</CustomObjectTranslation>

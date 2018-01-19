@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CandidateReview</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CandidateReviews</value>
+    </caseValues>
+    <fields>
+        <help><!-- Assessment of candidate based on review --></help>
+        <label><!-- Assessment --></label>
+        <name>Assessment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Candidate info --></help>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- CandidateReviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- hows candidate rating based on candidate review field --></help>
+        <label><!-- Rating --></label>
+        <name>Rating__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Rating should be between 1-5 --></errorMessage>
+        <name>Rating_Scale_Rule</name>
+    </validationRules>
+</CustomObjectTranslation>

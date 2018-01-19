@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Distribution Queues</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Distribution Queues</value>
+    </caseValues>
+    <fields>
+        <label><!-- QueueEmail --></label>
+        <name>QueueEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supported Objects --></label>
+        <name>Supported_Objects__c</name>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation><!-- Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

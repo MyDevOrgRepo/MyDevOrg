@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Logistic Need</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Logistic Needs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Event --></label>
+        <name>Events__c</name>
+        <relationshipLabel><!-- Logistic Needs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Logistic Need Types --></label>
+        <name>Logistic_Need_Types__c</name>
+        <picklistValues>
+            <masterLabel>AV</masterLabel>
+            <translation><!-- AV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;B</masterLabel>
+            <translation><!-- F&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>vendor__c</name>
+        <relationshipLabel><!-- Logistic Needs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>CCStaticDev is a resource that consist of all the JS related libraries such as backbone.js,angular.js etc.</description>
+</StaticResource>

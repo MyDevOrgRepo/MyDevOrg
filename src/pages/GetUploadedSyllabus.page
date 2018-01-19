@@ -1,0 +1,7 @@
+<apex:page standardController="Class__c" extensions="upLoadedSyllabus">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

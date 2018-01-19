@@ -1,0 +1,6 @@
+<apex:page controller="MultiselectController">
+    <apex:form >
+        <apex:pageblock title="Contacts">
+            <c:multiselectpicklist leftlabel="Available Contacts" leftoption="{!allContacts}" rightlabel="Selected Contacts" rightoption="{!selectedContacts}" size="14" width="150px"></c:multiselectpicklist>
+            <apex:pageblockbuttons >
+           </apex:pageblockbuttons></apex:pageblock></apex:form></apex:page>

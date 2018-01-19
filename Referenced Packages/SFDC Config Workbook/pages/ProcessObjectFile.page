@@ -1,0 +1,709 @@
+<apex:page controller="cwbtool.FieldSchemaController" action="{!loadAction}" standardstylesheets="false" sidebar="false" tabstyle="CWB_Tool__tab" title="CWB">
+
+ <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}"/>
+      <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" /> 
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-transition.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-dropdown.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__googleAnalytics,'/googleAnalytics.js')}"/>
+
+<!-- <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>-->
+ <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/ionic/css/ionicons.min.css')}" /> 
+ 
+<style>
+body, p, input, button, select, textarea, .navbar-search .search-query {
+  font-family: 'Segoe UI', Optima, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#content {
+  /*position: absolute;*/
+  top: 0px;
+  right: 20px;
+  left: 20px;
+  width: auto;
+  min-width: 600px;
+  margin: 0;
+}
+.sidebar-max #content {
+  left: 240px;
+}
+.hero-unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #eee;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+/*code, pre, table, .table, .table-bordered, .well, .label, .hero-unit, .navbar-inner, .btn-group > .btn:last-child, button, select, textarea, input, .input-append .add-on:last-child, .input-append .btn:last-child, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, .input-prepend.input-append .add-on:last-child, .input-prepend.input-append .btn:last-child, .btn-group > .btn:first-child, .dropdown-menu, .nav-pills .dropdown-menu, .nav-tabs .dropdown-menu, .nav-tabs > li > a, .nav-pills > li > a, .nav-tabs.nav-stacked > li:first-child > a, .nav-tabs.nav-stacked > li:last-child > a, .tabs-below > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a, .pager li > a, .pager li > span, .btn-group > .btn:last-child, .btn-group > .dropdown-toggle {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}*/
+.hero-unit, .form-actions {
+  background: #f7f7fd;
+}
+.hero-special {
+  background: #f7f7fd url({!URLFOR($Resource.CWBNewCss,'/CWBNewCss/img/bg-hero-special.jpg')}) center center no-repeat;
+}
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 35px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+.hero-unit h1 {
+  margin-bottom: 0.15em;
+}
+body, p, input, button, select, textarea, .navbar-search .search-query {
+  font-family: 'Segoe UI', Optima, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.panel {
+  margin: 0 auto 20px auto;
+}
+.panel header, .accordion-heading {
+  background: #3a4450;
+}
+.panel header {
+  padding: 0 10px;
+  height: 30px;
+}
+.panel .content {
+  background: #f7f7fd;
+  color: #3a4450;
+  border: 1px solid #f0f0fb;
+}
+.panel .content {
+  padding: 0px;
+}
+.tiles-container {
+  text-align: center;
+}
+.tile-btn {
+  display: inline-table;
+  width: 105px;
+  height: 85px;
+  margin: 5px;
+  background: #61b0e9;
+  color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.tile-btn span:first-child {
+  display: block;
+  font-size: 32px;
+  line-height: 32px;
+  margin-top: 14px;
+}
+.Btn {
+  /*-webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  filter: none;
+  text-shadow: none;*/
+  background: #dce0f1;
+  border-color: #c1c1e3;
+}
+.Btn.Btn-primary {
+  background: #61b0e9;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-color: #389ae2;
+  text-shadow: none;
+}
+.Btn.Btn-primary.Btn-large {
+  font-size: 16px;
+}
+span.txt {
+  display: block;
+  margin-top: 10px;
+}
+
+.panel header *, .accordion-heading *, .panel header a:hover, .accordion-heading a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.panel header span {
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
+  font-size: 17px;
+  line-height: 17px;
+}
+panel header *, .panel header a:hover, .accordion-heading a:hover,.content a:hover  {
+  color: #ffffff;
+  text-decoration: none;
+}
+.tile-btn:hover,.tile-btn:focus {
+  text-decoration: none;
+  background: #6bbef6;
+  color: #ffffff;
+}
+.msgcontainer {
+  min-height: 143px;
+}
+ .modal-backdrop{
+   z-index:12000;
+    outline:none;
+  }
+  .modal, .modal1{
+    z-index:12001;
+    outline:none;
+  }
+  .modal-backdrop{
+    outline:none;
+  }
+</style>
+<script>
+
+</script>
+<c:actionstatusNew />
+
+<apex:form >
+
+<apex:outputpanel id="container">
+<apex:pagemessages id="msg" escape="false"/>
+
+<apex:outputpanel >
+<apex:actionfunction name="process" action="{!startProcessing}" reRender="objectCont,scriptId,pset,msg" status="myStatus" oncomplete="start();"/>
+<apex:actionfunction name="checkDetailBeforeStartAction" action="{!updateObjectDetail}" reRender="objectCont,scriptId,msg" status="myStatus" oncomplete="process();"/>
+ <apex:actionFunction name="downloadObject" action="{!downLoadAction}" /> 
+ 
+<apex:actionfunction name="updatePermissionDetail" action="{!updatePermissionDetail}" reRender="pset,scriptId,msg" status="myStatus" oncomplete="process();"/>
+ <apex:actionFunction name="downLoadPermissionSetDetail" action="{!downLoadPermissionSetDetail}" /> 
+  
+  <script>
+      var request='';
+      var gaDetail='OrgName={!$Organization.Name}_Name={!$User.FirstName}';
+  </script>
+  <apex:outputpanel id="scriptId">  
+    <script>
+     
+
+    function downloadObjectDetail(){
+        showOverLay('Downloading..');
+        downloadObject();
+        hideProcessingWindow();
+    }
+    
+     function callDownLoadPermissionSetDetail(){
+        showOverLay('Downloading..');
+        downLoadPermissionSetDetail();
+        hideProcessingWindow();
+    }
+    
+   
+  function checkDetailBeforeStart(){
+   request='object';
+    //$('.actionPanel').hide();
+    showProgressBar('10');
+    checkDetailBeforeStartAction();
+    
+  }
+  function checkPermissionDetailDetailBeforeStart(){
+      //$('.actionPanel').hide();
+      request='pset';
+      showProgressBar('10');
+      updatePermissionDetail();
+      
+  }
+  
+    function start(){//console.log("Actal size :"+{!iActualSize}+"remaining:"+{!iCurrentSize}+' ======== {!!isCompleted} ');
+       var percentCompleted=100;
+     
+      if( {!!isCompleted}){
+       $('.actionPanel').hide();
+         //showOverLay('Processed {!(iActualSize-iCurrentSize)} out of {!iActualSize}');
+         var percentCompleted=(({!(iActualSize-iCurrentSize)}*100)/{!iActualSize});
+         
+          $('.Btn-group').addClass('disabled');
+          showProgressBar(percentCompleted.toFixed());
+         process(); 
+         
+      }else{
+        showProgressBar(percentCompleted.toFixed());
+         $('.Btn-group').removeClass('disabled');
+         $('.downloadlink').removeClass('disabled');
+        hideOverLay();
+        if(request=='object'){
+         downloadObjectDetail();
+        }
+        if(request=='pset'){
+          callDownLoadPermissionSetDetail();
+        }
+       
+      }
+  }
+  if({!isFirstTimeLoad}){
+    //start();
+  }
+   var timeout;
+  function hideProcessingWindow(){//console.log('call');
+   var timeout= setTimeout(function() {
+        hideOverLay();
+        removeTimeOut(); 
+       }, 5000);
+  }
+  
+  function removeTimeOut(){
+    // console.log('removeTimeOut');
+    clearTimeout(timeout);
+  }
+  
+  $(document).ready(function(){
+   
+   $('.tile-btn1').click(function(){ 
+     $('.msgcontainer').hide();
+     $('.'+$(this).attr('parent')).show();
+   });
+
+
+
+$('a.remote').click(function (e) {
+   //satrtAction($(this).attr('folderId'),$(this).attr('libId'));
+         e.preventDefault();
+        var url=$(this).attr('urlparam');//console.log(url);
+        $("#remotelocation .modal-body").html('<iframe id="ifrm" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
+         $('#remotelocation').modal('show');//.on('hide.bs.modal', function () {alert(1)});
+    });
+ 
+    $('#remotelocation').on('show.bs.modal', function () {
+   
+       /* $(this).find('.modal-dialog').css({
+                  width:'60%', //choose your width
+                  height:'100%', 
+                  'padding':'0'
+           });*/
+         /*$(this).find('.modal-content').css({
+                  height:'100%', 
+                  'padding':'0'
+           });*/
+         $(this).find('.modal-body').css({
+                  width:'auto',
+                  height:'100%', 
+                   height:'400px',
+                  'padding':'0'
+           });
+    });
+     $('#remotelocation').on('hide.bs.modal', function () {
+         $(this).data('modal', null);
+         $('#remotelocation .modal-body',this).empty().html('Please Wait..');
+     });
+
+});
+</script>
+<script>
+ $(document).ready(function() {
+    $('.profileClass').multiselect({
+   
+    buttonClass: 'Btn Btn-default', 
+    enableFiltering: true,
+    filterBehavior: 'both',
+  enableCaseInsensitiveFiltering: true,
+ filterPlaceholder: 'Search Profile..',
+  includeSelectAllOption: true,
+selectAllText: 'Select ALL Profile',
+selectAllValue: 'multiselect-all',
+maxHeight:400,
+ buttonWidth: '400px',
+  nonSelectedText: 'You have not selected any profile',
+  disableIfEmpty:true,
+   onChange: function(element, checked) {
+          if($('.profileClass').val()==null){
+              $('.containerDivclass').hide();
+              $('#containerMessage').show();
+          }else{
+              $('.containerDivclass').show();
+              $('#containerMessage').hide();
+          }
+          
+        }
+    });
+    /*buttonText: function(options, select) {
+            if (options.length > 0) {
+                return options.length + ' selected profile ';
+            }
+        },
+    */
+    
+   var obj=  $('.objectClass').multiselect({
+                   
+         buttonClass: 'Btn Btn-default ',    
+    enableFiltering: true,
+    filterBehavior: 'both',
+enableCaseInsensitiveFiltering: true,
+ filterPlaceholder: 'Search Object..',
+  includeSelectAllOption: true,
+selectAllText: 'Select ALL Object',
+selectAllValue: 'multiselect-all',
+maxHeight:400,
+ buttonWidth: '300px',
+  nonSelectedText: 'You have not selected any object',
+  disableIfEmpty:true,
+   onChange: function(element, checked) {
+          if($('.objectClass').val()==null){
+              $('.containerDivclass').hide();
+              $('#containerMessage').show();
+          }else{
+               if($('.objectClass').val().length>254){
+                  alert('Selected object size is greater than 254 and it may be hit excelsheet limit which is 255.We recommend that it should be less than 255.');
+               }
+              $('.containerDivclass').show();
+              $('#containerMessage').hide();
+          }
+          
+        }
+    });
+    
+ //$('.objectClass').multiselect('select');   
+});
+</script>
+</apex:outputpanel>
+
+<div id="content container-fluid">
+
+      <div class="page" id="page-dashboard">
+         <div class="hero-unit hero-special">
+          <div class='msgcontainer config'>   
+              <h1>CWB(Config Workbook) &amp; Org Comparator <small>v 1.51</small>
+               
+              </h1>
+              <p>CWB to view and extract object metadata details. Don't waste time clicking through multiple screens to lookup recordtypes, field types, picklists, and other metadata.Click it and get everything at once!
+                 You can download:&nbsp;
+<pre>1)Object and Field Level Security,validationrule
+2)Permissionset and Permissionset Assignment
+3)Apex Detail including code coverage
+4)Profile basic and Full detail
+5)Layout Detail
+6)Workflow Detail</pre>
+                    
+                </p>
+             <div style='float:left;'>
+              <p><a href="/servlet/servlet.FileDownload?file={!UserGuideId}" target='_blank' class="Btn Btn-primary Btn-large ga" data-action='Learn more'>Learn more </a></p>
+             </div>
+             <div style='float:left;margin-left:10px;'>
+                <span class='containerDivclass'>
+               <p style='display:none1;'>
+                 <a href="javascript:void(0);"  data-toggle="modal" data-target="#myModal" class='Btn Btn-primary Btn-large ga' data-action='Setting'><span class="ion-settings" aria-hidden="true"></span><span>Setting</span></a>
+               </p>
+               </span>
+             </div>  
+              
+          </div>
+          <div class='msgcontainer paidApp' style='display:none;'>  
+            <c:LicenseManagement rendered="false"/>
+            <c:CWBReportLicenseManagement showdescription="false"/>
+          </div>
+          <div class='msgcontainer modifiedsection' style='display:none;'>  
+            <div class="col-md-4">
+                <h2>Object Modified Details</h2>
+                <p>
+                    For all objects (standard and custom) you can explore update details about object.
+                </p>
+                
+                <div class="dropdown">
+                  <button class="Btn Btn-primary Btn-large  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Download
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li> 
+                         <apex:commandLink styleclass="Btn1 Btn-primary1 Btn-large1 ga" html-data-action="Object Update Detail(s)" action="{!downloadObjectUpdateDetails}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                           <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Object Update Detail(s)</span>
+                         </apex:commandLink>
+                    </li>
+                    <li>
+                        <apex:commandLink styleclass="Btn1 Btn-primary1 Btn-large1 ga" html-data-action="CustomField Update Detail(s)" action="{!downloadCustomFieldUpdateDetails}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Custom Field Update Detail(s)</span>
+                        </apex:commandLink>
+                    </li>
+                   </ul>
+                </div>
+              <p>
+                  
+                </p>
+            </div>
+             <div class="col-md-3">
+                <h2>Layout Modified Details</h2>
+                <p>
+                    For all Layout (standard and custom) you can explore update details about layout.
+                </p>
+                <p>
+                   <apex:commandLink styleclass="Btn Btn-primary Btn-large ga" html-data-action="Layout Update Detail(s)" action="{!downloadLayoutUpdateDetails}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                       <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Layout Update Detail(s)</span>
+                  </apex:commandLink>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h2>Workflow Modified Details</h2>
+                <p>
+                    For all Workflow (standard and custom) you can explore update details about Workflow.
+                </p>
+                <p>
+                   <apex:commandLink styleclass="Btn Btn-primary Btn-large ga" html-data-action="Workflow Update Detail(s)" action="{!downloadWorkflowUpdateDetails}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                       <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Workflow Update Detail(s)</span>
+                  </apex:commandLink>
+                </p>
+            </div>
+            
+          </div>
+          
+           <div class='msgcontainer objPerm ' style='display:none'>   
+              <!--<h1>Object and Field Level Security Detail</h1>
+              <p ><pre>For all objects (standard and custom) you can explore fine details about each field,field level security for each profile, custom button/links,formula field details and record types</pre></p>
+             --><span class='containerDivclass'>
+               <apex:outputpanel id="objectCont">
+                    <apex:outputpanel rendered="{!!isProcess}" styleClass="actionPanel1" layout="none">
+                      <div class="row containerDivclass">
+                        <div class="col-md-4">
+                        <h2>Object and Field Level Security Detail </h2>
+                        <p>
+                            For all objects (standard and custom) you can explore fine details about each field,field level security for each profile, custom button/links,formula field details and record types
+                        </p>
+                        <p>
+                        <a href="javasrcipt:void(0);" onclick="checkDetailBeforeStart(); return false;" class="Btn Btn-primary Btn-large ga" data-action='Download Object Permission'>
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span> Download Object Permission</span></a> 
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Full Object Details</h2>
+                        <p style='word-wrap:break-word;'>
+                            For all objects (standard and custom) you can explore fine details about each field,Picklist,formula,validationrule,Fieldset,Recordtype,Business Process,custom button/links etc.
+                        </p>
+                        <p>
+                         <a href="javascript:void(0);"  urlparam='{!$Page.DescribeObject}' parent='objPermSet' data-target="#remotelocation" class="Btn Btn-primary Btn-large remote ga" data-action='Download Full Object Detail(s)'>
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Download Full Object Detail(s)</span></a>
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <h2>Object Modified Details</h2>
+                        <p>
+                            For all objects (standard and custom) you can explore object update details.
+                        </p>
+                        <p>
+                           <apex:commandLink styleclass="Btn Btn-primary Btn-large ga" html-data-action="Object Update Detail(s)" action="{!downloadObjectUpdateDetails}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Object Update Detail(s)</span>
+                          </apex:commandLink>
+                        </p>
+                    </div>
+                    
+                    
+                  </div>
+                        
+                        
+                        
+                    </apex:outputpanel>
+                </apex:outputpanel>
+             </span>
+          </div>
+           
+           <div class='msgcontainer objprofile' style='display:none'>   
+              <apex:outputpanel id="profileCont">
+                  <div class="row containerDivclass">
+                    <div class="col-md-4">
+                        <h2>Basic Profile Details</h2>
+                        <p>
+                            Explore basic details about profile like apex classes, pages, object permissions, applications and general user permissions.
+                        </p>
+                        <p>
+                         <apex:commandLink html-role="menuitem" action="{!downLoadProfile}"  onclick="showOverLay('Please wait...');hideProcessingWindow();" styleclass="Btn Btn-primary Btn-large ga" html-data-action="Download Basic Profile Permission(s)">
+                              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span> Download Basic Profile Permission(s)</span>
+                          </apex:commandLink>   
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Full Profile Details</h2>
+                        <p>
+                            Explore all the basic details like apex classes, pages, object permissions, applications and general user permissions. On top of that one can explore field level security, record type and layout assignments, record type visiblities, tabs, and login IP range. 
+                        </p>
+                        <p>
+                         <a href="javascript:void(0);"  urlparam='{!$Page.DescribeProfile}' parent='objPermSet' data-target="#remotelocation" class="Btn Btn-primary Btn-large remote ga" data-action='Download Full Profile Permission(s)'>
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Download Full Profile Permission(s)</span></a>
+                        </p>
+                    </div>
+                  </div>
+              </apex:outputpanel>
+          </div>
+        
+        
+        
+           <div class='msgcontainer permsetdetail' style='display:none'>   
+              <apex:outputpanel id="pset">
+                <apex:outputpanel rendered='{!setPermissionSetId.size>0}' layout='none'>
+                      <div class="row containerDivclass">
+                        <apex:outputpanel rendered="{!!isProcess}" styleClass="actionPanel1 col-md-4">
+                            <h2>Permissionset Basic Detail</h2>
+                            <p>
+                                Fetches read/edit permission details for each field in every object across all permission sets. 
+                            </p>    
+                            <p> <a href="javascript:void(0);" class="Btn Btn-primary Btn-large ga" onclick="checkPermissionDetailDetailBeforeStart(); return false;" data-action='Download Permissionset Detail'><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                              <span>Download Basic Permissionset Detail</span></a></p>
+                        </apex:outputpanel>   
+                         <apex:outputpanel rendered="{!!isProcess}" styleClass="actionPanel1 col-md-3">
+                            <h2>Permissionset Full Detail</h2>
+                            <p>Fetches all the permissionset details for Application Visibilities,Class Accesses,Custom Permissions,External DataSource Access,Field Permissions,Object Permissions,Page Access,RecordType Visibilities,TabSettings,userLicense </p>    
+                            <p> 
+                                <a href="javascript:void(0);"  urlparam='{!$Page.DescribePermissionSet}' parent='objPermSet' data-target="#remotelocation" class="Btn Btn-primary Btn-large remote ga" data-action='Download Full PermissionSet Detail'>
+                                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span>Download Full PermissionSet Detail</span>
+                                </a>
+                            </p>
+                        </apex:outputpanel>  
+                        <apex:outputpanel rendered="{!!isProcess}" styleClass="actionPanel1 col-md-3">
+                             <h2>Permissionset Assignment Detail</h2>
+                              <p>
+                                Fetches user wise permissionset assignment
+                              </p>    
+                             <p>
+                               <apex:commandLink styleclass="Btn Btn-primary Btn-large ga" html-data-action="Download Permissionset Assignment Detail" action="{!downLoadPermissionSetAssignment}" onclick="showOverLay('Please wait...');hideProcessingWindow();">
+                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                                 <span>Download Permissionset Assignment Detail</span>
+                               </apex:commandLink>
+                             </p>
+                        </apex:outputpanel>  
+                      </div>
+                  </apex:outputpanel>
+              </apex:outputpanel>
+            </div>
+              
+            <div class='msgcontainer apexcont' style="display:none;">   
+                 <h1>Code details</h1>
+              <p>Gets fine details about:
+<pre>
+1. Apex : List of all classes, code coverage, namespace prefix, validity, created/last modified info, api version, and length without comments.     
+2. Apex/VF Components and pages: Lists all components/pages with created/last modified info, namespace prefix, and api version etc.
+3. Triggers : List of all triggers, code coverage, object name, associated DML events, namespace prefix, validity, created/last modified info, api version, and length without comments.     
+</pre>              
+                  
+              </p>                   
+             <span class='containerDivclass'>
+               <apex:commandLink html-role="menuitem" action="{!downLoadApexDetail}"  onclick="showOverLay('Please wait...');hideProcessingWindow();" styleclass="Btn Btn-primary Btn-large ga" html-data-action="Download Apex Detail">
+                      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span> Download Apex Detail</span>
+                  </apex:commandLink>
+             </span>
+          </div>
+          
+          
+          
+          
+          
+          <span id='containerMessage' style='display:none;'>
+          <div style='float:left;margin-left:10px;'>
+               <p>
+                 <a href="javascript:void(0);"  data-toggle="modal" data-target="#myModal" class='Btn Btn-primary Btn-large ga' data-action='Setting'><span class="ion-settings" aria-hidden="true"></span><span>Setting</span></a>
+               </p>
+             </div> 
+         <span  style='float:left;margin-left:10px;'>
+            <div class="alert alert-info" role="alert">Please select at least one profile and object.</div> 
+        </span>
+        </span>
+      </div>
+        <div class="panel" id="panel-101">
+          <header>
+            <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+            <span>More details about..</span>
+          </header>
+          <div class="content tiles-container container-fluid">
+            <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='config' data-action='Home'><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class='txt'>Home</span></a>
+           <!-- <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='paidApp' data-action='Upgrade version'><span class="ion-pull-request" aria-hidden="true"></span><span class='txt'>Upgrade version</span></a>-->
+             <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='paidApp' data-action='Upgrade version'><span class="ion-stats-bars" aria-hidden="true"></span><span class='txt'>Download History</span></a>
+           
+            <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='objPerm' data-action='Object'><span class="ion-cube active" aria-hidden="true"></span><span class='txt'>Object</span></a>
+            <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='objprofile' data-action='Profile'><span class="ion-person-stalker" aria-hidden="true"></span>
+               <span class='txt'>Profile</span>
+            </a>
+         
+           <apex:outputpanel rendered='{!setPermissionSetId.size>0}' layout='none'>    
+             <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='permsetdetail' data-action='Permision Set'><span class="ion-key" aria-hidden="true"></span>
+             <span class='txt'>Permision Set</span></a>
+            </apex:outputpanel>
+           
+             <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='apexcont' data-action='Code' ><span class="ion-code" aria-hidden="true"></span>
+                  <span class='txt'>Code</span></a>
+             
+             <a href="javascript:void(0);" urlparam='{!$Page.DescribeWorkflow}' class="tile-btn remote ga navbar-header" data-action='Workflow' parent='objPermSet' data-target="#remotelocation"><span class="ion-network" aria-hidden="true" ></span>
+            <span class='txt'>Workflow</span></a> 
+                    
+            <a href="javascript:void(0);" urlparam='{!$Page.DescribeLayout}' class="tile-btn remote ga navbar-header" data-action='Layout' parent='objPermSet' data-target="#remotelocation"><span class="ion-clipboard" aria-hidden="true" ></span>
+            <span class='txt'>Layout</span></a>
+            
+            <a href="javascript:void(0);" class="tile-btn tile-btn1 ga navbar-header" parent='modifiedsection' data-action='Modified Details '><span class="ion-edit" aria-hidden="true"></span><span class='txt'>Modified Details</span></a>
+           
+            <a href="{!$Page.Comparator}" class="tile-btn ga navbar-header" parent='objPermSet' data-action='Comparator'><span class="ion-hammer" aria-hidden="true"></span>
+            <span class='txt'>Comparator</span></a>
+            
+            <a href="javascript:void(0);" class="tile-btn ga navbar-header" data-toggle="modal" data-action='Settings'  data-target="#myModal">
+                <span class="ion-settings" aria-hidden="true" ></span>
+                <span class='txt'>Settings</span></a>
+            <a href="javascript:void(0);" class="tile-btn ga navbar-header"  data-action='Profile Comparsion' data-method="select"  onclick="showPoppup(this);">
+                <span class="ion-settings" aria-hidden="true" ></span>
+                <span class='txt'>Compare Profile</span></a>
+          <!--  <a href="javascript:void(0);" class="tile-btn ga navbar-header"  data-action='Update Metadata' data-method="selectoptagroup"  onclick="showMetadataPoppup(this);">
+                <span class="ion-settings" aria-hidden="true" ></span>
+                <span class='txt'>Update Metadata</span></a>    -->
+          </div>
+        </div>
+</div>
+</div>      
+</apex:outputpanel>
+</apex:outputpanel>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style='outline:none;'>
+  <div class="modal-dialog modal-lg" style='width:70% !important'>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body" style='height:400px;'>
+        <apex:selectList value="{!setProfileId}" multiselect="true" styleclass="multiselect profileClass" style="margin-right:40px;"> 
+            <apex:selectOptions value="{!lstProfile}"/>
+        </apex:selectList>
+        <span id="example21-toggle" class="Btn Btn-primary compType" style='margin-right:10px;'>Profile</span>
+        <apex:selectList value="{!lstSelctedObject}" multiselect="true" styleclass="multiselect objectClass" > 
+            <apex:selectOptions value="{!lstObjectOption}"/>
+        </apex:selectList>
+         <span id="example21-toggle" class="Btn Btn-primary compType">Object</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="Btn Btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</apex:form>
+
+<!-- Modal -->
+<div class="modal fade" id="remotelocation"  data-backdrop='static' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style='overflow:hidden;outline:none;'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div> 
+      <div class="modal-body">
+        Please Wait..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="Btn Btn-primary" data-dismiss="modal">Close</button>
+       </div>
+    </div>
+  </div>
+</div>
+
+ <c:DynamicModal /> 
+
+</apex:page>

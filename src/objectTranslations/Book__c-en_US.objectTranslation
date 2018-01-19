@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Book</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Books</value>
+    </caseValues>
+    <fields>
+        <help><!-- Where the book is located? --></help>
+        <label><!-- Book Position --></label>
+        <name>Book_Position__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of copies for particular book --></help>
+        <label><!-- Number of copies --></label>
+        <name>Number_of_copies__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is auto-generated(book_id) --></help>
+        <label><!-- book_id --></label>
+        <name>book_id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Helps to retrieve the book name --></help>
+        <label><!-- book_name --></label>
+        <name>book_name__c</name>
+    </fields>
+    <layouts>
+        <layout>Book Layout</layout>
+        <sections>
+            <label><!-- Book Details --></label>
+            <section>Book Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,175 @@
+<!-- <apex:page standardController="Account"  extensions="myControllerPractice" showheader="false" sidebar="false"> -->
+
+<apex:page sidebar="False" showheader="false" controller="myControllerPractice">
+
+
+
+
+<apex:pageblock id="firstPageBlock">
+        
+            <apex:pageBlockSection id="firstSection" title="Select Your Account">
+            <apex:form >
+            <apex:outputLabel value="Select your Account" />
+            <apex:inputField id="inputAccount" label="Select Account" value="{!toa.Account__c}"/>
+                       <apex:commandButton id="accButton" value="Show Account Details" action="{!accDetails}" rendered="{!hideButtons}">
+                       
+                       <apex:actionSupport event="onclick" reRender="secondPAgeBlock"/>
+                       <apex:actionsupport event="onclick" reRender="secondPAgeBlock1"/> 
+                       <apex:actionsupport event="onclick" reRender="secondPAgeBlock2"/>
+                       </apex:commandButton> 
+        </apex:form>
+            
+               
+        </apex:pageBlockSection>
+</apex:pageblock>
+
+    <apex:pageblock id="secondPAgeBlock" rendered="{!showAccTable}" title="Account Details">
+    
+            <apex:pageblocksection id="secondSection" title="Account Information">
+            
+            <apex:form >
+            <apex:commandButton id="conButton" value="SHow Contact" action="{!conDetails}" rendered="{!hideButtons}">
+                    <apex:actionsupport event="onclick" reRender="secondPAgeBlock1"/>            
+                    
+            </apex:commandButton>
+            <apex:pageBlockTable id="myTableAccount" value="{!acc}" var="rec">
+            
+                <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.phone}"/>
+                                                <apex:column value="{!rec.email__c}"/>
+                                                            <apex:column value="{!rec.billingcity}"/>
+            
+            </apex:pageBlockTable>
+            
+            </apex:form>
+            
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    
+    <!-- To show contacts -->
+    <apex:pageblock id="secondPAgeBlock1" rendered="{!showConTable}" title="Contact Details">
+    
+            <apex:pageblocksection id="secondSection" title="Contact Details">
+            
+            <apex:form >
+            
+             <apex:commandButton id="oppButton" value="Show Opportunities" action="{!oppDetails}" rendered="{!hideButtons}">
+                    <apex:actionsupport event="onclick" reRender="secondPAgeBlock2"/>            
+                    
+            </apex:commandButton>
+            
+            <apex:pageBlockTable id="myTableAccount1" value="{!cons}" var="rec">
+            
+                <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.phone}"/>
+                                                <apex:column value="{!rec.email}"/>
+                                                            <apex:column value="{!rec.mailingcity}"/>
+                                                            <apex:column value="{!rec.mailingstate}"/>
+                                                                <apex:column value="{!rec.mailingcountry}"/>
+                                                                <apex:column value="{!rec.Primary_Contact__c}"/>
+                                                                
+                                                                    
+            
+            </apex:pageBlockTable>
+            
+            </apex:form>
+            
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    
+    <!-- to show opportunity -->
+    
+    
+    
+    
+     <apex:pageblock id="secondPAgeBlock2" rendered="{!showOppTable}" title="Opportunity Details">
+    
+            <apex:pageblocksection id="ThirdSection" title="Opportunity Details">
+            
+            <apex:form >
+    <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize}" status="fetchStatus" reRender="secondPAgeBlock2"/>        
+            <apex:pageBlockTable id="myTableAccount1" value="{!opps}" var="rec">
+            
+               <apex:column value="{!rec.name}"/>
+                                <apex:column value="{!rec.stagename}"/>
+                                                <apex:column value="{!rec.closedate}"/>
+                                                            <apex:column value="{!rec.type}"/>
+                                                            <apex:column value="{!rec.probability}"/>
+            
+            
+            
+            </apex:pageBlockTable>
+            
+            
+            
+            
+            <!--Pagination starts-->
+            
+             <apex:panelGrid columns="8"> 
+                 
+                <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();">
+                    <apex:selectOptions value="{!paginationSizeOptions}"/>
+                </apex:selectList>
+           
+           <!--      
+                <apex:commandButton status="fetchStatus" reRender="secondPAgeBlock2" value="First" action="{!setCon.first}" disabled="{!setCon.hasPrevious}" title="First Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="secondPAgeBlock2" value="Previous" action="{!setCon.previous}" disabled="{!setCon.hasPrevious}" title="Previous Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="secondPAgeBlock2" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="secondPAgeBlock2" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page"/> 
+  
+  -->
+  
+  <!-- Changes here-->
+  
+  <apex:commandButton reRender="firstPageBlock,secondPageBlock,secondPAgeBlock1,secondPAgeBlock2" disabled="{!!setCon.hasprevious}" action="{!setCon.first}" value="First"/>
+                <apex:commandButton reRender="firstPageBlock,secondPageBlock,secondPAgeBlock1,secondPAgeBlock2" disabled="{!!setCon.hasprevious}" action="{!setCon.previous}" value="Previous"/>
+                <apex:commandButton reRender="firstPageBlock,secondPageBlock,secondPAgeBlock1,secondPAgeBlock2" disabled="{!!setCon.hasnext}" action="{!setCon.next}" value="Next"/>
+                <apex:commandButton reRender="firstPageBlock,secondPageBlock,secondPAgeBlock1,secondPAgeBlock2" disabled="{!!setCon.hasnext}" action="{!setCon.last}" value="Last"/>
+  
+  <!-- Changes ends here -->
+  
+                <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                     (setCon.pageNumber * size))} of {!noOfRecords}
+                </apex:outputText> 
+                       
+                <apex:outputPanel >                      
+                    <apex:actionStatus id="fetchStatus" >
+                        <apex:facet name="start" >
+                          <img src="/img/loading.gif" />                    
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:outputPanel> 
+  
+            </apex:panelGrid>  
+            
+            
+            <!--Pagination Ends-->
+            </apex:form>
+            </apex:pageblocksection>
+    
+    </apex:pageblock>
+    <apex:pageblock >
+    <apex:form >
+    <apex:commandButton value="Print" onclick="window.print()" action="disableButtons();">
+        
+            <apex:actionsupport event="onclick" reRender="accButton"/>
+                        <apex:actionsupport event="onclick" reRender="conButton"/>
+                                    <apex:actionsupport event="onclick" reRender="oppButton"/>
+                                   
+       
+                                                
+    
+    </apex:commandButton>
+    </apex:form>
+    </apex:pageblock>
+    
+    
+    
+    
+
+</apex:page>

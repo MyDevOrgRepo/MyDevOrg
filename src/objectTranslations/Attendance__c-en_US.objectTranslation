@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Attendance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attendances</value>
+    </caseValues>
+    <fields>
+        <help><!-- Checked, if student is absent --></help>
+        <label><!-- Absent --></label>
+        <name>Absent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related class to this attendance report --></help>
+        <label><!-- Class --></label>
+        <name>Class__c</name>
+        <relationshipLabel><!-- Attendances --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related Division to this attendance --></help>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <relationshipLabel><!-- Attendances --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked, i f student is present for the day --></help>
+        <label><!-- Present --></label>
+        <name>Present__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason for absent --></help>
+        <label><!-- Reason, if Absent --></label>
+        <name>Reason_if_Absent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the related staff --></help>
+        <label><!-- Staff --></label>
+        <name>StafName__c</name>
+        <relationshipLabel><!-- Attendances --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related student of this attendance report --></help>
+        <label><!-- Student --></label>
+        <name>StudentName__c</name>
+        <relationshipLabel><!-- Attendances --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Attendance Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Staff Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Student Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Select only one checkbox at a time [Present / Absent] --></errorMessage>
+        <name>SelectPresentOrAbsentCheckBoxAtATime</name>
+    </validationRules>
+</CustomObjectTranslation>

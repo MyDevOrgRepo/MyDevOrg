@@ -1,0 +1,28 @@
+<apex:page standardController="Lead">
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:pageBlock title="PageBlock1">
+  
+  <apex:pageBlockSection title="PageBlockSection1">
+  
+  <apex:pageBlockSectionItem helpText="{!$ObjectType.Lead.Fields.Country_of_interest__c.inLineHelpText}">
+  <apex:outputLabel value="{!$ObjectType.Lead.Fields.name.label}"/>
+  <apex:outputField value="{!lead.name}"/>
+  
+  </apex:pageBlockSectionItem>
+  
+  <apex:pageBlockSectionItem >
+  
+  </apex:pageBlockSectionItem>
+  
+  
+  <apex:pageBlockSectionItem >
+  
+  </apex:pageBlockSectionItem>
+  
+  </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

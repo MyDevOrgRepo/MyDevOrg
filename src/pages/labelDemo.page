@@ -1,0 +1,15 @@
+<apex:page controller="Label_Demo">
+ 
+ <apex:pageBlock id="Mypageblock">
+ 
+ <Apex:form >
+         <apex:pageBlockSection id="Redirect">
+         
+                    <apex:commandButton id="submit" value="Submit" action="{!getmyposition}"/>
+         
+         </apex:pageBlockSection>
+ </Apex:form>
+ </apex:pageBlock>
+ 
+ 
+</apex:page>

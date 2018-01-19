@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LookUpTask</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LookupTasks</value>
+    </caseValues>
+    <fields>
+        <help><!-- AccountTasksCount --></help>
+        <label><!-- AccountTasksCount --></label>
+        <name>AccountTasksCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account Lookup --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- LookupTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ContactTasksCount --></help>
+        <label><!-- ContactTasksCount --></label>
+        <name>ContactTasksCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact Lookup --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- LookupTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- OpportunityTasksCount --></help>
+        <label><!-- OpportunityTasksCount --></label>
+        <name>OpportunityTasksCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact Details --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- LookupTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Make checkbox true on trigger firing --></help>
+        <label><!-- TestObjectApex --></label>
+        <name>TestObjectApex__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

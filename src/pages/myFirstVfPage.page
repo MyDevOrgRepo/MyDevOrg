@@ -1,0 +1,56 @@
+<apex:page sidebar="false" showheader="false" Controller="EmployeeDetails" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+
+  <apex:outputpanel >
+  <apex:pageblock title="Employee Details">
+  <apex:pageblocksection title="Personal Details">
+  
+<apex:inputField value="{!employee.First_Name__c}"/>
+<apex:inputField value="{!employee.Middel_Name__c}"/>
+<apex:inputField value="{!employee.Last_Name__c}"/>
+<apex:inputField value="{!employee.Date_of_Birth__c}"/>
+<apex:inputField value="{!employee.Date_of_Birth__c}"/>
+<apex:inputField value="{!employee.Gender__c}"/>
+<apex:inputField value="{!employee.Marital_Status__c}"/>
+  
+  <!--Welcome!! {!$User.FirstName} {!$User.LastName}<HR/> 
+  Maximum number of all is:{!Max(49,1,2,66,37,89)}<HR/> 
+{!If(Day(Today())==16,'Its 16 today','Its not 16')}-->
+
+  </apex:pageblocksection>
+  <apex:pageblocksection title="Contact Detsils">
+  
+  <apex:inputField value="{!employee.Address__c}"/>
+  <apex:inputField value="{!employee.Mobile__c}"/>
+  <apex:inputField value="{!employee.Phone__c}"/>
+<apex:inputField value="{!employee.Email__c}"/>
+
+</apex:pageblocksection>
+
+  
+  <apex:pageblocksection title="Previous Employment Details">
+
+
+
+<apex:inputField value="{!employee.Previous_Employer__c}"/>
+<apex:inputField value="{!employee.years_of_experience__c}"/>   
+<apex:inputField value="{!employee.Department__c}"/>
+<apex:inputField value="{!employee.Designation__c}"/>
+       
+
+
+
+
+<div align="center" draggable="true">
+<apex:commandButton value="Create Employee" action="{!SaveEmployee}"/>
+</div>
+  </apex:pageblocksection>
+  
+  
+  
+  </apex:pageblock>
+  </apex:outputpanel>
+    </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

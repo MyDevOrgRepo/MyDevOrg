@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Guardian</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Guardians</value>
+    </caseValues>
+    <fields>
+        <help><!-- Address of the guardian --></help>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Age of guardian --></help>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of birth of guardian --></help>
+        <label><!-- Date of birth --></label>
+        <name>Date_of_birth__c</name>
+    </fields>
+    <fields>
+        <help><!-- First Name of the guradian --></help>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gender of the guardian --></help>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t want to disclose</masterLabel>
+            <translation><!-- Don&apos;t want to disclose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trans Gender</masterLabel>
+            <translation><!-- Trans Gender --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Last Name of the guardian --></help>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mobile of the Guardian --></help>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>Occupation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Phone of the Guardian --></help>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Student count for each associated guardian --></help>
+        <label><!-- Student Count --></label>
+        <name>Student_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email of the Guardian --></help>
+        <label><!-- email --></label>
+        <name>email__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Guardian should have 18 yrs. completed --></errorMessage>
+        <name>Age_should_be_more_than_18_yrs_old</name>
+    </validationRules>
+</CustomObjectTranslation>

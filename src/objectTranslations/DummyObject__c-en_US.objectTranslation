@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DummyObject</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DummyObjects</value>
+    </caseValues>
+    <fields>
+        <help><!-- Candidate lookup and select appropriate candidate --></help>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- DummyObjects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Cities of the states --></help>
+        <label><!-- City --></label>
+        <name>City__c</name>
+        <picklistValues>
+            <masterLabel>Ahmadabad</masterLabel>
+            <translation><!-- Ahmadabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ajmer</masterLabel>
+            <translation><!-- Ajmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Badoda</masterLabel>
+            <translation><!-- Badoda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhopal</masterLabel>
+            <translation><!-- Bhopal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bijing</masterLabel>
+            <translation><!-- Bijing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gandhi Nagar</masterLabel>
+            <translation><!-- Gandhi Nagar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guhuwati</masterLabel>
+            <translation><!-- Guhuwati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kolhapur</masterLabel>
+            <translation><!-- Kolhapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LasVegas</masterLabel>
+            <translation><!-- LasVegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mumbai</masterLabel>
+            <translation><!-- Mumbai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Delhi</masterLabel>
+            <translation><!-- New Delhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NewYork</masterLabel>
+            <translation><!-- NewYork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pune</masterLabel>
+            <translation><!-- Pune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranchi</masterLabel>
+            <translation><!-- Ranchi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SanFransisco</masterLabel>
+            <translation><!-- SanFransisco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sangli</masterLabel>
+            <translation><!-- Sangli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satara</masterLabel>
+            <translation><!-- Satara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shanghai</masterLabel>
+            <translation><!-- Shanghai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solapur</masterLabel>
+            <translation><!-- Solapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surat</masterLabel>
+            <translation><!-- Surat --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- List of countries --></help>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation><!-- Afghanistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Albania</masterLabel>
+            <translation><!-- Albania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Algeria</masterLabel>
+            <translation><!-- Algeria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andorra</masterLabel>
+            <translation><!-- Andorra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angola</masterLabel>
+            <translation><!-- Angola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antigua and Barbuda</masterLabel>
+            <translation><!-- Antigua and Barbuda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina</masterLabel>
+            <translation><!-- Argentina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armenia</masterLabel>
+            <translation><!-- Armenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aruba</masterLabel>
+            <translation><!-- Aruba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation><!-- Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation><!-- Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azerbaijan</masterLabel>
+            <translation><!-- Azerbaijan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahamas, The</masterLabel>
+            <translation><!-- Bahamas, The --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahrain</masterLabel>
+            <translation><!-- Bahrain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangladesh</masterLabel>
+            <translation><!-- Bangladesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barbados</masterLabel>
+            <translation><!-- Barbados --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belarus</masterLabel>
+            <translation><!-- Belarus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belgium</masterLabel>
+            <translation><!-- Belgium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belize</masterLabel>
+            <translation><!-- Belize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benin</masterLabel>
+            <translation><!-- Benin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhutan</masterLabel>
+            <translation><!-- Bhutan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolivia</masterLabel>
+            <translation><!-- Bolivia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosnia and Herzegovina</masterLabel>
+            <translation><!-- Bosnia and Herzegovina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Botswana</masterLabel>
+            <translation><!-- Botswana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brunei</masterLabel>
+            <translation><!-- Brunei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulgaria</masterLabel>
+            <translation><!-- Bulgaria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burkina Faso</masterLabel>
+            <translation><!-- Burkina Faso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burma</masterLabel>
+            <translation><!-- Burma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burundi</masterLabel>
+            <translation><!-- Burundi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cambodia</masterLabel>
+            <translation><!-- Cambodia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cameroon</masterLabel>
+            <translation><!-- Cameroon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape Verde</masterLabel>
+            <translation><!-- Cape Verde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central African Republic</masterLabel>
+            <translation><!-- Central African Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chad</masterLabel>
+            <translation><!-- Chad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chile</masterLabel>
+            <translation><!-- Chile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colombia</masterLabel>
+            <translation><!-- Colombia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comoros</masterLabel>
+            <translation><!-- Comoros --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo, Democratic Republic of the</masterLabel>
+            <translation><!-- Congo, Democratic Republic of the --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo, Republic of the</masterLabel>
+            <translation><!-- Congo, Republic of the --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica</masterLabel>
+            <translation><!-- Costa Rica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cote d&apos;Ivoire</masterLabel>
+            <translation><!-- Cote d&apos;Ivoire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Croatia</masterLabel>
+            <translation><!-- Croatia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuba</masterLabel>
+            <translation><!-- Cuba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curacao</masterLabel>
+            <translation><!-- Curacao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyprus</masterLabel>
+            <translation><!-- Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech Republic</masterLabel>
+            <translation><!-- Czech Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- List of all states --></help>
+        <label><!-- State/Provinance --></label>
+        <name>State_Provinance__c</name>
+        <picklistValues>
+            <masterLabel>Andaman and Nicobar Island</masterLabel>
+            <translation><!-- Andaman and Nicobar Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh</masterLabel>
+            <translation><!-- Andhra Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh</masterLabel>
+            <translation><!-- Arunachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assam</masterLabel>
+            <translation><!-- Assam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar</masterLabel>
+            <translation><!-- Bihar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh</masterLabel>
+            <translation><!-- Chandigarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhattisgarh</masterLabel>
+            <translation><!-- Chhattisgarh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dadra and Nagar Haveli</masterLabel>
+            <translation><!-- Dadra and Nagar Haveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daman and Diu</masterLabel>
+            <translation><!-- Daman and Diu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delh</masterLabel>
+            <translation><!-- Delh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa</masterLabel>
+            <translation><!-- Goa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat</masterLabel>
+            <translation><!-- Gujarat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haryana</masterLabel>
+            <translation><!-- Haryana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Himachal Pradesh</masterLabel>
+            <translation><!-- Himachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu and Kashmir</masterLabel>
+            <translation><!-- Jammu and Kashmir --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharkhand</masterLabel>
+            <translation><!-- Jharkhand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka</masterLabel>
+            <translation><!-- Karnataka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerala</masterLabel>
+            <translation><!-- Kerala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadweep</masterLabel>
+            <translation><!-- Lakshadweep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh</masterLabel>
+            <translation><!-- Madhya Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra</masterLabel>
+            <translation><!-- Maharashtra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manipur</masterLabel>
+            <translation><!-- Manipur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meghalaya</masterLabel>
+            <translation><!-- Meghalaya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizoram</masterLabel>
+            <translation><!-- Mizoram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaland</masterLabel>
+            <translation><!-- Nagaland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odisha</masterLabel>
+            <translation><!-- Odisha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puducherry</masterLabel>
+            <translation><!-- Puducherry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab</masterLabel>
+            <translation><!-- Punjab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthan</masterLabel>
+            <translation><!-- Rajasthan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikkim</masterLabel>
+            <translation><!-- Sikkim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TamilNadu</masterLabel>
+            <translation><!-- TamilNadu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telangana</masterLabel>
+            <translation><!-- Telangana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripura</masterLabel>
+            <translation><!-- Tripura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttar Pradesh</masterLabel>
+            <translation><!-- Uttar Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttarakhand</masterLabel>
+            <translation><!-- Uttarakhand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Bengal</masterLabel>
+            <translation><!-- West Bengal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TestPic --></label>
+        <name>TestPic__c</name>
+        <picklistValues>
+            <masterLabel>Test1</masterLabel>
+            <translation><!-- Test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test2</masterLabel>
+            <translation><!-- Test2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test3</masterLabel>
+            <translation><!-- Test3 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>DummyObject Layout</layout>
+        <sections>
+            <label><!-- Country --></label>
+            <section>Country</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

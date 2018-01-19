@@ -1,0 +1,41 @@
+<!-- <apex:page Controller="InfosysController" showHeader="False" showQuickActionVfHeader="true" sidebar="false" renderAs="pdf" rendered="{!renderEntirePage}"> -->
+  <apex:page Controller="InfosysController" showHeader="False" showQuickActionVfHeader="true" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ <apex:pageblock id="firstBlock">
+ 
+ <apex:pageBlockSection id="Class" title="Class">
+ 
+ <apex:form >
+  <b>Please Select Class</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <apex:inputField id="SelectClass" label="Select Class" value="{!std.Class__c}"/>
+ <apex:commandButton id="ShowStudents" title="Show Students" action="{!getStudents}" value="Show Students">
+ <!-- <apex:actionSupport event="onclick" reRender="Students"/> -->
+ </apex:commandButton>
+ </apex:form>
+
+ </apex:pageBlockSection>
+
+ <apex:pageBlock id="Students" title="Associated Students" rendered="{!showStudent}">
+<apex:pageBlockSection id="AssociataedStudents" Title="Asscociated Students">
+ <apex:PageBlockTable id="StudentTable" border="1" value="{!stds}" var="myStd">
+ 
+     <apex:column value="{!myStd.Class__c}"/>
+     <apex:column value="{!myStd.Division__c}"/>
+     <apex:column value="{!myStd.First_Name__c}"/>
+     <apex:column value="{!myStd.Last_Name__c}"/>
+     <apex:column value="{!myStd.Date_of_Birth__c}"/>
+     <apex:column value="{!myStd.email__c}"/>
+     <apex:column value="{!myStd.Phone__c}"/>
+     <!-- <apex:column value="{!myStd.Library_Account__c}"/> -->
+ 
+ 
+ </apex:PageBlockTable>
+</apex:pageBlockSection> 
+ 
+ </apex:pageBlock>
+ 
+   
+ </apex:pageblock>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

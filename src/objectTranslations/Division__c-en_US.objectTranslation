@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Division</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Divisions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Class with which this division is associated with --></help>
+        <label><!-- Class --></label>
+        <name>Class__c</name>
+        <relationshipLabel><!-- Divisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- No. of associated timetable records... --></help>
+        <label><!-- TimeTableRecordCount --></label>
+        <name>TimeTableRecordCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will be checked on when attendance for the day is reported. User will not be able to re-report the attendance for the same day for the same division, if this is checked --></help>
+        <label><!-- attendance reported --></label>
+        <name>attendance_reported__c</name>
+    </fields>
+    <layouts>
+        <layout>Division Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Can not add new division. Maximum limit reached. --></errorMessage>
+        <name>Cannot_add_division</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Time_Table --></label>
+        <name>Create_Time_Table</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_Attendance --></label>
+        <name>Report_Attendance</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ShowTimeTable --></label>
+        <name>ShowTimeTable</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Show_Attendance --></label>
+        <name>Show_Attendance</name>
+    </webLinks>
+</CustomObjectTranslation>

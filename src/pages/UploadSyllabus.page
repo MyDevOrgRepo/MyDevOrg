@@ -1,0 +1,12 @@
+<apex:page standardController="Class__c" extensions="uploadSyllabus">
+  <!-- Begin Default Content REMOVE THIS -->
+  <Apex:form >
+  <apex:pageblock >
+  <b>Click To Upload!!! </b><apex:commandButton id="UploadSyllabus" value="Upload" action="{!moveToUploadPage}"/>
+  
+  </apex:pageblock>
+  
+  </Apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

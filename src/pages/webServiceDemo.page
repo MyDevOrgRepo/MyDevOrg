@@ -1,0 +1,14 @@
+<apex:page controller="webserviceDemoController" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  
+  This is your new Page
+  <apex:form >
+  
+  <apex:commandButton action="{!getval}" title="!submitButton" value="{!submitButton}"/> 
+  <apex:inputText value="{!val}"/>
+  
+  </apex:form>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="trialControllerbase">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+  
+  <apex:pageBlock >
+  
+  <apex:pageBlockSection id="Account" title="Select Account">
+  
+  
+  <apex:inputField id="name" label="Select Account" value="{!acc.name}"/>
+  <apex:inputField id="phone" label="Phone number" value="{!acc.phone}"/>
+  
+      
+  </apex:pageBlockSection>
+  
+     
+  <apex:pageBlockSection id="Account1" title="Select Account">
+  
+  <apex:inputField id="name" value="{!acc.name}" label="Select Account"/>    
+  
+  </apex:pageBlockSection>
+  
+  
+  </apex:pageBlock>
+  </apex:form>
+      
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

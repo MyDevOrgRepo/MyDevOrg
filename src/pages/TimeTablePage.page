@@ -1,0 +1,1142 @@
+<apex:page controller="TimeTablePageController" showHeader="false" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ <style type="text/javascript">
+ 
+ function setRestPicklistValues()
+ {
+  var current_selected_start_value[]=(documment.getElementById("firstBlockStartTime")).split(" ");
+  var current_selected_start_value_colon_Seperated[] = parseInt(current_selected_start_value[0]);
+  var current_selected_start_value_Integer = parseInt(current_selected_start_value__colon_Seperated[0]+'.'+current_selected_start_value__colon_Seperated[1]);
+  var End_time_to_set = current_selected_start_value_Integer+1;
+  documment.getElementById("firstBlockEndTime.firstblockend1").value=End_time_to_set;
+  
+ }
+ 
+ </style>
+ 
+ <h1 align="Centre"> Time Table </h1>
+     <apex:pageBlock id="Timings">
+     
+     <table bgcolor="Grey" border="1" text="black" cellpadding="20" align="center">
+     
+         <tr>
+         <th>
+         
+         Days and Timings
+                 
+         </th>
+             <th>
+                 Monday
+             </th>
+         
+             <th>
+                 Tuesday
+             </th>
+         
+             <th>
+                 Wednesday
+             </th>
+         
+             <th>
+                 Thursday
+             </th>
+         
+             <th>
+                 Friday
+             </th>
+             
+             <th>
+                 Saturday
+             </th>
+             
+         </tr>
+         
+         <tr>
+         <th>
+         Start Time:
+         <select id="firstBlockStartTime">
+         <option value="12:00 PM">12:00 PM
+         <apex:actionsupport event="onchange" rerender="firstblockend1"/></option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select id="firstBlockEndTime" onchange="setRestPicklistValues()">
+         <option id="firstblockend1" value="12:00 PM">12:00 PM
+         
+         </option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Third Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Third Row of the table ends -->
+     
+     
+     <!-- Fourth Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Fourth Row of the table ends -->
+     
+     <!-- Fifth Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Fifth Row of the table ends -->
+     
+     <!-- Sixth Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Sixth Row of the table ends -->
+     
+     <!-- Seventh Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Seventh Row of the table ends -->
+     
+     <!-- Eight Row of the table -->
+     
+     <tr>
+         <th>
+         Start Time:
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         <br></br>
+         <br></br>
+         End Time:&nbsp;
+         <select>
+         <option value="12:00 PM">12:00 PM</option>
+         <option value="12:00 PM">12:30 PM</option>
+         <option value="12:00 PM">01:00 PM</option>
+         <option value="12:00 PM">01:30 PM</option>
+         <option value="12:00 PM">02:00 PM</option>
+         <option value="12:00 PM">02:30 PM</option>
+         <option value="12:00 PM">03:00 PM</option>
+         <option value="12:00 PM">03:30 PM</option>
+         <option value="12:00 PM">04:00 PM</option>
+         <option value="12:00 PM">04:30 PM</option>
+         <option value="12:00 PM">05:00 PM</option>
+         <option value="12:00 PM">05:30 PM</option>
+         <option value="12:00 PM">06:00 PM</option>
+         
+         </select>
+         
+         
+         </th>
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         <td>
+         
+          <select>
+         <option value="Marathi">Marathi</option>
+         <option value="English">English</option>
+         <option value="Hindi">Hindi</option>
+         <option value="Sanskrit">Sanskrit</option>
+         <option value="Algebra">Algebra</option>
+         <option value="Geometry">Geometry</option>
+         <option value="History and Civics">History and Civics</option>
+         <option value="Geography">Geography</option>
+         <option value="Music">Music</option>
+         <option value="Sports">Sports</option>
+         <option value="Handicraft">Handicraft</option>        
+         </select>    
+         
+         </td>
+         
+         
+         </tr>
+     
+     <!-- Eight Row of the table ends -->
+     
+     
+     
+     </table>
+     
+     
+     
+     </apex:pageBlock>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

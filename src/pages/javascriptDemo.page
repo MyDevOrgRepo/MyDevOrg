@@ -1,0 +1,163 @@
+<apex:page extensions="MyJavaScriptDemo" standardController="Lead" rendered="true" id="Page" docType="html-5.0">
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <!-- Begin Default Content REMOVE THIS -->
+ 
+ <script>
+     
+         function sayHello()
+         {
+              document.alert('Hello');
+             
+         }
+         
+         
+         
+      
+         
+        
+ 
+ 
+  
+  
+ $(document).ready(function(){
+    $("#SaveRecord").click(function(){
+        alert("The paragraph was clicked.");
+    });
+});
+ 
+ 
+
+     $(window).load(function() {
+         $('#calYearPicker').html('')
+         for(var i=1932;i<2042;i++){
+         $('#calYearPicker').append("<option value='"+i+"'>"+i+"</option>");
+         }
+         
+     });
+     
+     function validate()
+     {$("#errorListId").empty();
+         alert('inValidation');
+         var phone = "{!l.phone}";
+         alert('Phone is:'+phone);
+         if(phone=='')
+         {
+                alert('In if');
+                 $("#errorListId").append("<li>Phone cannot be blank</li>");
+                 
+         }
+         if($("#errorListId").size()>0)
+         {
+             
+         $("#errorOutputPanel").show();
+             alert('size is:'+$("#errorListId").size());
+             
+             
+         }
+         else
+         {
+         alert('size is:'+$("#errorListId").size());
+             alert('In else');
+             $("#errorListId").empty();
+             $("#errorOutputPanel").hide();
+             CallSeveAction();
+         }
+     };
+ 
+ </script>
+ 
+ 
+ 
+ <apex:form >
+   <apex:actionFunction action="{!save}" immediate="false" name="CallSaveAction" />
+ 
+ 
+ <!-- <apex:pageblock id="errorBlock" title="Validations">
+   
+    <apex:pageBlockSection title="" id="section1"> -->
+ 
+      
+ 
+ <!--
+    
+    </apex:pageBlockSection>
+ 
+ </apex:pageBlock>   
+   -->
+   
+ <apex:pageblock id="firstblock" title="Lead Details">
+ 
+ 
+ <apex:pageBlockSection title="Details 1" id="section1">
+ 
+    <apex:outputPanel id="errorOutputPanel" rendered="{!showinput}">
+ 
+                                <span>
+                                    <ul style="padding-left:10px;padding-top:0px;margin:0px" id="errorListId">
+                                    </ul>
+                                </span>
+ </apex:outputPanel>
+
+     <apex:inputField label="First Name" value="{!l.firstname}" rendered="{!showinput}"/>
+     <apex:inputField label="Last Name" value="{!l.lastname}" rendered="{!showinput}"/> 
+    <apex:inputField label="Email" value="{!l.email}" rendered="{!showinput}"/>
+    <apex:inputField label="Phone" value="{!l.phone}" rendered="{!showinput}" id="phone"/>
+    <apex:inputField label="Company" value="{!l.company}" rendered="{!showinput}"/>
+    <apex:inputField label="Mobile" value="{!l.mobilephone}" id="Mobile" rendered="{!showinput}"/>
+    <apex:inputField label="Fax" value="{!l.Fax}" id="Fax" rendered="{!showinput}"/>
+    <apex:inputField label="Birthdate" value="{!l.birthdate__c}" id="Birthdate" rendered="{!showinput}" onfocus="DatePicker.pickDate(false,this,false);"/>
+    <apex:inputField label="Title" value="{!l.title}" id="Title" rendered="{!showinput}"/>
+    <apex:inputField label="Rating" value="{!l.rating}" id="Rating" rendered="{!showinput}"/>
+    
+    <apex:outputField label="First Name" value="{!l.firstname}" rendered="{!showoutput}"/>
+     <apex:outputField label="Last Name" value="{!l.lastname}" rendered="{!showoutput}"/> 
+    <apex:outputField label="Email" value="{!l.email}" rendered="{!showoutput}"/>
+    <apex:outputField label="Phone" value="{!l.phone}" rendered="{!showoutput}"/>
+    "{!l.phone}" 
+    <apex:outputField label="Mobile" value="{!l.mobilephone}" id="MobileOutput" rendered="{!showoutput}"/>
+    <apex:outputField label="Fax" value="{!l.Fax}" id="Faxout" rendered="{!showoutput}"/>
+    <apex:outputField label="Birthdate" value="{!l.birthdate__c}" id="Birthdateout" rendered="{!showoutput}"/>
+    <apex:outputField label="Company" value="{!l.company}" id="Companyout" rendered="{!showoutput}"/>
+    <apex:outputField label="Title" value="{!l.title}" id="Titleout" rendered="{!showoutput}"/>
+    <apex:outputField label="Rating" value="{!l.rating}" id="Ratingout" rendered="{!showoutput}"/>
+    
+    </apex:pageBlockSection>
+ 
+ 
+ <!-- <apex:pageblock id="secondblock" title="Audit fields"> -->
+ 
+ <apex:pageBlockSection title="Details 2" id="section2">
+ 
+     <apex:outputField label="Created Date" value="{!l.createddate}" rendered="{!showoutput}"/>
+     <apex:outputField label="Created by" value="{!l.CratedBy__c}" rendered="{!showoutput}"/>
+     <apex:outputField label="Last Modified By" value="{!l.LastModified__c}" rendered="{!showoutput}"/>
+     <apex:outputField label="Owner" value="{!l.ownerid}" id="outputOwner" rendered="{!showoutput}"/>
+ 
+
+     <apex:inputField label="Created Date" value="{!l.createddate}" rendered="{!showinput}"/>
+     <apex:inputField label="Created by" value="{!l.CratedBy__c}" rendered="{!showinput}"/>
+     <apex:inputField label="Last Modified By" value="{!l.LastModified__c}" rendered="{!showinput}"/> 
+   <apex:inputField label="Owner" value="{!l.ownerid}" id="inputOwner" rendered="{!showinput}"/>
+ 
+ </apex:pageBlockSection>
+
+ <apex:pageBlockButtons >
+ 
+             <apex:commandButton title="Change" value="Edit" id="changeButton" action="{!edit}" reRender="firstblock"/> 
+  <apex:commandButton title="Save" value="Save" onclick="validate(); return false;" id="SaveRecord" />
+
+
+ 
+ </apex:pageBlockButtons>       
+ 
+ 
+ </apex:pageblock>
+
+ 
+ 
+ 
+ 
+ 
+ </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
